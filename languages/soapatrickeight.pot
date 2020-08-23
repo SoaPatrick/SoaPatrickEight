@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: ThemeBox\n"
+"Project-Id-Version: soapatrickeight\n"
 "POT-Creation-Date: 2020-03-21 08:46+0100\n"
 "PO-Revision-Date: 2020-03-21 08:04+0100\n"
 "Last-Translator: \n"
@@ -141,7 +141,7 @@ msgid "Search"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "ThemeBox"
+msgid "soapatrickeight"
 msgstr ""
 
 #. Author of the plugin/theme

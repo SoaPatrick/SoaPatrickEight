@@ -1,15 +1,15 @@
-ThemeBox
+soapatrickeight
 =========
 
-Hi. I'm a starter theme called `ThemeBox`.
+Hi. I'm a starter theme called `soapatrickeight`.
 
 Getting Started
 ---------------
 
-The first thing you want to do is copy the `themebox` directory and change the name to something else (like, say, `theme-one`), and then you'll need to do a three-step find and replace on the name in all the templates.
+The first thing you want to do is copy the `soapatrickeight` directory and change the name to something else (like, say, `theme-one`), and then you'll need to do a three-step find and replace on the name in all the templates.
 
-1. Search for: `'themebox'` and replace with: `'theme-one'`.
-2. Rename `themebox.pot` from `languages` folder to use the theme's slug
+1. Search for: `'soapatrickeight'` and replace with: `'theme-one'`.
+2. Rename `soapatrickeight.pot` from `languages` folder to use the theme's slug
 3. Update or delete this readme.
 
 Bitbucket Pipelines

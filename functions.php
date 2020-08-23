@@ -1,10 +1,10 @@
 <?php
 /**
- * themebox functions and definitions
+ * soapatrickeight functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package themebox
+ * @package soapatrickeight
  */
 
 require get_template_directory() . '/template-functions/setup.php';
