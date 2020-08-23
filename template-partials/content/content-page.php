@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package themebox
+ * @package soapatrickeight
  */
 
 ?>
@@ -14,7 +14,7 @@
 		<?php the_title( '<h1>', '</h1>' ); ?>
 	</header>
 
-	<?php themebox_post_thumbnail(); ?>
+	<?php soapatrickeight_post_thumbnail(); ?>
 
 	<div>
 		<?php the_content(); ?>

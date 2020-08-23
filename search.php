@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package themebox
+ * @package soapatrickeight
  */
 
 get_header();
@@ -16,7 +16,7 @@ get_header();
           <h1>
             <?php
               /* translators: %s: search query. */
-              printf( esc_html_x( 'Search Results for: %s', 'search result title', 'themebox' ), '<span>' . get_search_query() . '</span>' );
+              printf( esc_html_x( 'Search Results for: %s', 'search result title', 'soapatrickeight' ), '<span>' . get_search_query() . '</span>' );
             ?>
           </h1>
         </header>
