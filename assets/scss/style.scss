@@ -1,0 +1,27 @@
+/*!
+Theme Name: ThemeBox
+Theme URI:
+Author: SoaPatrick
+Author URI: https://www.soapatrick.com
+Description:
+Version: 1.4.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: themebox
+*/
+
+/*--------------------------------------------------------------
+#Imports
+--------------------------------------------------------------*/
+
+//Abstracts
+@import "abstracts/__abstracts-dir";
+
+//Base Styles
+@import "base/__base-dir";
+
+//Components
+@import "components/__components-dir";
+
+//Layout
+@import "layouts/__layouts-dir";
