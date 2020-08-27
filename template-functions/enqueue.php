@@ -11,7 +11,7 @@ function soapatrickeight_scripts() {
   // deregister Gutenberg Block Styling Library
   wp_dequeue_style( 'wp-block-library' );
 
-  wp_enqueue_style( 'soapatrickeight-style', get_stylesheet_uri() );
+  wp_enqueue_style( 'soapatrickseven-style', get_template_directory_uri() . '/assets/css/app.css' );
   wp_enqueue_script( 'soapatrickseven-scripts', get_template_directory_uri() . '/assets/js/scripts.js', '','' , true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
