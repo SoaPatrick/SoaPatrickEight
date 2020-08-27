@@ -1,13 +1,13 @@
 <?php
 /**
- * Custom taxonomy Post Projects
+ * Custom taxonomy Projects
  *
  * @link https://generatewp.com/taxonomy/
  *
  * @package soapatrickeight
  */
 
-function soapatrickeight_add_tax_post_projects() {
+function soapatrickeight_add_tax_projects() {
 
   $labels = [
     'name'                       => _x( 'Project', 'Taxonomy General Name', 'soapatrickeight' ),
@@ -46,4 +46,4 @@ function soapatrickeight_add_tax_post_projects() {
   register_taxonomy( "projects", [ "post" ], $args );
 
 }
-add_action( 'init', 'soapatrickeight_add_tax_post_projects' );
+add_action( 'init', 'soapatrickeight_add_tax_projects' );

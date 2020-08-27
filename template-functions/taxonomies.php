@@ -8,4 +8,4 @@
  */
 
 get_template_part( 'template-types/taxonomie/tax', 'factory_tags');
-get_template_part( 'template-types/taxonomie/tax', 'post_projects');
+get_template_part( 'template-types/taxonomie/tax', 'projects');

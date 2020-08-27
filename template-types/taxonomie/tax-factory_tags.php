@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom taxonomy Factory Tag
+ * Custom taxonomy Factory Tags
  *
  * @link https://generatewp.com/taxonomy/
  *
