@@ -10,9 +10,9 @@ pipelines:
         script:
           - npm install -g gulp
           - npm install
-          - gulp sass
+          - gulp
         artifacts:
-          - style.css
+          - assets/css/app.css
     - step:
         name: Deploy Theme
         deployment: production
@@ -24,4 +24,25 @@ pipelines:
               REMOTE_PATH: '$REMOTE_PATH'
               LOCAL_PATH: '/opt/atlassian/pipelines/agent/build/'
               EXTRA_ARGS: '--exclude-from=deployment-exclude-list.txt'
-              
+    develop:
+    - step:
+        name: Build CSS
+        caches:
+          - node
+        script:
+          - npm install -g gulp
+          - npm install
+          - gulp
+        artifacts:
+          - assets/css/app.css
+    - step:
+        name: Deploy Theme
+        deployment: staging
+        script:
+          - pipe: atlassian/rsync-deploy:0.3.2
+            variables:
+              USER: '$REMOTE_USER'
+              SERVER: '$REMOTE_SERVER'
+              REMOTE_PATH: '$REMOTE_PATH'
+              LOCAL_PATH: '/opt/atlassian/pipelines/agent/build/'
+              EXTRA_ARGS: '--exclude-from=deployment-exclude-list.txt'

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package themebox
+ * @package soapatrickeight
  */
 
 ?>
@@ -16,20 +16,20 @@
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div
 			<?php
-			themebox_posted_on();
-			themebox_posted_by();
+			soapatrickeight_posted_on();
+			soapatrickeight_posted_by();
 			?>
 		</div>
 		<?php endif; ?>
 	</header>
 
-	<?php themebox_post_thumbnail(); ?>
+	<?php soapatrickeight_post_thumbnail(); ?>
 
 	<div>
 		<?php the_excerpt(); ?>
 	</div><
 
 	<footer>
-		<?php themebox_entry_footer(); ?>
+		<?php soapatrickeight_entry_footer(); ?>
 	</footer>
 </article>
