@@ -10,9 +10,9 @@ pipelines:
         script:
           - npm install -g gulp
           - npm install
-          - gulp sass
+          - gulp
         artifacts:
-          - style.css
+          - app.css
     - step:
         name: Deploy Theme
         deployment: production
@@ -32,9 +32,9 @@ pipelines:
         script:
           - npm install -g gulp
           - npm install
-          - gulp sass
+          - gulp
         artifacts:
-          - style.css
+          - app.css
     - step:
         name: Deploy Theme
         deployment: staging
