@@ -12,7 +12,7 @@ pipelines:
           - npm install
           - gulp
         artifacts:
-          - app.css
+          - assets/css/app.css
     - step:
         name: Deploy Theme
         deployment: production
@@ -34,7 +34,7 @@ pipelines:
           - npm install
           - gulp
         artifacts:
-          - app.css
+          - assets/css/app.css
     - step:
         name: Deploy Theme
         deployment: staging
