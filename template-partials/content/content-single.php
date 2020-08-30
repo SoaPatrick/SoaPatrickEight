@@ -9,26 +9,26 @@
 
 ?>
 
-<article id="article-<?php the_ID(); ?>" <?php post_class('article article--list'); ?>>
+<article id="article-<?php the_ID(); ?>" <?php post_class('article article--single'); ?>>
 	<header class="article__header">
 		<?php
-      the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+      the_title( '<h1>', '</h1>' );
 
       if ( 'post' === get_post_type() ) :
         ?>
           <div class="article__meta">
             <?php
               soapatrickeight_posted_on();
-              soapatrickeight_tags()
+              soapatrickeight_tags();
             ?>
           </div>
         <?php
       endif;
     ?>
-  </header>
+	</header>
 
-	<div class="article__excerpt">
-		<?php the_excerpt(); ?>
-  </div>
+	<div class="article__content">
+		<?php the_content(); ?>
+	</div>
 
 </article>

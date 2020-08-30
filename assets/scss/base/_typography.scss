@@ -1,3 +1,73 @@
 /*--------------------------------------------------------------
 #Typography
 --------------------------------------------------------------*/
+
+html {
+  font-size: $font-size__base;
+
+  @media (max-width: 480px) {
+    font-size: $font-size__small;
+  }
+}
+
+body {
+  background: var(--color__background);
+  font-family: $font-family__base;
+  font-weight: $font-weight__light;
+  line-height: $line-height__base;
+  color: var(--color__text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family__heading;
+  font-weight: $font-weight__regular;
+  line-height: $line-height__heading;
+}
+
+h1 {
+  font-size: $font-size__h1;
+}
+
+h2 {
+  font-size: $font-size__h2;
+}
+
+h3 {
+  font-size: $font-size__h3;
+}
+
+h4 {
+  font-size: $font-size__h4;
+}
+
+h6 {
+  font-size: $font-size__h5;
+}
+
+h5 {
+  font-size: $font-size__h6;
+}
+
+a {
+  color: inherit;
+  transition: all .15s ease-in-out;
+  text-decoration: none;
+  padding-bottom: .15em;
+  border-bottom: var(--link__border) solid currentColor;
+
+  &:hover,
+  &:active {
+    color: var(--color__highlight);
+    border-color: transparent;
+  }
+
+  &:focus {
+    outline: $outline;
+  }
+}
+

@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------
+#Navigation
+--------------------------------------------------------------*/
+
+.site-navigation {
+  background: var(--color__sidepanel);
+
+  ul {
+    font-family: $font-family__heading;
+    font-size: $font-size__h3;
+    position: fixed;
+    bottom: calc(#{$margin__base} - 5px);
+    left: $margin__base;
+    width: calc(#{$navbar--width} - 2 * #{$margin__base});
+    @include list--reset();
+
+    @media (max-width: 911px) {
+      position: static;
+    }
+  }
+
+  .site-navigation__link {
+    border: 0;
+
+    &--logo {
+      svg {
+        width: 50%;
+        fill: var(--color__highlight);
+        transition: all .15s ease-in-out;
+      }
+
+      &:hover,
+      &:active {
+        svg {
+          fill: var(--color__text);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 911px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 2rem;
+  }
+}

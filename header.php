@@ -26,24 +26,7 @@
 <body <?php body_class(); ?>>
 <div class="site">
 
-  <header class="site-header">
-    <div>
-      <?php if ( is_front_page() && is_home() ) : ?>
-        <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-      <?php else : ?>
-        <p><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-      <?php endif; ?>
-      <p><?php bloginfo( 'description' ); ?></p>
-    </div>
+  <?php get_template_part( 'template-partials/layout/navigation'); ?>
 
-    <nav>
-      <?php
-        wp_nav_menu( array(
-          'theme_location' => 'primary',
-          'menu_id'        => '',
-        ) );
-      ?>
-    </nav>
-  </header>
-
-  <main class="site-content">
+  <div class="site-wrapper">
+    <main class="site-main">
