@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="article-<?php the_ID(); ?>" <?php post_class('article article--list'); ?>>
+<article id="article-<?php the_ID(); ?>" <?php post_class('article article--aside'); ?>>
 	<header class="article__header">
 		<?php
       the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
@@ -26,9 +26,4 @@
       endif;
     ?>
   </header>
-
-	<div class="article__excerpt">
-		<?php the_excerpt(); ?>
-  </div>
-
 </article>

@@ -18,8 +18,8 @@
       </a>
     </li>
     <li><a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>storage"><?php esc_html_e( 'Storage', 'soapatrickeight' ); ?></a></li>
-    <li><a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>factory"><?php esc_html_e( 'Factory', 'soapatrickeight' ); ?></span></a></li>
+    <li><a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>factory"><?php esc_html_e( 'Factory', 'soapatrickeight' ); ?></a></li>
+    <li><a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>privacy"><?php esc_html_e( 'Privacy', 'soapatrickeight' ); ?></a></li>
     <li><a class="site-navigation__link" href="#"><?php esc_html_e( 'Settings', 'soapatrickeight' ); ?></a></li>
-    <li><a class="site-navigation__link" href="#"><?php esc_html_e( 'Find Stuff', 'soapatrickeight' ); ?></a></li>
   </ul>
 </nav>

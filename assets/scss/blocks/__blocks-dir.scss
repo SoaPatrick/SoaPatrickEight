@@ -8,3 +8,28 @@ Files inside this folder can contain general Gutenberg styling.
 */
 
 //Import Block files
+@import "figures";
+@import "gallery";
+@import "youtube";
+
+
+blockquote {
+  position: relative;
+  margin:0;
+  padding: 0 0 0 2.5rem;
+
+  p {
+    font-size: $font-size__h3;
+  }
+
+  &:after {
+    content: "";
+    left: .5rem;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    border: .15rem solid var(--color__highlight);
+    border-radius: .15rem;
+  }
+}

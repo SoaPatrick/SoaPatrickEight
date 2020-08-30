@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="article-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="article-<?php the_ID(); ?>" <?php post_class('article'); ?>>
 	<header>
 		<?php the_title( '<h1>', '</h1>' ); ?>
 	</header>

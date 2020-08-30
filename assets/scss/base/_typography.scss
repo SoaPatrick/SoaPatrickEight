@@ -4,6 +4,10 @@
 
 html {
   font-size: $font-size__base;
+
+  @media (max-width: 480px) {
+    font-size: $font-size__small;
+  }
 }
 
 body {
@@ -54,7 +58,7 @@ a {
   transition: all .15s ease-in-out;
   text-decoration: none;
   padding-bottom: .15em;
-  border-bottom: var(--link__border) solid var(--color__text);
+  border-bottom: var(--link__border) solid currentColor;
 
   &:hover,
   &:active {

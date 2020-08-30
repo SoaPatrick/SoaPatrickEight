@@ -16,6 +16,9 @@ body {
   grid-template-columns: $navbar--width auto;
   grid-template-areas: "navigation wrapper";
 
+  @media (max-width: 911px) {
+    display: block;
+  }
 
   &-navigation {
     grid-area: navigation;
@@ -24,15 +27,32 @@ body {
   &-wrapper {
     grid-area: wrapper;
     display: grid;
-    grid-template-columns: minmax(320px, 1000px) auto;
-    grid-template-areas: "main aside";
+    grid-template-columns: 900px auto;
+    grid-template-areas: "main bubbles" "main footer";
+
+    @media (max-width: 1640px) {
+      grid-template-columns: minmax(600px, 900px) auto;
+      grid-template-areas: "main bubbles" "footer bubbles";
+    }
+
+    @media (max-width: 911px) {
+      display: block;
+    }
   }
 
   &-main {
     grid-area: main;
   }
 
-  &-aside {
-    grid-area: aside;
+  &-bubbles {
+    grid-area: bubbles;
+
+    @media (max-width: 911px) {
+      display: none;
+    }
+  }
+
+  &-footer {
+    grid-area: footer;
   }
 }
