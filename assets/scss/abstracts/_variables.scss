@@ -11,8 +11,9 @@ or for different breakpoints should be defined as CSS Variables
 // Colors
 $color__white: #ffffff;
 $color__black: #000000;
-$color__gray--dark: #222222;
+$color__gray--dark: #333333;
 $color__gray--darker: #1c1c1c;
+$color__gray--darkest: #131313;
 $color__gray--light: #eeeeee;
 
 $color__amber: #FFB300;
@@ -23,8 +24,8 @@ $color__blue: #28aae2;
 $color__green: #348236;
 
 // Font-Family
-$font-family__base: Arial, sans-serif;
-$font-family__heading: Georgia, serif;
+$font-family__base: 'Lato', sans-serif;
+$font-family__heading: 'Recoleta', serif;
 
 // Font-Sizes
 $font-size__base: 20px;
@@ -42,8 +43,21 @@ $font-weight__regular: 400;
 $font-weight__bold: 700;
 
 // Line-Height
-$line-height__base: 1.45;
+$line-height__base: 1.7;
 $line-height__heading: 1.3;
+
+// Link Borders
+$link__border--thin: .5px;
+$link__border--normal: 1px;
+
+// Margin Bases
+$margin__base: 2rem;
+
+// Outline
+$outline__width: 3px;
+$outline: $outline__width dotted var(--color__highlight);
+
+$navbar--width: 220px;
 
 // Z-Indices
 $z-index: (
@@ -51,3 +65,27 @@ $z-index: (
   main                 : 900,
   footer               : 800,
 );
+
+:root {
+  --color__highlight: #{$color__pink};
+
+  --color__background: #{$color__white};
+  --color__sidepanel: #{$color__gray--light};
+  --color__text: #{$color__gray--dark};
+
+  --link__border: #{$link__border--normal};
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :root {
+    --color__background: #{$color__gray--darker};
+    --color__sidepanel: #{$color__gray--darkest};
+    --color__text: #{$color__gray--light};
+
+    --link__border: #{$link__border--thin};
+  }
+}
