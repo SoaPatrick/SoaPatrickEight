@@ -10,17 +10,11 @@
  */
 
 ?>
+    </main>
+    <aside class="site-aside">
 
-	</main>
-
-  <?php get_sidebar(); ?>
-
-	<footer class="site-footer">
-		<div>
-			&copy; <?php echo date('Y'); ?> by SoaPatrick
-		</div>
-	</footer>
-
+    </aside>
+  </div>
 </div>
 
 <?php wp_footer(); ?>

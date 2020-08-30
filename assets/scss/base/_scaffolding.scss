@@ -1,3 +1,38 @@
 /*--------------------------------------------------------------
 #Scaffolding
 --------------------------------------------------------------*/
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.site {
+  height: 100%;
+  display: grid;
+  grid-template-columns: $navbar--width auto;
+  grid-template-areas: "navigation wrapper";
+
+
+  &-navigation {
+    grid-area: navigation;
+  }
+
+  &-wrapper {
+    grid-area: wrapper;
+    display: grid;
+    grid-template-columns: minmax(320px, 1000px) auto;
+    grid-template-areas: "main aside";
+  }
+
+  &-main {
+    grid-area: main;
+  }
+
+  &-aside {
+    grid-area: aside;
+  }
+}

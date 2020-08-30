@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------
+#Navigation
+--------------------------------------------------------------*/
+
+.site-navigation {
+  background: var(--color__sidepanel);
+
+  ul {
+    font-family: $font-family__heading;
+    font-size: $font-size__h3;
+    position: fixed;
+    bottom: $margin__base;
+    left: $margin__base;
+    width: calc(#{$navbar--width} - 2 * #{$margin__base});
+    @include list--reset();
+  }
+
+  .site-navigation__link {
+    border: 0;
+
+    &--logo {
+      svg {
+        width: 50%;
+        fill: var(--color__highlight);
+        transition: all .15s ease-in-out;
+      }
+
+      &:hover,
+      &:active {
+        svg {
+          fill: var(--color__text);
+        }
+      }
+    }
+  }
+}
