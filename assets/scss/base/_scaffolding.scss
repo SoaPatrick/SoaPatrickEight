@@ -27,11 +27,11 @@ body {
   &-wrapper {
     grid-area: wrapper;
     display: grid;
-    grid-template-columns: 900px auto;
+    grid-template-columns: minmax(700px, auto) minmax(400px, 700px);
     grid-template-areas: "main bubbles" "main footer";
 
     @media (max-width: 1640px) {
-      grid-template-columns: minmax(600px, 900px) auto;
+      grid-template-columns: minmax(600px, 850px) auto;
       grid-template-areas: "main bubbles" "footer bubbles";
     }
 
