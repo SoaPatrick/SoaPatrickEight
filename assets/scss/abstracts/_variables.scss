@@ -54,6 +54,9 @@ $link__border--normal: 1px;
 // Margin Bases
 $margin__base: 2rem;
 
+// Shadows
+$shadow__quarter: 0 -.5rem .5rem rgba(0,0,0,.25);
+
 // Outline
 $outline__width: 3px;
 $outline: $outline__width dotted var(--color__highlight);

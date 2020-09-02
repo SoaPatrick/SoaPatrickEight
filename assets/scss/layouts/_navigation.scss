@@ -2,27 +2,27 @@
 #Navigation
 --------------------------------------------------------------*/
 
-.site-navigation {
+.site-header {
   background: var(--color__sidepanel);
 
-  ul {
+  .navbar {
     font-family: $font-family__heading;
     font-size: $font-size__h3;
     position: fixed;
     bottom: calc(#{$margin__base} - 5px);
     left: $margin__base;
     width: calc(#{$navbar--width} - 2 * #{$margin__base});
-    @include list--reset();
 
     @media (max-width: 911px) {
       position: static;
     }
-  }
 
-  .site-navigation__link {
-    border: 0;
+    &-brand {
+      border: 0;
+      display: block;
+      line-height: 0;
 
-    &--logo {
+
       svg {
         width: 50%;
         fill: var(--color__highlight);
@@ -36,14 +36,87 @@
         }
       }
     }
+
+    &-toggle {
+      @media (min-width: 912px) {
+        display: none;
+      }
+    }
+
+    &-nav {
+      &__link {
+        border: 0;
+      }
+    }
+  }
+
+  ul {
+    @include list--reset();
   }
 
   @media (max-width: 911px) {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 2rem;
+    .navbar {
+      padding: 1rem 2rem 2rem 2rem;
+      position: fixed;
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--color__sidepanel);
+      box-shadow: $shadow__quarter;
+
+      &-brand {
+        padding: 0;
+        z-index: 2;
+
+        svg {
+          height: 2rem;
+          width: auto;
+        }
+      }
+
+      &-toggle {
+        z-index: 2;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all .15s ease-in-out;
+
+        &:hover,
+        &:focus {
+          color: var(--color__highlight);
+        }
+      }
+
+      &-nav {
+        background: var(--color__sidepanel);
+        box-shadow: $shadow__quarter;
+        transform: translateY(100%);
+        transition: all 0.4s ease-in-out;
+        position: fixed;
+        bottom: 5rem;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 2rem;
+        opacity: 0;
+
+        &.open {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        &__link {
+          display: block;
+          padding: .5rem 0;
+        }
+      }
+    }
   }
 }

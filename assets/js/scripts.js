@@ -32,3 +32,13 @@ function ytIframe() {
   iframe.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
   this.parentNode.replaceChild(iframe, this);
 }
+
+
+
+window.onload = function(){
+  // toggle Settings from Navigation
+  document.getElementById('toggle-navigation').onclick = function() {
+    document.getElementById('navigation').classList.toggle('open');
+    document.getElementById('toggle-navigation').classList.toggle('active');
+  };
+};
