@@ -88,15 +88,19 @@
         transition: all .15s ease-in-out;
 
         &:hover,
-        &:focus {
+        &:active {
           color: var(--color__highlight);
+        }
+
+        &:focus {
+          outline: $outline;
         }
       }
 
       &-nav {
         background: var(--color__sidepanel);
         box-shadow: $shadow__quarter;
-        transform: translateY(100%);
+        transform: translateY(calc(100% + 5rem));
         transition: all 0.4s ease-in-out;
         position: fixed;
         bottom: 5rem;
@@ -114,7 +118,7 @@
 
         &__link {
           display: block;
-          padding: .5rem 0;
+          margin: .5rem 0;
         }
       }
     }
