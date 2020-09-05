@@ -70,9 +70,25 @@ $z-index: (
   footer               : 800,
 );
 
+
+
 :root {
   --color__highlight: #{$color__pink};
+}
 
+[data-theme="dark"] {
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  --color__background: #{$color__gray--darker};
+  --color__sidepanel: #{$color__gray--darkest};
+  --color__text: #{$color__gray--light};
+
+  --link__border: #{$link__border--thin};
+}
+
+[data-theme="light"] {
   --color__background: #{$color__white};
   --color__sidepanel: #{$color__gray--light};
   --color__text: #{$color__gray--dark};
@@ -80,16 +96,9 @@ $z-index: (
   --link__border: #{$link__border--normal};
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    -webkit-font-smoothing: antialiased;
-  }
-
-  :root {
-    --color__background: #{$color__gray--darker};
-    --color__sidepanel: #{$color__gray--darkest};
-    --color__text: #{$color__gray--light};
-
-    --link__border: #{$link__border--thin};
-  }
-}
+[data-color="amber"] { --color__highlight: #{$color__amber} }
+[data-color="red"] { --color__highlight: #{$color__red} }
+[data-color="pink"] { --color__highlight: #{$color__pink} }
+[data-color="purple"] { --color__highlight: #{$color__purple} }
+[data-color="blue"] { --color__highlight: #{$color__blue} }
+[data-color="green"] { --color__highlight: #{$color__green} }

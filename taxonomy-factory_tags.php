@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying factory archive items
+ * The template for displaying factory tag items
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -13,12 +13,13 @@ get_header(); ?>
     <div class="grid breadcrumbs-wrapper">
       <nav class="breadcrumbs">
         <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
-        <span class="breadcrumbs--item__last"><?php esc_html_e( 'Factory', 'soapatrickeight' ) ?></span>
+        <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/factory/"><?php esc_html_e( 'Factory', 'soapatrickeight' ) ?></a></span>
+        <span class="breadcrumbs--item__last"><?php echo single_term_title(); ?></span>
       </nav>
     </div>
 
-    <header>
-      <h1><?php esc_html_e( 'Factory', 'soapatrickeight' ) ?></h1>
+    <header class="grid">
+      <h1 class="title-large"><?php echo single_term_title(); ?></h1>
     </header>
 
     <div class="grid">
@@ -31,17 +32,14 @@ get_header(); ?>
             'fields'     => 'all',
           );
           $terms = get_terms( 'factory_tags', $args);
-          foreach ( $terms as $term ) {
-            $url = get_term_link( $term );
-            if ( is_wp_error( $url ) ) {
-              continue;
+          $currentTerm = $wp_query->get_queried_object();
+            foreach ( $terms as $term ) {
+              if ($currentTerm->term_id === $term->term_id)
+                echo '<a href="'. get_term_link( $term ) .'" class="btn btn-small btn-active">'. $term->name .'</a>';
+              else {
+                echo '<a href="'. get_term_link( $term ) .'" class="btn btn-small">'. $term->name .'</a>';
+              }
             }
-            printf(
-              '<a href="%s" class="btn btn-small">%s</a>',
-              $url,
-              $term->name
-            );
-          }
         ?>
       </div>
     </div>
@@ -60,8 +58,7 @@ get_header(); ?>
 
   </section>
 
-  <?php soapatrickeight_posts_navigation(); ?>
-
-
 <?php
 get_footer();
+
+

@@ -2,6 +2,13 @@
 #Mixins
 --------------------------------------------------------------*/
 
+// mixin for  switching colors in settings
+@mixin color-switch($color-name, $color) {
+  #switch--#{$color-name} {
+    background-color: $color;
+  }
+}
+
 // Reset browsers default button styling
 @mixin btn--reset() {
   margin: 0;

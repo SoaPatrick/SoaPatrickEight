@@ -20,7 +20,6 @@ get_header();
 
     <header class="grid">
       <h1 class="title-large"><?php esc_html_e( 'Storage', 'soapatrickseven' ) ?></h1>
-      <hr>
     </header>
 
     <div class="grid">

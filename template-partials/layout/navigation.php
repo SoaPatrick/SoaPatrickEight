@@ -17,10 +17,11 @@
     </a>
     <button class="navbar-toggle" id="toggle-navigation">Menu</button>
     <ul id="navigation" class="navbar-nav">
+      <li><a class="navbar-nav__link" href="<?php echo esc_url( home_url( '/' ) ); ?>box"><?php esc_html_e( 'Box', 'soapatrickeight' ); ?></a></li>
       <li><a class="navbar-nav__link" href="<?php echo esc_url( home_url( '/' ) ); ?>storage"><?php esc_html_e( 'Storage', 'soapatrickeight' ); ?></a></li>
       <li><a class="navbar-nav__link" href="<?php echo esc_url( home_url( '/' ) ); ?>factory"><?php esc_html_e( 'Factory', 'soapatrickeight' ); ?></a></li>
-      <li><a class="navbar-nav__link" href="<?php echo esc_url( home_url( '/' ) ); ?>privacy"><?php esc_html_e( 'Privacy', 'soapatrickeight' ); ?></a></li>
-      <li><a class="navbar-nav__link" href="#"><?php esc_html_e( 'Settings', 'soapatrickeight' ); ?></a></li>
+      <li><a class="navbar-nav__link navbar-nav__link--patrick" href="<?php echo esc_url( home_url( '/' ) ); ?>patrick"><?php esc_html_e( 'Patrick', 'soapatrickeight' ); ?></a></li>
+      <li><a class="navbar-nav__link" id="toggle-settings"><?php esc_html_e( 'Settings', 'soapatrickeight' ); ?></a></li>
     </ul>
   </div>
 </header>

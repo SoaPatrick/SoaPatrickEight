@@ -43,7 +43,45 @@
 
     &-nav {
       &__link {
+        padding: 0;
         border: 0;
+        left: 0;
+        display: inline-block;
+        position: relative;
+        left: 0;
+        transition: all .25s ease-in-out;
+        cursor: pointer;
+
+        &:before {
+          content: "Soap";
+          color: var(--color__highlight);
+          position: absolute;
+          z-index: -1;
+          left: 0rem;
+          opacity: 0;
+          transition: opacity .2s ease-in-out;
+        }
+
+        &:hover {
+          left: -1rem;
+          padding-left: 2.8rem;
+          color: var(--color__text);
+
+          &:before {
+            transition: opacity .25s ease-in-out;
+            opacity: 1;
+          }
+        }
+
+        &--patrick {
+          &:hover {
+            padding-left: 2.1rem;
+          }
+
+          &:before {
+            content: "Soa";
+          }
+        }
       }
     }
   }
