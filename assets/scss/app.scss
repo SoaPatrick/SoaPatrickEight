@@ -16,3 +16,23 @@
 
 //Layout
 @import "layouts/__layouts-dir";
+
+
+.breadcrumbs {
+  font-size: $font-size__small;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  &__item {
+    &:after {
+      content: "/";
+      padding: 0 .5em;
+      font-weight: bold;
+      opacity: .25;
+    }
+  }
+}
+

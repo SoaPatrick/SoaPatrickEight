@@ -8,6 +8,12 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+
+  *,
+  *::before,
+  *::after {
+    transition: background .15s linear, fill .15s linear;
+  }
 }
 
 .site {
@@ -55,4 +61,16 @@ body {
   &-footer {
     grid-area: footer;
   }
+}
+
+
+.soa,
+.patrick {
+  display: inline-block;
+  margin-bottom: 4rem;
+}
+
+.patrick {
+  position: relative;
+  top: .21em;
 }

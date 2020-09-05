@@ -11,6 +11,17 @@ get_header();
 
   if ( have_posts() ) :
     ?>
+    <div class="grid breadcrumbs-wrapper">
+      <nav class="breadcrumbs">
+        <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
+        <?php if( is_tag() ) : ?>
+          <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/tags/"><?php esc_html_e( 'Tags', 'soapatrickeight' ) ?></a></span>
+        <?php else : ?>
+          <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/storage/"><?php esc_html_e( 'Storage', 'soapatrickeight' ) ?></a></span>
+        <?php endif; ?>
+        <span class="breadcrumbs__item--last"><?php the_archive_title();?></span>
+      </nav>
+    </div>
       <section>
         <header>
           <?php
@@ -23,12 +34,12 @@ get_header();
             the_post();
             get_template_part( 'template-partials/content/content', get_post_type() );
           endwhile;
-          the_posts_navigation();
         ?>
       </section>
     <?php
-  else :
-    get_template_part( 'template-partials/content/content', 'none' );
+
+  soapatrickeight_posts_navigation();
+
   endif;
 
 get_footer();

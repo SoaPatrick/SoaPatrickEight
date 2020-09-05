@@ -35,8 +35,12 @@
 
       <div class="site-footer__related">
         <?php
-          if( is_single()):
+          if( is_singular('post')):
             get_template_part( 'template-partials/content/content', 'related-posts' );
+          elseif( is_singular('factory') ):
+            get_template_part( 'template-partials/content/content', 'related-factory' );
+          else:
+            get_template_part( 'template-partials/content/content', 'latest-factory' );
           endif;
         ?>
       </div>
