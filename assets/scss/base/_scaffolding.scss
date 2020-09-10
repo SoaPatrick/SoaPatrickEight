@@ -33,7 +33,7 @@ body {
   &-wrapper {
     grid-area: wrapper;
     display: grid;
-    grid-template-columns: minmax(700px, auto) minmax(400px, 700px);
+    grid-template-columns: minmax(700px, auto) minmax(400px, 650px);
     grid-template-areas: "main bubbles" "main footer";
 
     @media (max-width: 1640px) {

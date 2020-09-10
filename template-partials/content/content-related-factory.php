@@ -26,7 +26,7 @@ if ( have_posts() ) :
     $related_items = new WP_Query( $args );
     ?>
       <aside class="related related--factory highlight">
-        <h1 class="title-large has-text-align-center"><?php esc_html_e( 'Related Factory Items', 'soapatrickeight' ); ?></h1>
+        <h1 class="title-large has-text-align-center"><?php esc_html_e( 'Related Items', 'soapatrickeight' ); ?></h1>
         <div class="grid">
           <div class="related__items related--factory__items">
             <?php

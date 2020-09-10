@@ -10,10 +10,10 @@
 get_header(); ?>
 
   <section>
-    <header class="grid">
+    <header>
       <h1 class="title-large"><?php esc_html_e( 'Change Log', 'soapatrickeight' ) ?></h1>
     </header>
-    <div class="changelog" data-infinite-scroll='{ "path": ".post-navigation__previous", "append": ".logs", "history": false, "scrollThreshold": false, "button" : ".post-navigation__previous" }'>
+    <div class="changelog" data-infinite-scroll='{ "path": ".post-navigation a", "append": ".logs", "history": false, "scrollThreshold": false, "button" : ".post-navigation a" }'>
       <?php
         if( have_posts() ) :
           $day_check = '';

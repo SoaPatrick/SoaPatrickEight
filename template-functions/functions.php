@@ -168,16 +168,16 @@ endif;
  */
 if ( ! function_exists( 'soapatrickeight_post_navigation' ) ) :
   function soapatrickeight_post_navigation() {
-    echo '<div class="grid"><nav class="post-navigation post-navigation--single">';
-    if ( 'post' === get_post_type() ) {
-      next_post_link( '%link', __( 'Newer Post', 'soapatrickeight' ) );
-      previous_post_link('%link', __( 'Older Post', 'soapatrickeight' ) );
-    }
-    if ( 'factory' === get_post_type() ) {
-      next_post_link( '%link', __( 'Newer Item', 'soapatrickeight' ) );
-      previous_post_link('%link', __( 'Older Item', 'soapatrickeight' ) );
-    }
-    echo '</nav></div>';
+    echo '<nav class="post-navigation post-navigation--single">';
+    if ( 'post' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php next_post_link( '%link', __( 'Newer Post &rarr;', 'soapatrickeight' ) ); ?></div>
+      <div class="post-navigation__next"><?php previous_post_link('%link', __( '&larr;  Older Post', 'soapatrickeight' ) ); ?></div>
+    <?php }
+    if ( 'factory' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php next_post_link( '%link', __( 'Newer Item &rarr;', 'soapatrickeight' ) ); ?></div>
+      <div class="post-navigation__next"><?php previous_post_link('%link', __( '&larr;  Older Item', 'soapatrickeight' ) ); ?></div>
+    <?php }
+    echo '</nav>';
   }
 endif;
 
@@ -188,33 +188,22 @@ endif;
  */
 if ( ! function_exists( 'soapatrickeight_posts_navigation' ) ) :
 	function soapatrickeight_posts_navigation() {
-    echo '<div class="grid"><nav class="post-navigation">';
-    if ( 'post' === get_post_type() ) {
-      posts_nav_link( ' ', __( 'Newer Posts', 'soapatrickeight' ), __( 'Older Posts', 'soapatrickeight' ) );
-    }
-    if ( 'factory' === get_post_type() ) {
-      posts_nav_link( ' ', __( 'Newer Items', 'soapatrickeight' ), __( 'Older Items', 'soapatrickeight' ) );
-    }
+    echo '<nav class="post-navigation">';
+    if ( 'post' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php previous_posts_link( __( 'Newer Posts  &rarr;', 'soapatrickeight' ), '' ); ?></div>
+      <div class="post-navigation__next"><?php next_posts_link( __( '&larr; Older Posts', 'soapatrickeight' ), '' ); ?></div>
+    <?php }
+    if ( 'factory' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php previous_posts_link( __( 'Newer Items &rarr;', 'soapatrickeight' ), '' ); ?></div>
+      <div class="post-navigation__next"><?php next_posts_link( __( '&larr; Older Items', 'soapatrickeight' ), '' ); ?></div>
+    <?php }
     if ( 'log' === get_post_type() ) {
       next_posts_link( __( 'Load More', 'soapatrickeight' ) );
     }
-    echo '</nav></div>';
+    echo '</nav>';
 	}
 endif;
 
-
-/**
- * add classes to next and previous Posts
- *
- */
-add_filter('next_posts_link_attributes', 'soapatrickseven_next_posts_link_class');
-add_filter('previous_posts_link_attributes', 'soapatrickseven_previous_posts_link_class');
-function soapatrickseven_next_posts_link_class() {
-  return 'class="btn post-navigation__previous"';
-}
-function soapatrickseven_previous_posts_link_class() {
-  return 'class="btn post-navigation__next"';
-}
 
 /**
  * add classes to next and previous Post

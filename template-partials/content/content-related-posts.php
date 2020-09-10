@@ -12,7 +12,7 @@ if ( have_posts() ) :
     $args = array(
       'post_type'           => 'post',
       'post_status'         => 'publish',
-      'posts_per_page'      => 3,
+      'posts_per_page'      => 4,
       'orderby'             => 'rand',
       'tax_query'           => array(
         array(

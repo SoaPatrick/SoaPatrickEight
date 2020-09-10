@@ -52,34 +52,37 @@
         transition: all .25s ease-in-out;
         cursor: pointer;
 
-        &:before {
-          content: "Soap";
-          color: var(--color__highlight);
-          position: absolute;
-          z-index: -1;
-          left: 0rem;
-          opacity: 0;
-          transition: opacity .2s ease-in-out;
-        }
-
-        &:hover {
-          left: -1rem;
-          padding-left: 2.8rem;
-          color: var(--color__text);
+        @media (min-width: 912px) {
 
           &:before {
-            transition: opacity .25s ease-in-out;
-            opacity: 1;
+            content: "Soap";
+            color: var(--color__highlight);
+            position: absolute;
+            z-index: -1;
+            left: 0rem;
+            opacity: 0;
+            transition: opacity .2s ease-in-out;
           }
-        }
 
-        &--patrick {
           &:hover {
-            padding-left: 2.1rem;
+            left: -1rem;
+            padding-left: 2.8rem;
+            color: var(--color__text);
+
+            &:before {
+              transition: opacity .25s ease-in-out;
+              opacity: 1;
+            }
           }
 
-          &:before {
-            content: "Soa";
+          &--patrick {
+            &:hover {
+              padding-left: 2.1rem;
+            }
+
+            &:before {
+              content: "Soa";
+            }
           }
         }
       }
@@ -94,7 +97,7 @@
     .navbar {
       padding: 1rem 2rem 2rem 2rem;
       position: fixed;
-      z-index: 2;
+      z-index: 2000;
       bottom: 0;
       left: 0;
       right: 0;

@@ -18,12 +18,12 @@ get_header(); ?>
       </nav>
     </div>
 
-    <header class="grid">
+    <header>
       <h1 class="title-large"><?php echo single_term_title(); ?></h1>
     </header>
 
-    <div class="grid">
-      <div class="tag--list">
+    <div class="content-grid">
+      <div class="factory-list__tags">
         <?php
           $args = array(
             'orderby'    => 'name',
@@ -35,17 +35,17 @@ get_header(); ?>
           $currentTerm = $wp_query->get_queried_object();
             foreach ( $terms as $term ) {
               if ($currentTerm->term_id === $term->term_id)
-                echo '<a href="'. get_term_link( $term ) .'" class="btn btn-small btn-active">'. $term->name .'</a>';
+                echo '<a href="'. get_term_link( $term ) .'" class="active">'. $term->name .'</a>';
               else {
-                echo '<a href="'. get_term_link( $term ) .'" class="btn btn-small">'. $term->name .'</a>';
+                echo '<a href="'. get_term_link( $term ) .'">'. $term->name .'</a>';
               }
             }
         ?>
       </div>
     </div>
 
-    <div class="grid">
-      <div class="factory-list__list">
+    <div class="content-grid">
+      <div class="factory-list__list alignwide-content">
         <?php
           if ( have_posts() ) :
             while ( have_posts() ) : the_post();
