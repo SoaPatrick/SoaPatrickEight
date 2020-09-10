@@ -10,72 +10,20 @@
  */
 function soapatrickeight_allowed_block_types( $allowed_blocks ) {
 
-	return array(
+  return array(
     'core/paragraph',
     'core/image',
     'core/heading',
     'core/gallery',
     'core/list',
     'core/quote',
-    'core/audio',
-    'core/cover',
-    'core/file',
     'core/video',
-    'core/table',
-    'core/verse',
     'core/code',
-    'core/button',
     'core/columns',
-    'core/block',
-    'core/template',
-    'core/media-text',
-    'core/separator',
-    'core/shortcode',
-    'core/archives',
-    'core/categories',
-    'core/latest-comments',
-    'core/latest-posts',
-    'core/calendar',
-    'core/rss',
-    'core/search',
-    'core/tag-cloud',
-    'core/embed',
-    'core-embed/twitter',
     'core-embed/youtube',
-    'core-embed/facebook',
-    'core-embed/instagram',
-    'core-embed/wordpress',
-    'core-embed/soundcloud',
-    'core-embed/spotify',
-    'core-embed/flickr',
-    'core-embed/vimeo',
-    'core-embed/animoto',
-    'core-embed/cloudup',
-    'core-embed/collegehumor',
-    'core-embed/dailymotion',
-    'core-embed/funnyordie',
-    'core-embed/hulu',
-    'core-embed/imgur',
-    'core-embed/issuu',
-    'core-embed/kickstarter',
-    'core-embed/meetup-com',
-    'core-embed/mixcloud',
-    'core-embed/photobucket',
-    'core-embed/polldaddy',
-    'core-embed/reddit',
-    'core-embed/reverbnation',
-    'core-embed/screencast',
-    'core-embed/scribd',
-    'core-embed/slideshare',
-    'core-embed/smugmug',
-    'core-embed/speaker',
-    'core-embed/ted',
-    'core-embed/tumblr',
-    'core-embed/videopress',
-    'core-embed/wordpress-tv'
-	);
+  );
 }
-//add_filter( 'allowed_block_types', 'soapatrickeight_allowed_block_types' );
+add_filter( 'allowed_block_types', 'soapatrickeight_allowed_block_types' );
 
 
 /**
@@ -168,16 +116,16 @@ endif;
  */
 if ( ! function_exists( 'soapatrickeight_post_navigation' ) ) :
   function soapatrickeight_post_navigation() {
-    echo '<div class="grid"><nav class="post-navigation post-navigation--single">';
-    if ( 'post' === get_post_type() ) {
-      next_post_link( '%link', __( 'Newer Post', 'soapatrickeight' ) );
-      previous_post_link('%link', __( 'Older Post', 'soapatrickeight' ) );
-    }
-    if ( 'factory' === get_post_type() ) {
-      next_post_link( '%link', __( 'Newer Item', 'soapatrickeight' ) );
-      previous_post_link('%link', __( 'Older Item', 'soapatrickeight' ) );
-    }
-    echo '</nav></div>';
+    echo '<nav class="post-navigation post-navigation--single">';
+    if ( 'post' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php next_post_link( '%link', __( 'Newer Post &rarr;', 'soapatrickeight' ) ); ?></div>
+      <div class="post-navigation__next"><?php previous_post_link('%link', __( '&larr;  Older Post', 'soapatrickeight' ) ); ?></div>
+    <?php }
+    if ( 'factory' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php next_post_link( '%link', __( 'Newer Item &rarr;', 'soapatrickeight' ) ); ?></div>
+      <div class="post-navigation__next"><?php previous_post_link('%link', __( '&larr;  Older Item', 'soapatrickeight' ) ); ?></div>
+    <?php }
+    echo '</nav>';
   }
 endif;
 
@@ -188,33 +136,22 @@ endif;
  */
 if ( ! function_exists( 'soapatrickeight_posts_navigation' ) ) :
 	function soapatrickeight_posts_navigation() {
-    echo '<div class="grid"><nav class="post-navigation">';
-    if ( 'post' === get_post_type() ) {
-      posts_nav_link( ' ', __( 'Newer Posts', 'soapatrickeight' ), __( 'Older Posts', 'soapatrickeight' ) );
-    }
-    if ( 'factory' === get_post_type() ) {
-      posts_nav_link( ' ', __( 'Newer Items', 'soapatrickeight' ), __( 'Older Items', 'soapatrickeight' ) );
-    }
+    echo '<nav class="post-navigation">';
+    if ( 'post' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php previous_posts_link( __( 'Newer Posts  &rarr;', 'soapatrickeight' ), '' ); ?></div>
+      <div class="post-navigation__next"><?php next_posts_link( __( '&larr; Older Posts', 'soapatrickeight' ), '' ); ?></div>
+    <?php }
+    if ( 'factory' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php previous_posts_link( __( 'Newer Items &rarr;', 'soapatrickeight' ), '' ); ?></div>
+      <div class="post-navigation__next"><?php next_posts_link( __( '&larr; Older Items', 'soapatrickeight' ), '' ); ?></div>
+    <?php }
     if ( 'log' === get_post_type() ) {
       next_posts_link( __( 'Load More', 'soapatrickeight' ) );
     }
-    echo '</nav></div>';
+    echo '</nav>';
 	}
 endif;
 
-
-/**
- * add classes to next and previous Posts
- *
- */
-add_filter('next_posts_link_attributes', 'soapatrickseven_next_posts_link_class');
-add_filter('previous_posts_link_attributes', 'soapatrickseven_previous_posts_link_class');
-function soapatrickseven_next_posts_link_class() {
-  return 'class="btn post-navigation__previous"';
-}
-function soapatrickseven_previous_posts_link_class() {
-  return 'class="btn post-navigation__next"';
-}
 
 /**
  * add classes to next and previous Post

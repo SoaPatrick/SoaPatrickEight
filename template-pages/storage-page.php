@@ -22,8 +22,8 @@ get_header();
       <h1 class="title-large"><?php esc_html_e( 'Storage', 'soapatrickseven' ) ?></h1>
     </header>
 
-    <div class="grid">
-      <div class="storage">
+    <div class="content-grid">
+      <div class="storage alignwide-content">
         <?php
           while ( have_posts() ) : the_post();
 

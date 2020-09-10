@@ -11,7 +11,7 @@
 
 <article id="article-<?php the_ID(); ?>" <?php post_class('article article--single'); ?>>
 
-<div class="grid breadcrumbs-wrapper">
+<div class="breadcrumbs-wrapper">
     <nav class="breadcrumbs">
       <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
       <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/box/"><?php esc_html_e( 'Box', 'soapatrickeight' ) ?></a></span>
@@ -34,7 +34,7 @@
     ?>
 	</header>
 
-	<div class="article__content">
+	<div class="content-grid article__content">
 		<?php the_content(); ?>
 	</div>
 

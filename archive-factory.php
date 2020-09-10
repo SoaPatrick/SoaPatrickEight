@@ -10,7 +10,7 @@
 get_header(); ?>
   <section class="factory-list">
 
-    <div class="grid breadcrumbs-wrapper">
+    <div class="breadcrumbs-wrapper">
       <nav class="breadcrumbs">
         <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
         <span class="breadcrumbs--item__last"><?php esc_html_e( 'Factory', 'soapatrickeight' ) ?></span>
@@ -21,8 +21,8 @@ get_header(); ?>
       <h1><?php esc_html_e( 'Factory', 'soapatrickeight' ) ?></h1>
     </header>
 
-    <div class="grid">
-      <div class="tag--list">
+    <div class="content-grid">
+      <div class="factory-list__tags">
         <?php
           $args = array(
             'orderby'    => 'name',
@@ -37,7 +37,7 @@ get_header(); ?>
               continue;
             }
             printf(
-              '<a href="%s" class="btn btn-small">%s</a>',
+              '<a href="%s">%s</a>',
               $url,
               $term->name
             );
@@ -46,8 +46,8 @@ get_header(); ?>
       </div>
     </div>
 
-    <div class="grid">
-      <div class="factory-list__list">
+    <div class="content-grid">
+      <div class="factory-list__list alignwide-content">
         <?php
           if ( have_posts() ) :
             while ( have_posts() ) : the_post();

@@ -27,8 +27,8 @@
     ?>
   </header>
 
-	<div class="article__excerpt">
-		<?php the_excerpt(); ?>
+  <div class="article__excerpt">
+    <?php the_excerpt(); ?>
   </div>
 
 </article>

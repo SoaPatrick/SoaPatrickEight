@@ -112,3 +112,37 @@
   hyphenate-limit-last: always;
   hyphenate-limit-zone: 8%;
 }
+
+// mixin hover bob animation
+@mixin bob-animation($tag) {
+  #{$tag} {
+    animation-name: hide-start;
+    animation-duration: .5s;
+  }
+
+  #{$tag} img {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    animation-name: bob-start;
+    animation-duration: .3s;
+  }
+
+  #{$tag}:hover img,
+  #{$tag}:focus img,
+  #{$tag}:active img {
+    animation-name: bob-float, bob;
+    animation-duration: .3s, 1.5s;
+    animation-delay: 0s, .3s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards;
+    animation-direction: normal, alternate;
+  }
+}
+
+// mixin hover bob animation font-size
+@mixin bob-animation-font-size() {
+  font-size: calc(7px + .8vw);
+}
