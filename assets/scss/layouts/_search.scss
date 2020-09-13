@@ -3,17 +3,17 @@
 --------------------------------------------------------------*/
 
 .search-form {
-  margin-top: 4rem;
+  margin: 4rem 0;
 
   input {
     padding: .75rem 1.5rem;
-    font-size: 1rem;
+    width: 100%;
+    font-size: 1.5rem;
     border: 0;
     font-weight: $font-weight__regular;
-    background: rgba(0,0,0,.4);
+    background: rgba(0,0,0,.1);
     color: var(--color__text);
     border-radius: 3rem;
-    max-width: 100%;
 
     &:focus {
       outline: none;
@@ -36,3 +36,24 @@
   }
 }
 
+#search-collapse {
+  @media #{$breakpoint__767--max} {
+    background: var(--color__highlight);
+  }
+
+  max-height: 0;
+  transition: max-height 0.25s ease-out;
+  overflow: hidden;
+
+  &.open {
+    max-height: 800px;
+    transition: max-height 0.25s ease-in;
+  }
+
+  @media #{$breakpoint__768--min} {
+    .search-form {
+      grid-column-start: 2;
+      grid-column-end: 5;
+    }
+  }
+}

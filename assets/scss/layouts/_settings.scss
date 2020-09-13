@@ -43,15 +43,18 @@
   .container {
     position: relative;
     background: var(--color__text);
-    color: var(--color__sidepanel);
-    box-shadow: $shadow__quarter;
+    color: var(--color__body);
+    box-shadow: $shadow__half;
     padding: 2rem 1rem;
+  }
+
+  .svg-inline--fa {
+    color: var(--color__body);
   }
 
   h2 {
     text-align: center;
     margin-top: 0;
-    color: var(--color__sidepanel);
   }
 }
 
@@ -153,7 +156,7 @@
     outline: none;
 
     &:checked {
-      border-color: var(--color__sidepanel);
+      border-color: var(--color__body);
     }
   }
 

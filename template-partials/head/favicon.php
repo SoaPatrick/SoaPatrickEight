@@ -2,7 +2,7 @@
 /**
  * Head part for loading the favicons
  *
- * @package themebix
+ * @package soapatrickeight
  */
 
 ?>

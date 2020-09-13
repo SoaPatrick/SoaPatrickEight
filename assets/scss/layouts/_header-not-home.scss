@@ -1,0 +1,40 @@
+/*--------------------------------------------------------------
+#Header not home
+--------------------------------------------------------------*/
+
+.site-header--not-home {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+
+  .bubbles-row {
+    position: relative;
+    fill: var(--color__highlight);
+
+    &__third {
+      opacity: .3;
+    }
+
+    &__second {
+      opacity: .5;
+    }
+  }
+
+  + .site-content {
+    padding-top: calc(14vw + 2em);
+  }
+}
+
+@media #{$breakpoint__767--max} {
+  .site-header--not-home {
+    border-top: 1em solid var(--color__highlight);
+
+    .bubbles-row {
+      margin-top: -1px;
+    }
+
+    + .site-content {
+      padding-top: calc(14vw + 3em);
+    }
+  }
+}

@@ -11,11 +11,11 @@ or for different breakpoints should be defined as CSS Variables
 // Colors
 $color__white: #ffffff;
 $color__black: #000000;
-$color__gray--dark: #333333;
+$color__gray--dark: #222222;
 $color__gray--darker: #1c1c1c;
-$color__gray--darkest: #131313;
 $color__gray--light: #eeeeee;
 
+// Theme Colors
 $color__amber: #FFB300;
 $color__red: #CF3A3A;
 $color__pink: #EC407A;
@@ -24,75 +24,78 @@ $color__blue: #28aae2;
 $color__green: #348236;
 
 // Font-Family
-$font-family__base: 'Lato', sans-serif;
-$font-family__heading: 'Recoleta', serif;
+$font-family__base: 'Source Sans Pro', serif;
+$font-family__heading: 'AmsiProNarw-Black', sans-serif;
+$font-family__code: Hack, "Fira Code", Consolas, Menlo, Monaco, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
 
 // Font-Sizes
-$font-size__base: clamp(18px,1.5vw,20px);
-$font-size__h1: 3rem;
-$font-size__h2: 2rem;
-$font-size__h3: 1.17rem;
+$font-size__base: calc(18px + .25vw);
+$font-size__h1: 2.2rem;
+$font-size__h2: 1.5rem;
+$font-size__h3: 1.2rem;
 $font-size__h4: 1rem;
-$font-size__h5: 0.83rem;
-$font-size__h6: 0.67rem;
-$font-size__small: 0.83rem;
+$font-size__small: 0.8rem;
+$font-size__smaller: 0.65rem;
+$font-size__medium: calc(22px + 1.5vw);
+$font-size__large: calc(26px + 1.6vw);
+
+// Font Line-Height
+$line-height__base: calc(1.5em + .2vw);
+$line-height__heading: 1.3;
 
 // Font-Weight:
 $font-weight__light: 300;
 $font-weight__regular: 400;
-$font-weight__bold: 700;
+$font-weight__bold: 600;
 
-// Line-Height
-$line-height__base: 1.7;
-$line-height__heading: 1.3;
-
-// Link Borders
-$link__border--thin: 1px;
-$link__border--normal: 1px;
-
-// Margin Bases
-$margin__base: 2rem;
+// Margings
+$margin__base: 1rem;
+$margin__body: 2rem;
 
 // Shadows
-$shadow__quarter: 0 -.1rem .1rem rgba(0,0,0,.15);
+$shadow__quarter: 0 0 .5rem rgba(0,0,0,.25);
+$shadow__half: 0 0 .5rem rgba(0,0,0,.5);
 
 // Outline
 $outline__width: 3px;
 $outline: $outline__width dotted var(--color__highlight);
+$outline-highlight: $outline__width dotted $color__white;
 
-$navbar--width: 220px;
+// Navbar
+$navbar__width: 3rem;
+$navbar__height: 1.2 * $navbar__width;
 
-// Z-Indices
-$z-index: (
-  header               : 1000,
-  main                 : 900,
-  footer               : 800,
-);
+// Border-width
+$border-width__btn: .125em;
+$border-width__blockquote: 5px;
 
+// Breakpoints
+$breakpoint__370--max: (max-width: 370px);
+$breakpoint__371--min: (min-width: 371px);
+$breakpoint__767--max: (max-width: 767px);
+$breakpoint__768--min: (min-width: 768px);
+$breakpoint__991--max: (max-width: 991px);
+$breakpoint__992--min: (min-width: 992px);
+$breakpoint__1199--max: (max-width: 1199px);
+$breakpoint__1200--min: (min-width: 1200px);
+$breakpoint__1499--max: (max-width: 1499px);
+$breakpoint__1500--min: (min-width: 1500px);
 
-
+// CSS Variables
 :root {
   --color__highlight: #{$color__pink};
 }
 
 [data-theme="dark"] {
-  body {
-    -webkit-font-smoothing: antialiased;
-  }
-
-  --color__background: #{$color__gray--darker};
-  --color__sidepanel: #{$color__gray--darkest};
-  --color__text: #{$color__gray--light};
-
-  --link__border: #{$link__border--thin};
+  --color__body: #{$color__gray--darker};
+  --color__wrapper: #{$color__gray--dark};
+  --color__text: #{$color__white};
 }
 
 [data-theme="light"] {
-  --color__background: #{$color__white};
-  --color__sidepanel: #{$color__gray--light};
+	--color__body: #{$color__gray--light};
+	--color__wrapper: #{$color__white};
   --color__text: #{$color__gray--dark};
-
-  --link__border: #{$link__border--normal};
 }
 
 [data-color="amber"] { --color__highlight: #{$color__amber} }

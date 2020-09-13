@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------
+#Navigation
+--------------------------------------------------------------*/
+
+.post-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "previous next";
+  gap: 2rem;
+
+  &--single {
+    margin-bottom: 4rem;
+  }
+
+  @media #{$breakpoint__767--max} {
+    grid-template-columns: 1fr;
+    grid-template-areas: "next" "previous";
+  }
+
+  &__previous {
+    grid-area: previous;
+    justify-self: start;
+  }
+
+  &__next {
+    grid-area: next;
+    justify-self: end;
+  }
+
+  &__next,
+  &__previous {
+    @media #{$breakpoint__767--max} {
+      justify-self: center;
+    }
+  }
+}

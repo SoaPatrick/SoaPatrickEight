@@ -18,12 +18,13 @@ get_header();
       </nav>
     </div>
 
-    <header>
+    <header class="grid">
       <h1 class="title-large"><?php esc_html_e( 'Tags', 'soapatrickeight' ) ?></h1>
+      <hr>
     </header>
 
-    <div class="content-grid">
-      <div class="tag--list alignwide-content">
+    <div class="grid">
+      <div class="tag--list">
         <?php
           $tags = get_tags('post_tag');
           if ( $tags ) :

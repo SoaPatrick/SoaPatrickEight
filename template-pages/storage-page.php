@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package soapatrickseven
+ * @package soapatrickeight
  */
 
 get_header();
@@ -13,17 +13,18 @@ get_header();
   <article>
     <div class="grid breadcrumbs-wrapper">
       <nav class="breadcrumbs">
-        <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickseven' ) ?></a></span>
-        <span class="breadcrumbs__item--last"><?php esc_html_e( 'Storage', 'soapatrickseven' ) ?></span>
+        <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
+        <span class="breadcrumbs__item--last"><?php esc_html_e( 'Storage', 'soapatrickeight' ) ?></span>
       </nav>
     </div>
 
     <header class="grid">
-      <h1 class="title-large"><?php esc_html_e( 'Storage', 'soapatrickseven' ) ?></h1>
+      <h1 class="title-large"><?php esc_html_e( 'Storage', 'soapatrickeight' ) ?></h1>
+      <hr>
     </header>
 
-    <div class="content-grid">
-      <div class="storage alignwide-content">
+    <div class="grid">
+      <div class="storage">
         <?php
           while ( have_posts() ) : the_post();
 

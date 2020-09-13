@@ -1,3 +1,43 @@
 /*--------------------------------------------------------------
 #Lists
 --------------------------------------------------------------*/
+
+ul,
+ol {
+  margin: $margin__base 0;
+  list-style: none;
+  line-height: $line-height__base;
+
+  ul,
+  ol {
+    margin: 0;
+  }
+
+  li::before {
+    color: var(--color__highlight);
+    display: inline-block;
+    width: 1rem;
+    margin-left: -1rem;
+  }
+}
+
+ol {
+  counter-reset: li;
+
+  li {
+    counter-increment: li;
+
+    &::before {
+      content: counter(li);
+      font-weight: $font-weight__regular;
+    }
+  }
+}
+
+// colored bullet list icon
+ul {
+  li::before {
+    font-family: sans-serif;
+    content: "•";
+  }
+}

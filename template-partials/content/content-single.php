@@ -7,35 +7,53 @@
  * @package soapatrickeight
  */
 
+
+$format = get_post_format();
+
 ?>
 
-<article id="article-<?php the_ID(); ?>" <?php post_class('article article--single'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('article post'); ?>>
+  <?php if ($format === 'quote' || $format === 'link' || $format === 'status') : ?>
 
-<div class="breadcrumbs-wrapper">
-    <nav class="breadcrumbs">
-      <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
-      <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/box/"><?php esc_html_e( 'Box', 'soapatrickeight' ) ?></a></span>
-      <span class="breadcrumbs__item--last"><?php the_title() ?></span>
-    </nav>
-  </div>
-
-	<header class="article__header">
-		<?php
-      the_title( '<h1>', '</h1>' );
-
-        ?>
-          <div class="article__meta">
-            <?php
-              soapatrickeight_posted_on();
-              soapatrickeight_tags();
-            ?>
-          </div>
+    <header class="grid article__header">
+      <div class="inner-wrapper inner-wrapper__<?php echo $format ?>">
         <?php
-    ?>
-	</header>
+          if($format === 'status') :
+            if (get_field( "font-awesome_icon" )) :
+              echo '<i class="' . get_field( "font-awesome_icon" ) . '"></i>';
+            else :
+              echo '<i class="fal fa-pencil"></i>';
+            endif;
+          endif;
+          the_content();
+        ?>
+      </div>
+      <div class="article__meta">
+        <?php
+          soapatrickeight_posted_on();
+          soapatrickeight_tags();
+          soapatrickeight_edit_post();
+        ?>
+      </div>
+    </header>
 
-	<div class="content-grid article__content">
-		<?php the_content(); ?>
-	</div>
+  <?php else : ?>
 
+    <header class="grid article__header">
+      <?php the_title( '<h1 class="title-large">', '</h1>' ); ?>
+
+      <div class="article__meta">
+        <?php
+          soapatrickeight_posted_on();
+          soapatrickeight_tags();
+          soapatrickeight_edit_post();
+        ?>
+      </div>
+    </header>
+
+    <div class="grid article__content">
+      <?php the_content(); ?>
+    </div>
+
+  <?php endif; ?>
 </article>

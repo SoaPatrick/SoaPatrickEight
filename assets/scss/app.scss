@@ -1,3 +1,15 @@
+/*!
+Theme Name: soapatrickeight
+Theme URI:
+Author: SoaPatrick
+Author URI: https://www.soapatrick.com
+Description:
+Version: 2.11.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: soapatrickeight
+*/
+
 /*--------------------------------------------------------------
 #Imports
 --------------------------------------------------------------*/
@@ -11,192 +23,14 @@
 //Components
 @import "components/__components-dir";
 
-//Blocks
-@import "blocks/__blocks-dir";
-
 //Layout
 @import "layouts/__layouts-dir";
 
+//Post
+@import "post/__post-dir";
 
-.breadcrumbs {
-  font-size: $font-size__small;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: flex-end;
+//Page
+@import "page/__page-dir";
 
-  &__item {
-    &:after {
-      content: "/";
-      padding: 0 .5em;
-      font-weight: bold;
-      opacity: .25;
-    }
-  }
-}
-
-
-
-.related--factory {
-
-  @include bob-animation-font-size();
-  @include bob-animation(article);
-
-  &__items {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: $margin__base;
-  }
-
-  article {
-    position: relative;
-
-    img {
-      display: block;
-      position: relative;
-      z-index: 2;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      position: relative;
-      z-index: 2;
-    }
-
-    h1 {
-      position: absolute;
-      bottom: 0;
-      margin: 0;
-      font-size: inherit;
-    }
-  }
-}
-
-
-/*--------------------------------------------------------------
-#Factory
---------------------------------------------------------------*/
-
-.tag--list {
-  a {
-    margin: 0 1rem .5rem 0;
-    display: inline-block;
-    line-height: 1.2;
-  }
-}
-
-.factory-list {
-  color: var(--color__text);
-
-  @include bob-animation(article);
-
-  &__tags {
-    a {
-      margin: 0 1rem .5rem 0;
-      display: inline-block;
-      line-height: 1.2;
-
-      &.active {
-        color: var(--color__highlight)
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-
-  &__list {
-    margin: $margin__base 0;
-    padding-bottom: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: $margin__base;
-  }
-
-  article {
-    position: relative;
-
-    img {
-      display: block;
-      position: relative;
-      z-index: 2;
-    }
-
-    h1 {
-      position: absolute;
-      bottom: 0;
-      margin: 0;
-      font-size: inherit;
-    }
-  }
-}
-
-
-
-.content-grid {
-  margin: 2rem -2rem;
-  display: grid;
-  row-gap: 2rem;
-  grid-template-columns: 2rem minmax(320px, 700px) minmax(2rem, calc(580px - 2rem)) minmax(2rem, auto); // 900px
-
-  > * {
-    grid-column: 2 / 3;
-    margin: 0;
-  }
-
-  .alignwide {
-    grid-column: 1 / 4;
-  }
-
-  .alignfull {
-    grid-column: 1 / 5;
-  }
-
-  .alignwide-content {
-    grid-column: 2 / 4;
-  }
-
-  @media (max-width: 767px) {
-    grid-template-columns: 2rem auto 2rem;
-
-    > * {
-      grid-column: 2 / 3;
-      margin: 0;
-    }
-
-    .alignwide,
-    .alignfull {
-      grid-column: 1 / 4;
-    }
-  }
-}
-
-
-
-/*--------------------------------------------------------------
-#Storage
---------------------------------------------------------------*/
-
-.storage {
-  display: flex;
-  flex-wrap: wrap;
-
-  &__year {
-    flex: 0 0 160px;
-
-    h2 {
-      margin-bottom: 0;
-    }
-
-    ul {
-      margin-top: 0;
-      list-style: none;
-      padding: 0;
-
-      li::before {
-        content: none;
-      }
-    }
-  }
-}
+//Gutenberg
+@import "gutenberg/__gutenberg-dir";

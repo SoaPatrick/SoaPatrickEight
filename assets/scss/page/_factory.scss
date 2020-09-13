@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------
+#Factory
+--------------------------------------------------------------*/
+
+.factory-list {
+  color: var(--color__text);
+  font-size: $font-size__smaller;
+
+  @media #{$breakpoint__1199--max} {
+    font-size: calc(10px + 1vw);
+  }
+
+  @media #{$breakpoint__767--max} {
+    font-size: calc(5px + 1.2vw);
+  }
+
+  @include bob-animation(article);
+
+  &__list {
+    margin: $margin__base 0;
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: $margin__base;
+
+    @media #{$breakpoint__1199--max} {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  article {
+    position: relative;
+
+    img {
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      font-family: $font-family__base;
+      font-weight: $font-weight__bold;
+      font-size: inherit;
+    }
+  }
+}

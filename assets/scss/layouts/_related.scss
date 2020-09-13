@@ -1,0 +1,22 @@
+/*--------------------------------------------------------------
+#Related
+--------------------------------------------------------------*/
+
+.related {
+  padding: 4rem 0;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  &--factory{
+    color: $color__white;
+
+    @include bob-animation-font-size();
+    @include bob-animation(article);
+
+    &__items {
+      @extend .factory-feed__items;
+    }
+  }
+}

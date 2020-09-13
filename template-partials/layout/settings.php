@@ -11,7 +11,7 @@
   <div class="container">
     <div id="settings__header"></div>
     <button type="button" id="settings__close" aria-label="<?php esc_html_e( 'Close Settings', 'soapatrickeight' ); ?>">
-      Close
+      <i class="fal fa-times fa-fw"></i>
     </button>
     <h2><?php esc_html_e( 'Settings', 'soapatrickeight' ); ?></h2>
     <div class="theme-switch-wrapper">

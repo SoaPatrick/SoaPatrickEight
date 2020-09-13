@@ -2,64 +2,43 @@
 #Typography
 --------------------------------------------------------------*/
 
-html {
-  font-size: $font-size__base;
-}
+/*
+ * General
+ * -----------------------------------------------------------
+ */
 
-body {
-  background: var(--color__background);
-  font-family: $font-family__base;
-  font-weight: $font-weight__light;
+p {
+  margin: $margin__base 0;
   line-height: $line-height__base;
-  color: var(--color__text);
 }
 
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
   font-family: $font-family__heading;
   font-weight: $font-weight__regular;
   line-height: $line-height__heading;
 }
 
-h1 {
-  font-size: $font-size__h1;
+.title-large {
+  font-size: $font-size__large;
+  margin: 0;
 }
 
-h2 {
-  font-size: $font-size__h2;
-}
-
-h3 {
-  font-size: $font-size__h3;
-}
-
-h4 {
-  font-size: $font-size__h4;
-}
-
-h6 {
-  font-size: $font-size__h5;
-}
-
-h5 {
-  font-size: $font-size__h6;
-}
+/*
+ * Links
+ * -----------------------------------------------------------
+ */
 
 a {
-  color: inherit;
-  transition: all .15s ease-in-out;
+  color: var(--color__highlight);
+  font-weight: $font-weight__regular;
   text-decoration: none;
-  padding-bottom: .15em;
-  border-bottom: var(--link__border) solid currentColor;
 
-  &:hover,
-  &:active {
+  &:hover {
     color: var(--color__highlight);
-    border-color: transparent;
+    text-decoration: underline;
   }
 
   &:focus {
@@ -67,3 +46,32 @@ a {
   }
 }
 
+/*
+ * Misc Elements
+ * -----------------------------------------------------------
+ */
+
+hr {
+  margin: $margin__base auto;
+  border: 1px solid var(--color__highlight);;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.has-text-align {
+  &-left {
+    text-align: left;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}

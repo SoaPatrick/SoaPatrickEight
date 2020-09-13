@@ -16,36 +16,34 @@ get_header();
 
   if ( have_posts() ) :
 
-    if ( is_home() && ! is_front_page() ) :
-      ?>
-        <header>
-          <h1><?php single_post_title(); ?></h1>
-        </header>
-      <?php
-    endif;
+    $postCount = 0;
+    while ( have_posts() ) : the_post();
+      $postCount++;
+      if ( $postCount == 2  && is_home() && !is_paged() ) :
 
-    while ( have_posts() ) :
-      the_post();
-      if (is_single()):
-        get_template_part( 'template-partials/content/content-single', get_post_type() );
-      else:
-        get_template_part( 'template-partials/content/content', get_post_type() );
+        get_template_part( 'template-partials/content/content', 'factory_feed' );
+
       endif;
+
+      get_template_part( 'template-partials/content/content-single', get_post_type() );
+
     endwhile;
 
     if (is_single()):
 
-      if ( 'post' === get_post_type() || 'factory' === get_post_type() ):
+      if ( 'post' === get_post_type() ) {
         soapatrickeight_post_navigation();
-      endif;
+      }
 
-    else :
+      get_template_part( 'template-partials/content/content-related', get_post_type() );
+
+    else:
 
       soapatrickeight_posts_navigation();
 
     endif;
-
-  else :
+    ?>
+  <?php else :
 
     get_template_part( 'template-partials/content/content', 'none' );
 
