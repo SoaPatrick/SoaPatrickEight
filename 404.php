@@ -12,7 +12,7 @@ get_header();
 
   <section>
     <header>
-      <h1><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'soapatrickeight' ); ?></h1>
+      <h1><?php esc_html_e( 'Oops!', 'soapatrickeight' ); ?></h1>
     </header>
 
     <div>
