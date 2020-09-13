@@ -1,0 +1,26 @@
+/*--------------------------------------------------------------
+#Highlight
+--------------------------------------------------------------*/
+
+.highlight {
+  color: $color__white;
+  background: var(--color__highlight);
+
+  a,
+  .post-list .title-list a {
+    color: $color__gray--dark;
+
+    &:focus {
+      outline: $outline-highlight;
+    }
+  }
+
+  .post-list__icon {
+    background: $color__white;
+    color: var(--color__highlight);
+
+    &--image {
+      background: none;
+    }
+  }
+}

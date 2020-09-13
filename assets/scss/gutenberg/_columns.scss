@@ -1,0 +1,17 @@
+/*--------------------------------------------------------------
+#Columns
+--------------------------------------------------------------*/
+
+.wp-block-columns {
+  display: grid;
+  gap: $margin__base;
+  grid-template-columns: 1fr 1fr;
+
+  @media #{$breakpoint__991--max} {
+    display: block;
+  }
+
+  .wp-block-column {
+    margin: 0;
+  }
+}

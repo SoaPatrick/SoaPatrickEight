@@ -1,0 +1,65 @@
+/*----------------------------------------------
+#Code
+----------------------------------------------*/
+p,
+ul,
+ol {
+  code {
+    background: var(--color__body);
+    padding: .3em;
+    display: inline-block;
+    line-height: 1;
+    border-radius: .2em;
+    font-size: $font-size__small;
+    font-family: $font-family__code;
+  }
+}
+
+pre[class*="language-"] {
+  margin: $margin__base 0;
+  border-radius: .2em;
+  background: $color__gray--darker;
+  position: relative;
+  padding: 0;
+
+  .prism-titlename {
+    margin: 0 !important;
+    padding: $margin__base $margin__base 0;
+  }
+
+  .prism-language {
+    position: absolute;
+    right: .25rem;
+    top: .25rem;
+    font-size: .5rem;
+    font-weight: bold;
+    color: orange;
+    font-family: $font-family__code;
+  }
+
+  code {
+    overflow-y: auto;
+    display: block;
+    padding: $margin__base;
+  }
+
+  &.line-numbers code {
+    padding-left: 3rem;
+
+    .line-numbers-rows {
+      padding: $margin__base 0;
+      left: 0;
+    }
+  }
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: $font-size__smaller;
+
+  &::selection,
+  ::selection {
+    background: var(--color__highlight);
+    color: $color__white;
+  }
+}

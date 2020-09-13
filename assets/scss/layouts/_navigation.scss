@@ -1,0 +1,116 @@
+/*--------------------------------------------------------------
+#Navigation
+--------------------------------------------------------------*/
+
+// SoaPatrick Styling
+.soapatrick {
+  font-style: normal;
+  display: inline-block;
+
+  &--soa {
+    margin-top: -.2rem;
+  }
+
+  &--patrick {
+    margin-top: .13rem;
+  }
+}
+
+.site-navigation {
+  position: fixed;
+  width: $navbar__width;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding-top: $margin__body;
+  z-index: 1000;
+
+  &__link {
+    height: $navbar__width;
+    width: $navbar__width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+      display: flex;
+      white-space: nowrap;
+      align-items: center;
+      height: auto;
+      position: absolute;
+      z-index: 0;
+      left: calc(1rem + #{$navbar__width});
+      visibility: hidden;
+      background-color: var(--color__text);
+      color: var(--color__body);
+      padding: .5rem 1.25rem;
+      font-weight: 400;
+      border-radius: 2rem;
+    }
+
+    &.active,
+    &:hover {
+      background: var(--color__highlight);
+      color: $color__white;
+
+      svg {
+        color: $color__white;
+
+        .primary {
+          fill: var(--color__body);
+        }
+      }
+
+      &:hover span {
+        visibility: visible;
+      }
+    }
+
+    &:focus {
+      outline: $outline;
+      outline-offset: $outline__width * -1; // make outline inside link
+    }
+  }
+
+  &__icon {
+    color: var(--color__highlight);
+    font-size: calc(#{$navbar__width} / 3);
+    width: calc(#{$navbar__width} / 3);
+
+    .secondary {
+      fill: var(--color__text);
+    }
+  }
+}
+
+@media #{$breakpoint__767--max} {
+  .site-navigation {
+    top: auto;
+    width: 100%;
+    display: flex;
+    padding: 0;
+    box-shadow: $shadow__quarter;
+    background: var(--color__body);
+
+    &__link {
+      flex-grow: 1;
+      height: $navbar__height;
+      align-items: center;
+      padding-bottom: 1rem;
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+// fix WP Admin Navbar margin
+@media #{$breakpoint__768--min} {
+  body.admin-bar {
+    .site-navigation {
+      padding-top: calc(#{$margin__body} + 32px);
+    }
+  }
+}

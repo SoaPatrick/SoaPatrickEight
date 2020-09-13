@@ -1,0 +1,14 @@
+/*--------------------------------------------------------------
+#Tag-list
+--------------------------------------------------------------*/
+
+.tag--list {
+  display: flex;
+  flex-wrap: wrap;
+  text-transform: lowercase;
+
+  a {
+    margin-right: $margin__base / 2;
+    margin-bottom: $margin__base / 2;
+  }
+}

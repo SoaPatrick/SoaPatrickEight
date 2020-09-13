@@ -1,0 +1,37 @@
+/*----------------------------------------------
+#Grid
+----------------------------------------------*/
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax($margin__body,1fr) minmax(0,15.5rem) minmax(500px,30rem) minmax(0,15.5rem) minmax($margin__body,1fr);
+
+  > * {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+
+  .alignwide {
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+
+  .alignfull {
+    grid-column-start: 1;
+    grid-column-end: 6;
+  }
+}
+
+@media #{$breakpoint__767--max} {
+  .grid {
+    grid-template-columns: minmax($margin__base,5.5rem) 0 minmax(calc(320px - 2* #{$margin__base}),calc(100% - 2 * #{$margin__base})) 0 minmax($margin__base,5.5rem);
+
+    > .wp-block-embed-youtube,
+    > .wp-block-image,
+    > .wp-block-video,
+    > .wp-block-gallery {
+      grid-column-start: 1;
+      grid-column-end: 6;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------
+#Changelog
+--------------------------------------------------------------*/
+
+.changelog {
+
+  h2 {
+    font-size: 1.17rem;
+    margin-bottom: .5rem;
+  }
+
+	ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 1.5rem;
+    margin-bottom: 3rem;
+
+    li {
+      position: relative;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  span {
+    position: absolute;
+    left: -1.5rem;
+    width: 1.5rem;
+  }
+
+  svg {
+    color: var(--color__highlight);
+  }
+}

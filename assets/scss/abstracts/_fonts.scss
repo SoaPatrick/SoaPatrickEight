@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------
+#Fonts
+--------------------------------------------------------------*/
+
+// @import must be at top of file, otherwise CSS will not work
+@import url("//hello.myfonts.net/count/36f9a1");
+
+@font-face {
+  font-family: 'AmsiProNarw-Black';
+  src: url('../fonts/AmsiProNarw-Black.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/SourceSansPro-300.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/SourceSansPro-400.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/SourceSansPro-700.woff2') format('woff2');
+  font-display: swap;
+}
