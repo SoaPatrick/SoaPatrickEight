@@ -11,10 +11,8 @@
 
 ?>
 
-<form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label>
-		<span><?php _ex( 'Search for:', 'search label', 'soapatrickeight' );?></span>
-		<input type="search" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'search placeholder', 'soapatrickeight' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-	</label>
-	<input type="submit" value="<?php echo esc_attr_x( 'Search', 'search submit button', 'soapatrickeight' ); ?>" />
+<form class="search-form" action="<?php echo home_url( '/' ); ?>" method="get">
+  <label for="search-collapse--input">
+    <input type="text" name="s" id="search-collapse--input" value="<?php the_search_query(); ?>" placeholder="<?php esc_html_e( 'Find Stuff...', 'soapatrickseven' ); ?>" aria-label="<?php esc_html_e( 'Find Stuff...', 'soapatrickseven' ); ?>"">
+  </label>
 </form>

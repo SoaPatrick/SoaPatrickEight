@@ -1,3 +1,76 @@
 /*--------------------------------------------------------------
 #Scaffolding
 --------------------------------------------------------------*/
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  *,
+  *::before,
+  *::after {
+    transition: background .15s linear, fill .15s linear;
+  }
+}
+
+.site {
+  height: 100%;
+  display: grid;
+  grid-template-columns: $navbar--width auto;
+  grid-template-areas: "navigation wrapper";
+
+  @media (max-width: 911px) {
+    display: block;
+  }
+
+  &-navigation {
+    grid-area: navigation;
+  }
+
+  &-wrapper {
+    grid-area: wrapper;
+    display: grid;
+    grid-template-columns: minmax(700px, auto) minmax(400px, 650px);
+    grid-template-areas: "main bubbles" "main footer";
+
+    @media (max-width: 1640px) {
+      grid-template-columns: minmax(600px, 850px) auto;
+      grid-template-areas: "main bubbles" "footer bubbles";
+    }
+
+    @media (max-width: 911px) {
+      display: block;
+    }
+  }
+
+  &-main {
+    grid-area: main;
+  }
+
+  &-bubbles {
+    grid-area: bubbles;
+
+    @media (max-width: 911px) {
+      display: none;
+    }
+  }
+
+  &-footer {
+    grid-area: footer;
+  }
+}
+
+
+.soa,
+.patrick {
+  display: inline-block;
+  margin-bottom: 4rem;
+}
+
+.patrick {
+  position: relative;
+  top: .21em;
+}

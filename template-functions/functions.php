@@ -10,70 +10,18 @@
  */
 function soapatrickeight_allowed_block_types( $allowed_blocks ) {
 
-	return array(
+  return array(
     'core/paragraph',
     'core/image',
     'core/heading',
     'core/gallery',
     'core/list',
     'core/quote',
-    'core/audio',
-    'core/cover',
-    'core/file',
     'core/video',
-    'core/table',
-    'core/verse',
     'core/code',
-    'core/button',
     'core/columns',
-    'core/block',
-    'core/template',
-    'core/media-text',
-    'core/separator',
-    'core/shortcode',
-    'core/archives',
-    'core/categories',
-    'core/latest-comments',
-    'core/latest-posts',
-    'core/calendar',
-    'core/rss',
-    'core/search',
-    'core/tag-cloud',
-    'core/embed',
-    'core-embed/twitter',
     'core-embed/youtube',
-    'core-embed/facebook',
-    'core-embed/instagram',
-    'core-embed/wordpress',
-    'core-embed/soundcloud',
-    'core-embed/spotify',
-    'core-embed/flickr',
-    'core-embed/vimeo',
-    'core-embed/animoto',
-    'core-embed/cloudup',
-    'core-embed/collegehumor',
-    'core-embed/dailymotion',
-    'core-embed/funnyordie',
-    'core-embed/hulu',
-    'core-embed/imgur',
-    'core-embed/issuu',
-    'core-embed/kickstarter',
-    'core-embed/meetup-com',
-    'core-embed/mixcloud',
-    'core-embed/photobucket',
-    'core-embed/polldaddy',
-    'core-embed/reddit',
-    'core-embed/reverbnation',
-    'core-embed/screencast',
-    'core-embed/scribd',
-    'core-embed/slideshare',
-    'core-embed/smugmug',
-    'core-embed/speaker',
-    'core-embed/ted',
-    'core-embed/tumblr',
-    'core-embed/videopress',
-    'core-embed/wordpress-tv'
-	);
+  );
 }
 add_filter( 'allowed_block_types', 'soapatrickeight_allowed_block_types' );
 
@@ -100,7 +48,7 @@ if ( ! function_exists( 'soapatrickeight_posted_on' ) ) :
 	function soapatrickeight_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 		}
 
 		$time_string = sprintf( $time_string,
@@ -140,28 +88,87 @@ endif;
 
 
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Prints HTML with meta information for the tags.
  */
-if ( ! function_exists( 'soapatrickeight_entry_footer' ) ) :
-	function soapatrickeight_entry_footer() {
-		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html_x( ', ', 'category list item separator', 'soapatrickeight' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html_x( 'Posted in %1$s', 'categories prefix', 'soapatrickeight' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-			}
+if ( ! function_exists( 'soapatrickeight_tags' ) ) :
+	function soapatrickeight_tags() {
+		// Hide  tag text for pages.
+    if ( 'post' === get_post_type() ) {
+      $tags_list = get_the_term_list( $post->ID , 'post_tag', '', ', ' );
+    }
 
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'tag list item separator', 'soapatrickeight' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html_x( 'Tagged %1$s', 'tags prefix ', 'soapatrickeight' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-			}
-		}
+    if ( 'factory' === get_post_type() ) {
+      $tags_list = get_the_term_list( $post->ID , 'factory_tags', '', ', ' );
+    }
+
+    if ( $tags_list ) {
+      /* translators: 1: list of tags. */
+      printf( '<span class="tags-links">' . esc_html_x( ' in %1$s', 'tags prefix ', 'soapatrickeight' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+    }
 	}
 endif;
+
+
+
+/**
+ * function for single post navigation
+ *
+ */
+if ( ! function_exists( 'soapatrickeight_post_navigation' ) ) :
+  function soapatrickeight_post_navigation() {
+    echo '<nav class="post-navigation post-navigation--single">';
+    if ( 'post' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php next_post_link( '%link', __( 'Newer Post &rarr;', 'soapatrickeight' ) ); ?></div>
+      <div class="post-navigation__next"><?php previous_post_link('%link', __( '&larr;  Older Post', 'soapatrickeight' ) ); ?></div>
+    <?php }
+    if ( 'factory' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php next_post_link( '%link', __( 'Newer Item &rarr;', 'soapatrickeight' ) ); ?></div>
+      <div class="post-navigation__next"><?php previous_post_link('%link', __( '&larr;  Older Item', 'soapatrickeight' ) ); ?></div>
+    <?php }
+    echo '</nav>';
+  }
+endif;
+
+
+/**
+ * function for posts navigation
+ *
+ */
+if ( ! function_exists( 'soapatrickeight_posts_navigation' ) ) :
+	function soapatrickeight_posts_navigation() {
+    echo '<nav class="post-navigation">';
+    if ( 'post' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php previous_posts_link( __( 'Newer Posts  &rarr;', 'soapatrickeight' ), '' ); ?></div>
+      <div class="post-navigation__next"><?php next_posts_link( __( '&larr; Older Posts', 'soapatrickeight' ), '' ); ?></div>
+    <?php }
+    if ( 'factory' === get_post_type() ) { ?>
+      <div class="post-navigation__previous"><?php previous_posts_link( __( 'Newer Items &rarr;', 'soapatrickeight' ), '' ); ?></div>
+      <div class="post-navigation__next"><?php next_posts_link( __( '&larr; Older Items', 'soapatrickeight' ), '' ); ?></div>
+    <?php }
+    if ( 'log' === get_post_type() ) {
+      next_posts_link( __( 'Load More', 'soapatrickeight' ) );
+    }
+    echo '</nav>';
+	}
+endif;
+
+
+/**
+ * add classes to next and previous Post
+ *
+ */
+add_filter('next_post_link', 'soapatrickseven_next_post_link_class');
+add_filter('previous_post_link', 'soapatrickseven_previous_post_link_class');
+function soapatrickseven_next_post_link_class($format){
+  $format = str_replace('href=', 'class="btn post-navigation__next" href=', $format);
+  return $format;
+}
+function soapatrickseven_previous_post_link_class($format) {
+  $format = str_replace('href=', 'class="btn post-navigation__previous" href=', $format);
+  return $format;
+}
+
+
 
 
 /**
@@ -229,3 +236,72 @@ function soapatrickeight_remove_default_image_sizes( $sizes ) {
 }
 add_filter( 'intermediate_image_sizes_advanced', 'soapatrickeight_remove_default_image_sizes' );
 
+
+/**
+ * Replace Youtube Videos with Preview Image instead
+ * of embeded iFrame, play video on click
+ *
+ */
+function soapatrickeight_youtube_embeded($content){
+  //youtube.com\^(?!href=)
+  if (preg_match_all('#(?<!href\=\")https\:\/\/www.youtube.com\/watch\?([\\\&\;\=\w\d]+|)v\=[\w\d]{11}+([\\\&\;\=\w\d]+|)(?!\"\>)#', $content, $youtube_match)) {
+    foreach ($youtube_match[0] as $youtube_url) {
+      parse_str( parse_url( wp_specialchars_decode( $youtube_url ), PHP_URL_QUERY ), $youtube_video );
+      if (isset($youtube_video['v'])){
+        $content = str_replace($youtube_url, '<div class="youtube-wrapper"><div class="youtube-wrapper__video" data-id="'.$youtube_video['v'].'"></div></div>', $content);
+      }
+    }
+  }
+  //youtu.be
+  if (preg_match_all('#(?<!href\=\")https\:\/\/youtu.be/([\\\&\;\=\w\d]+|)(?!\"\>)#', $content, $youtube_match)){
+    foreach ($youtube_match[0] as $youtube_url) {
+      $youtube_video = str_replace('https://youtu.be/', '', $youtube_url);
+      if (isset($youtube_video)){
+        $content = str_replace($youtube_url, '<div class="youtube-wrapper"><div class="youtube-wrapper__video" data-id="'.$youtube_video.'"></div></div>', $content);
+      }
+    }
+  }
+  return $content;
+}
+add_filter('the_content', 'soapatrickeight_youtube_embeded',1);
+
+
+/**
+ * Replace Bracket with 'more' link in exceprt
+ *
+ */
+function soapatrickeight_excerpt_more( $more ) {
+  return ' ... <a href="'.get_the_permalink().'" rel="nofollow">more &rarr;</a>';
+}
+add_filter( 'excerpt_more', 'soapatrickeight_excerpt_more' );
+
+
+/**
+ * Attach a class to linked images' parent anchors
+ * Works for existing content
+ *
+ */
+function soapatrickeight_give_linked_images_class($content) {
+  $classes = 'img-link'; // separate classes by spaces - 'img image-link'
+  // check if there are already a class property assigned to the anchor
+  if ( preg_match('/<a.*? class=".*?"><img/', $content) ) {
+    // If there is, simply add the class
+    $content = preg_replace('/(<a.*? class=".*?)(".*?><img)/', '$1 ' . $classes . '$2', $content);
+  } else {
+    // If there is not an existing class, create a class property
+    $content = preg_replace('/(<a.*?)><img/', '$1 class="' . $classes . '" ><img', $content);
+  }
+  return $content;
+}
+add_filter('the_content','soapatrickeight_give_linked_images_class');
+
+
+/**
+ * Remove archive title prefixes.
+ *
+ */
+function soapatrickeight_archive_title( $title ) {
+  // Remove any HTML, words, digits, and spaces before the title.
+  return preg_replace( '#^[\w\d\s]+:\s*#', '', strip_tags( $title ) );
+}
+add_filter( 'get_the_archive_title', 'soapatrickeight_archive_title' );

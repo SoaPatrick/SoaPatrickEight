@@ -26,10 +26,24 @@ get_header();
 
     while ( have_posts() ) :
       the_post();
-      get_template_part( 'template-partials/content/content', get_post_type() );
+      if (is_single()):
+        get_template_part( 'template-partials/content/content-single', get_post_type() );
+      else:
+        get_template_part( 'template-partials/content/content', get_post_type() );
+      endif;
     endwhile;
 
-    the_posts_navigation();
+    if (is_single()):
+
+      if ( 'post' === get_post_type() || 'factory' === get_post_type() ):
+        soapatrickeight_post_navigation();
+      endif;
+
+    else :
+
+      soapatrickeight_posts_navigation();
+
+    endif;
 
   else :
 

@@ -16,14 +16,14 @@ get_header();
           <h1>
             <?php
               /* translators: %s: search query. */
-              printf( esc_html_x( 'Search Results for: %s', 'search result title', 'soapatrickeight' ), '<span>' . get_search_query() . '</span>' );
+              printf( esc_html_x( 'Search: %s', 'search result title', 'soapatrickeight' ), '<span>' . get_search_query() . '</span>' );
             ?>
           </h1>
         </header>
         <?php
           while ( have_posts() ) :
             the_post();
-            get_template_part( 'template-partials/content/content', 'search' );
+            get_template_part( 'template-partials/content/content');
           endwhile;
           the_posts_navigation();
         ?>
