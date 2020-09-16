@@ -4,7 +4,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: minmax($margin__body,1fr) minmax(0,15.5rem) minmax(500px,30rem) minmax(0,15.5rem) minmax($margin__body,1fr);
+  grid-template-columns: minmax($margin__body,1fr) minmax(0,375px) minmax(500px,750px) minmax(0,375px) minmax($margin__body,1fr);
 
   > * {
     grid-column-start: 3;
@@ -22,9 +22,9 @@
   }
 }
 
-@media #{$breakpoint__767--max} {
+@media #{$breakpoint__991--max} {
   .grid {
-    grid-template-columns: minmax($margin__base,5.5rem) 0 minmax(calc(320px - 2* #{$margin__base}),calc(100% - 2 * #{$margin__base})) 0 minmax($margin__base,5.5rem);
+    grid-template-columns: minmax($margin__base,1fr) 0 minmax(calc(320px - 2* #{$margin__base}),550px) 0 minmax($margin__base,1fr);
 
     > .wp-block-embed-youtube,
     > .wp-block-image,

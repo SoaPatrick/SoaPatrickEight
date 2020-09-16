@@ -19,7 +19,6 @@
   <link rel="profile" href="https://gmpg.org/xfn/11">
   <?php
     wp_head();
-    get_template_part( 'template-partials/head/fontlicense');
     get_template_part( 'template-partials/head/favicon');
     get_template_part( 'template-partials/head/theme-script');
   ?>

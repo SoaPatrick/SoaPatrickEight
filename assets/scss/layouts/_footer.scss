@@ -8,6 +8,22 @@
   grid-template-columns: 3fr 1fr;
   gap: 1rem;
 
+  a {
+    background-image: linear-gradient($color__white, $color__white);
+    border-bottom: 1px solid $color__white;
+    background-repeat: no-repeat;
+    transition: background-size .2s, color .2s;
+    background-position: 50% calc(100% + .1em);
+    background-size: 100% 0%;
+    padding: .1em;
+    margin-right: -.1em;
+    margin-left: -.1em;
+
+    &:hover {
+      background-size: 100% calc(100% + .1em);
+    }
+  }
+
   &__data-protection {
     align-self: center;
     justify-self: right;

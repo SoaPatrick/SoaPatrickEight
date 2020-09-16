@@ -32,19 +32,10 @@ h4 {
  */
 
 a {
-  color: var(--color__highlight);
-  font-weight: $font-weight__regular;
   text-decoration: none;
-
-  &:hover {
-    color: var(--color__highlight);
-    text-decoration: underline;
-  }
-
-  &:focus {
-    outline: $outline;
-  }
+  color: currentColor;
 }
+
 
 /*
  * Misc Elements
