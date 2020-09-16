@@ -11,7 +11,7 @@
 
 <section class="factory-feed highlight">
   <div class="grid">
-    <h1 class="title-large has-text-align-center"><i class="fal fa-industry-alt fa-fw"></i><?php esc_html_e( 'Factory Feed', 'soapatrickeight' ); ?></h1>
+    <h1 class="title-large has-text-align-center"><?php esc_html_e( 'Factory Feed', 'soapatrickeight' ); ?></h1>
     <div class="factory-feed__items">
       <?php
         $args = array(

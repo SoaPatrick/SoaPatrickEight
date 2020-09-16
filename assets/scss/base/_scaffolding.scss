@@ -19,8 +19,8 @@ body {
   color: var(--color__text);
   -webkit-font-smoothing: antialiased;
 
-  @media #{$breakpoint__768--min} {
-    margin: $margin__body calc(#{$navbar__width} + 5px);
+  @media #{$breakpoint__992--min} {
+    margin: $margin__body $navbar__width;
   }
 }
 
@@ -31,12 +31,12 @@ body {
   position: relative;
   z-index: 1;
 
-  @media #{$breakpoint__767--max} {
+  @media #{$breakpoint__991--max} {
     margin-bottom: $navbar__height;
     min-height: calc(100vh - #{$navbar__height});
   }
 
-  @media #{$breakpoint__768--min} {
+  @media #{$breakpoint__992--min} {
     box-shadow: $shadow__quarter;
     margin-bottom: $margin__body;
     min-height: calc(100vh - 2 * #{$margin__body});

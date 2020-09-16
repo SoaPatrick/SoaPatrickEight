@@ -6,9 +6,14 @@
   color: $color__white;
   background: var(--color__highlight);
 
-  a,
-  .post-list .title-list a {
-    color: $color__gray--dark;
+  a {
+    background-image: linear-gradient($color__white, $color__white);
+    border-bottom: 1px solid $color__white;
+
+    &:hover,
+    &:active {
+      color: $color__gray--darker;
+    }
 
     &:focus {
       outline: $outline-highlight;
@@ -22,5 +27,19 @@
     &--image {
       background: none;
     }
+  }
+
+  .article__meta .tags a:before {
+    color: $color__gray--darker;
+  }
+
+
+  h1 a,
+  h2 a {
+    margin: 0;
+    padding: 0;
+    background-image: none;
+    background-size: 0 0;
+    bordeR: 0;
   }
 }

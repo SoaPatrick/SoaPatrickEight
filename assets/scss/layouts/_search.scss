@@ -37,7 +37,7 @@
 }
 
 #search-collapse {
-  @media #{$breakpoint__767--max} {
+  @media #{$breakpoint__991--max} {
     background: var(--color__highlight);
   }
 
@@ -50,7 +50,7 @@
     transition: max-height 0.25s ease-in;
   }
 
-  @media #{$breakpoint__768--min} {
+  @media #{$breakpoint__992--min} {
     .search-form {
       grid-column-start: 2;
       grid-column-end: 5;

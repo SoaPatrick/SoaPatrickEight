@@ -10,10 +10,24 @@
   font-size: inherit;
   display: inline-block;
   border-radius: 2em;
+  font-weight: $font-weight__regular;
+
+  position: relative;
+  display: inline-block;
+
+  background-image: linear-gradient(var(--color__highlight), var(--color__highlight));
+  background-repeat: no-repeat;
+  transition: background-size .3s, color .3s;
+  background-position: 50% 100%;
+  background-size: 100% 0%;
+
+  &:hover {
+    background-size: 100% 100%;
+  }
 
   &:hover,
   &:focus {
-    background: var(--color__highlight);
+    //background: var(--color__highlight);
     color: $color__white;
     font-weight: $font-weight__regular;
     text-decoration: none;
