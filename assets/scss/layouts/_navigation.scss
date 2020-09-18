@@ -117,6 +117,7 @@
     width: 100%;
     display: flex;
     padding: 0;
+    padding-bottom: .5rem;
     box-shadow: $shadow__quarter;
     background: var(--color__body);
     display: flex;
@@ -132,6 +133,9 @@
 
     .navbar-brand {
       padding: 0 1rem;
+      justify-content: center;
+      align-items: center;
+      display: flex;
 
 
       svg {
