@@ -17,17 +17,16 @@
 
   background-image: linear-gradient(var(--color__highlight), var(--color__highlight));
   background-repeat: no-repeat;
-  transition: background-size .3s, color .3s;
-  background-position: 50% 100%;
+  transition: background-size .2s, color .2s;
+  background-position: 50% calc(100% + .5em);
   background-size: 100% 0%;
 
   &:hover {
-    background-size: 100% 100%;
+    background-size: 100% calc(100% + .5em);
   }
 
   &:hover,
   &:focus {
-    //background: var(--color__highlight);
     color: $color__white;
     font-weight: $font-weight__regular;
     text-decoration: none;

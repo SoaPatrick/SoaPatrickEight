@@ -11,16 +11,16 @@
   <div class="container">
     <div id="settings__header"></div>
     <button type="button" id="settings__close" aria-label="<?php esc_html_e( 'Close Settings', 'soapatrickeight' ); ?>">
-      <i class="fal fa-times fa-fw"></i>
+      Close
     </button>
     <h2><?php esc_html_e( 'Settings', 'soapatrickeight' ); ?></h2>
     <div class="theme-switch-wrapper">
-      <i class="fal fa-lightbulb-slash"></i>
+      Off
       <label class="theme-switch" for="light-dark-switch">
         <input type="checkbox" id="light-dark-switch">
         <div class="slider round"></div>
       </label>
-      <i class="fal fa-lightbulb-on"></i>
+      On
     </div>
     <div class="color-switch-wrapper">
       <label id="color-switch" for="radio">
