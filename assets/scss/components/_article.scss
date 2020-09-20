@@ -20,6 +20,10 @@
     }
 
     @media #{$breakpoint__991--max} {
+      .posted-on {
+        margin-bottom: .25em;
+      }
+
       .tags {
         margin: 0;
       }
