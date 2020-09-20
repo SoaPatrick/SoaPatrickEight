@@ -23,7 +23,7 @@ get_header(); ?>
     </header>
 
     <div class="grid">
-      <div class="tag--list">
+      <div class="tags">
         <?php
           $args = array(
             'orderby'    => 'name',
@@ -38,7 +38,7 @@ get_header(); ?>
               continue;
             }
             printf(
-              '<a href="%s" class="btn btn-small">%s</a>',
+              '<a href="%s">%s</a>',
               $url,
               $term->name
             );

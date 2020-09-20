@@ -4,7 +4,7 @@
 
 .factory-list {
   color: var(--color__text);
-  font-size: $font-size__smaller;
+  font-size: $font-size__small;
 
   @media #{$breakpoint__1199--max} {
     font-size: calc(10px + 1vw);

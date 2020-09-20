@@ -24,15 +24,16 @@ get_header();
     </header>
 
     <div class="grid">
-      <div class="tag--list">
+      <div class="tags">
         <?php
-          $tags = get_tags('post_tag');
-          if ( $tags ) :
-              foreach ( $tags as $tag ) : ?>
-                <a class="btn btn-small" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( $tag->name ); ?>"><?php echo esc_html( $tag->name ); ?></a></li>
-              <?php
-            endforeach;
-          endif;
+
+          $args = array(
+            'smallest'                  => .63,
+            'largest'                   => 2.5,
+            'unit'                      => 'rem'
+          );
+
+          wp_tag_cloud( $args );
         ?>
       </div>
     </div>

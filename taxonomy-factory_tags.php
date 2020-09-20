@@ -24,7 +24,7 @@ get_header(); ?>
     </header>
 
     <div class="grid">
-      <div class="tag--list">
+      <div class="tags">
         <?php
           $args = array(
             'orderby'    => 'name',
@@ -36,9 +36,9 @@ get_header(); ?>
           $currentTerm = $wp_query->get_queried_object();
             foreach ( $terms as $term ) {
               if ($currentTerm->term_id === $term->term_id)
-                echo '<a href="'. get_term_link( $term ) .'" class="btn btn-small btn-active">'. $term->name .'</a>';
+                echo '<a href="'. get_term_link( $term ) .'" class="active">'. $term->name .'</a>';
               else {
-                echo '<a href="'. get_term_link( $term ) .'" class="btn btn-small">'. $term->name .'</a>';
+                echo '<a href="'. get_term_link( $term ) .'">'. $term->name .'</a>';
               }
             }
         ?>
