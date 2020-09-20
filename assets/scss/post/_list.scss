@@ -19,7 +19,7 @@
 
   &__header {
     grid-area: header;
-    margin-bottom: .25rem;
+    margin-bottom: .5rem;
   }
 
   &__meta{
@@ -64,9 +64,33 @@
 
   .title-list {
     margin: 0;
+    font-size: 1.5rem;
 
     @media #{$breakpoint__767--max} {
       font-size: 1.2rem;
+    }
+
+    a {
+      color: var(--color__text);
+      border: 0;
+      padding: 0;
+
+      &:hover {
+        text-decoration: none;
+        background-repeat: no-repeat;
+        background-size: 100% 0.5px;
+        background-position: center bottom 15%;
+        background-origin: padding-box;
+        color: var(--color__text);
+        text-shadow:
+          3px 0 var(--color__wrapper),
+          2px 0 var(--color__wrapper),
+          2px 0 var(--color__wrapper),
+          -2px 0 var(--color__wrapper),
+          -2px 0 var(--color__wrapper),
+          -3px 0 var(--color__wrapper);
+        background-image: linear-gradient(var(--color__text),var(--color__text));
+      }
     }
   }
 }
