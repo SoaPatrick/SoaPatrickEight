@@ -34,11 +34,7 @@
 
   <div class="site-wrapper">
     <?php
-      if ( is_home() && !is_paged() ) :
-        get_template_part( 'template-partials/layout/header', 'home');
-      else :
-        get_template_part( 'template-partials/layout/header', 'not_home');
-      endif;
+      get_template_part( 'template-partials/layout/header', 'sp8');
     ?>
     <div class="site-content">
 
