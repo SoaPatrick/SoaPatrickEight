@@ -83,12 +83,12 @@
         background-origin: padding-box;
         color: var(--color__text);
         text-shadow:
-          3px 0 var(--color__wrapper),
-          2px 0 var(--color__wrapper),
-          2px 0 var(--color__wrapper),
-          -2px 0 var(--color__wrapper),
-          -2px 0 var(--color__wrapper),
-          -3px 0 var(--color__wrapper);
+          1px 2px var(--color__wrapper),
+          2px 2px var(--color__wrapper),
+          3px 2px var(--color__wrapper),
+          -1px 2px var(--color__wrapper),
+          -2px 2px var(--color__wrapper),
+          -3px 2px var(--color__wrapper);
         background-image: linear-gradient(var(--color__text),var(--color__text));
       }
     }
