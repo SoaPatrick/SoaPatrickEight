@@ -31,10 +31,24 @@ h4 {
  * -----------------------------------------------------------
  */
 
-a {
+ a {
+  color: var(--color__highlight);
+  font-weight: $font-weight__regular;
   text-decoration: none;
-  color: currentColor;
+  padding-bottom: 1px;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    color: var(--color__highlight);
+    //text-decoration: underline;
+    border-bottom: 1px solid currentColor;
+  }
+
+  &:focus {
+    outline: $outline;
+  }
 }
+
 
 
 /*

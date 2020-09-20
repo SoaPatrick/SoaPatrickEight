@@ -8,75 +8,8 @@
   grid-template-columns: 3fr 1fr;
   gap: 1rem;
 
-  a {
-    background-image: linear-gradient($color__white, $color__white);
-    border-bottom: 1px solid $color__white;
-    background-repeat: no-repeat;
-    transition: background-size .2s, color .2s;
-    background-position: 50% calc(100% + .1em);
-    background-size: 100% 0%;
-    padding: .1em;
-    margin-right: -.1em;
-    margin-left: -.1em;
-
-    &:hover {
-      background-size: 100% calc(100% + .1em);
-    }
-  }
-
   &__data-protection {
-    align-self: center;
+    align-self: end;
     justify-self: right;
-
-    a {
-      position: relative;
-
-      span {
-        display: flex;
-        white-space: nowrap;
-        align-items: center;
-        height: auto;
-        position: absolute;
-        z-index: 0;
-        right: 1rem;
-        top: -.5rem;
-        visibility: hidden;
-        background-color: var(--color__text);
-        color: var(--color__body);
-        padding: .5rem 1.25rem;
-        font-weight: 400;
-        border-radius: 2rem;
-      }
-
-      &:hover {
-        text-decoration: none;
-        span {
-          visibility: visible;
-        }
-      }
-    }
-  }
-
-  svg {
-    display: block;
-    font-size: 1.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .secondary {
-    fill: var(--color__text);
-    opacity: 1;
-  }
-
-  &.highlight {
-    .secondary {
-      fill: $color__white;
-      opacity: 1;
-    }
-
-    .primary {
-      fill: $color__gray--darker;
-    }
   }
 }

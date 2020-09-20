@@ -10,26 +10,14 @@
   font-size: inherit;
   display: inline-block;
   border-radius: 2em;
-  font-weight: $font-weight__regular;
-
-  position: relative;
-  display: inline-block;
-
-  background-image: linear-gradient(var(--color__highlight), var(--color__highlight));
-  background-repeat: no-repeat;
-  transition: background-size .2s, color .2s;
-  background-position: 50% calc(100% + .5em);
-  background-size: 100% 0%;
-
-  &:hover {
-    background-size: 100% calc(100% + .5em);
-  }
 
   &:hover,
   &:focus {
+    background: var(--color__highlight);
     color: $color__white;
     font-weight: $font-weight__regular;
     text-decoration: none;
+    border: $border-width__btn solid var(--color__highlight);
   }
 }
 

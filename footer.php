@@ -18,7 +18,7 @@
         <?php echo sprintf( __( 'Stuff from 2000 to %s by SoaPatrick<a href="%s">Eight</a>', 'soapatrickeight' ), date('Y'), esc_url( home_url( '/log' )) ); ?>
       </p>
       <p class="site-footer__data-protection">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>data-protection" aria-label="<?php esc_html_e( 'Data Protection', 'soapatrickeight' ); ?>"><?php esc_html_e( 'Data Protection', 'soapatrickeight' ); ?></a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>data-protection" aria-label="<?php esc_html_e( 'Privacy', 'soapatrickeight' ); ?>"><?php esc_html_e( 'Privacy', 'soapatrickeight' ); ?></a>
       </p>
     </footer>
 
