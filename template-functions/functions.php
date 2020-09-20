@@ -56,7 +56,7 @@ if ( ! function_exists( 'soapatrickeight_tags' ) ) :
     }
 
     if ( $tags_list ) {
-      echo '<div class="tags"><span class="tags-links">' . $tags_list . '</span></div>';
+      echo '<div class="tags">' . $tags_list . '</div>';
     }
   }
 endif;

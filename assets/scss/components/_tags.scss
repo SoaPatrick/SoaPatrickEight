@@ -1,0 +1,23 @@
+/*--------------------------------------------------------------
+#Tags
+--------------------------------------------------------------*/
+
+.tags a {
+  position: relative;
+  margin-right: .75em;
+  margin-bottom: .25em;
+  display: inline-block;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:before {
+    color: var(--color__text);
+    content: "#";
+  }
+
+  &.active {
+    color: var(--color__text);
+  }
+}

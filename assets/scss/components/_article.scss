@@ -9,34 +9,15 @@
     display: flex;
     flex-wrap: wrap;
 
-    .posted-on a,
-    .tags a {
-      margin-bottom: .5em;
-      margin-right: 2em;
-      display: inline-block;
-    }
+    .posted-on,
+    .tags {
+      margin-right: 2rem;
 
-    .tags a {
-      position: relative;
-      margin-right: .75em;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &:before {
-        color: var(--color__text);
-        content: "#";
+      a {
+        margin-bottom: .25em;
+        display: inline-block;
       }
     }
-
-    // .edit:before,
-    // .tags:before,
-    // .posted-on:before {
-    //   content: "•";
-    //   margin: 0 .75em;
-    //   color: var(--color__text);
-    // }
 
     @media #{$breakpoint__991--max} {
       .tags {
@@ -69,6 +50,7 @@
         display: inline-block;
         transform: rotate(-35deg);
         content: "\293B\00A0";
+        line-height: 0;
       }
     }
   }
