@@ -24,7 +24,7 @@ get_header();
     </header>
 
     <div class="grid">
-      <div class="tags">
+      <div class="tags tags--cloud">
         <?php
 
           $args = array(

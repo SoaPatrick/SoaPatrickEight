@@ -2,23 +2,32 @@
 #Tags
 --------------------------------------------------------------*/
 
-.tags a {
-  position: relative;
-  margin-right: .75em;
-  margin-bottom: .25em;
-  display: inline-block;
-  font-size: $font-size__small;
-
-  &:last-child {
-    margin-right: 0;
+.tags {
+  &--cloud {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
-  &:before {
-    color: var(--color__text);
-    content: "#";
-  }
+  a {
+    position: relative;
+    margin-right: .75rem;
+    margin-bottom: .25rem;
+    display: inline-block;
+    font-size: $font-size__small;
 
-  &.active {
-    color: var(--color__text);
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:before {
+      color: var(--color__text);
+      content: "#";
+    }
+
+    &.active {
+      color: var(--color__text);
+    }
   }
 }
