@@ -16,10 +16,10 @@
                 "id": ""
             },
             "choices": {
-                "fal fa-plus-circle": "Added",
-                "fal fa-minus-circle": "Removed",
-                "fal fa-wrench": "Changed",
-                "fal fa-bug": "Fixed"
+                "added": "Added",
+                "removed": "Removed",
+                "changed": "Changed",
+                "fixed": "Fixed"
             },
             "default_value": [],
             "allow_null": 0,
