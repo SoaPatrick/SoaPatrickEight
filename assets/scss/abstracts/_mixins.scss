@@ -9,108 +9,12 @@
   }
 }
 
-// Reset browsers default button styling
-@mixin btn--reset() {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  font: inherit;
-  color: inherit;
-  background: none;
-  text-decoration: none;
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-// Reset Browser default input styling
-@mixin input--reset() {
-  border-radius: 0;
-  box-shadow: none;
-  appearance: none;
-  border: 0;
-  padding: 0;
-  max-width: 100%;
-  font: inherit;
-  -moz-appearance: none; // sass-lint:disable-line no-vendor-prefixes
-  -webkit-appearance: none; // sass-lint:disable-line no-vendor-prefixes
-
-  &:focus {
-    outline: none;
-  }
-}
-
-// Reset Browser default list styling
-@mixin list--reset() {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  li {
-    padding: 0;
-  }
-}
-
-// Placeholder Text Mixin
-// usage: @include input--placeholder() { color: red; }
-@mixin input--placeholder() {
-  $selector: '';
-  $prefixes: (
-      moz: "::-moz",
-      webkit: "::-webkit",
-      ie: ":-ms"
-  );
-  @each $prop, $value in $prefixes {
-      @if $prop != "moz" {
-          $selector: #{$value}-input-placeholder;
-      } @else {
-          $selector: #{$value}-placeholder;
-      }
-      @if & {
-          &#{$selector} {
-              @content;
-          }
-      } @else {
-          #{$selector} {
-              @content;
-          }
-      }
-  }
-  &::placeholder {
-    @content;
-  }
-}
-
-// Hyphens Mixin
-@mixin hyphens() {
-  -webkit-hyphens: auto;
-  -webkit-hyphenate-limit-before: 3;
-  -webkit-hyphenate-limit-after: 3;
-  -webkit-hyphenate-limit-chars: 6 3 3;
-  -webkit-hyphenate-limit-lines: 2;
-  -webkit-hyphenate-limit-last: always;
-  -webkit-hyphenate-limit-zone: 8%;
-
-  -moz-hyphens: auto;
-  -moz-hyphenate-limit-chars: 6 3 3;
-  -moz-hyphenate-limit-lines: 2;
-  -moz-hyphenate-limit-last: always;
-  -moz-hyphenate-limit-zone: 8%;
-
-  -ms-hyphens: auto;
-  -ms-hyphenate-limit-chars: 6 3 3;
-  -ms-hyphenate-limit-lines: 2;
-  -ms-hyphenate-limit-last: always;
-  -ms-hyphenate-limit-zone: 8%;
-
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
-  hyphenate-limit-lines: 2;
-  hyphenate-limit-last: always;
-  hyphenate-limit-zone: 8%;
+// mixin for random bubbles
+@mixin bubbles($left, $scale, $opacity, $moveclouds, $sideways, $delay) {
+  left: $left;
+  transform: scale($scale);
+  opacity: $opacity;
+  animation: moveclouds $moveclouds linear $delay infinite,sideWays $sideways ease-in-out infinite alternate;
 }
 
 // mixin hover bob animation
@@ -144,5 +48,19 @@
 
 // mixin hover bob animation font-size
 @mixin bob-animation-font-size() {
-  font-size: calc(7px + .8vw);
+  @media #{$breakpoint__1200--min} {
+    font-size: calc(7px + .8vw);
+  }
+
+  @media #{$breakpoint__1500--min} {
+    font-size: 1rem;
+  }
+
+  @media #{$breakpoint__1199--max} {
+    font-size: calc(10px + 1vw);
+  }
+
+  @media #{$breakpoint__767--max} {
+    font-size: calc(5px + 1.2vw);
+  }
 }

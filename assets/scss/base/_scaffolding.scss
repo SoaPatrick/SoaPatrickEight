@@ -2,75 +2,80 @@
 #Scaffolding
 --------------------------------------------------------------*/
 
+html {
+  font-size: $font-size__base;
+}
 
 html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+}
 
-  *,
-  *::before,
-  *::after {
-    transition: background .15s linear, fill .15s linear;
+body {
+  font-family: $font-family__base;
+  font-weight: $font-weight__light;
+  background: var(--color__body);
+  color: var(--color__text);
+  -webkit-font-smoothing: antialiased;
+
+  @media #{$breakpoint__992--min} {
+    margin: $margin__body $navbar__width;
   }
 }
 
-.site {
-  height: 100%;
-  display: grid;
-  grid-template-columns: $navbar--width auto;
-  grid-template-areas: "navigation wrapper";
-
-  @media (max-width: 911px) {
-    display: block;
-  }
-
-  &-navigation {
-    grid-area: navigation;
-  }
-
-  &-wrapper {
-    grid-area: wrapper;
-    display: grid;
-    grid-template-columns: minmax(700px, auto) minmax(400px, 650px);
-    grid-template-areas: "main bubbles" "main footer";
-
-    @media (max-width: 1640px) {
-      grid-template-columns: minmax(600px, 850px) auto;
-      grid-template-areas: "main bubbles" "footer bubbles";
-    }
-
-    @media (max-width: 911px) {
-      display: block;
-    }
-  }
-
-  &-main {
-    grid-area: main;
-  }
-
-  &-bubbles {
-    grid-area: bubbles;
-
-    @media (max-width: 911px) {
-      display: none;
-    }
-  }
-
-  &-footer {
-    grid-area: footer;
-  }
-}
-
-
-.soa,
-.patrick {
-  display: inline-block;
-  margin-bottom: 4rem;
-}
-
-.patrick {
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color__wrapper);
   position: relative;
-  top: .21em;
+  z-index: 1;
+
+  @media #{$breakpoint__991--max} {
+    margin-bottom: $navbar__height;
+    min-height: calc(100vh - #{$navbar__height});
+  }
+
+  @media #{$breakpoint__992--min} {
+    box-shadow: $shadow__quarter;
+    margin-bottom: $margin__body;
+    min-height: calc(100vh - 2 * #{$margin__body});
+  }
+
+  .site-footer,
+  .site-header {
+    flex: none;
+  }
+
+  .site-content {
+    flex: 1 0 auto;
+    padding: 4rem 0;
+    overflow-x: hidden;
+
+    > article:first-child {
+      padding-top: 0;
+    }
+
+    > article:nth-last-child(2) {
+      padding-bottom: 4rem;
+    }
+  }
+}
+
+body.single .site-content {
+  padding-bottom: 0;
+}
+
+// scollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color__highlight);
 }

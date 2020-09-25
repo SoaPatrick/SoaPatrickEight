@@ -8,18 +8,7 @@
  */
 
 get_header();
-?>
 
-  <section>
-    <header>
-      <h1><?php esc_html_e( 'Oops!', 'soapatrickeight' ); ?></h1>
-    </header>
+  get_template_part( 'template-partials/content/content', 'none' );
 
-    <div>
-      <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'soapatrickeight' ); ?></p>
-      <?php get_search_form(); ?>
-    </div>
-  </section>
-
-<?php
 get_footer();

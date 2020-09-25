@@ -35,23 +35,29 @@
   &__close {
     position: absolute;
     z-index: 5;
-    right: .75rem;
-    top: .75rem;
+    right: .5rem;
+    top: .5rem;
     cursor: pointer;
+    line-height: 0;
   }
 
   .container {
     position: relative;
     background: var(--color__text);
-    color: var(--color__sidepanel);
-    box-shadow: $shadow__quarter;
+    color: var(--color__body);
+    box-shadow: $shadow__half;
     padding: 2rem 1rem;
+  }
+
+  .svg-inline {
+    color: var(--color__body);
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   h2 {
     text-align: center;
     margin-top: 0;
-    color: var(--color__sidepanel);
   }
 }
 
@@ -64,10 +70,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  .svg-inline--fa {
-    font-size: 1.3rem;
-  }
 
   .theme-switch {
     display: inline-block;
@@ -153,7 +155,7 @@
     outline: none;
 
     &:checked {
-      border-color: var(--color__sidepanel);
+      border-color: var(--color__body);
     }
   }
 

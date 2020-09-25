@@ -10,19 +10,20 @@
 get_header(); ?>
   <section class="factory-list">
 
-    <div class="breadcrumbs-wrapper">
+    <div class="grid breadcrumbs-wrapper">
       <nav class="breadcrumbs">
         <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
         <span class="breadcrumbs--item__last"><?php esc_html_e( 'Factory', 'soapatrickeight' ) ?></span>
       </nav>
     </div>
 
-    <header>
-      <h1><?php esc_html_e( 'Factory', 'soapatrickeight' ) ?></h1>
+    <header class="grid">
+      <h1 class="title-large"><?php esc_html_e( 'Factory', 'soapatrickeight' ) ?></h1>
+      <hr>
     </header>
 
-    <div class="content-grid">
-      <div class="factory-list__tags">
+    <div class="grid">
+      <div class="tags">
         <?php
           $args = array(
             'orderby'    => 'name',
@@ -46,8 +47,8 @@ get_header(); ?>
       </div>
     </div>
 
-    <div class="content-grid">
-      <div class="factory-list__list alignwide-content">
+    <div class="grid">
+      <div class="factory-list__list">
         <?php
           if ( have_posts() ) :
             while ( have_posts() ) : the_post();
@@ -61,7 +62,6 @@ get_header(); ?>
   </section>
 
   <?php soapatrickeight_posts_navigation(); ?>
-
 
 <?php
 get_footer();

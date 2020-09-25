@@ -1,0 +1,19 @@
+/*--------------------------------------------------------------
+#Breadcrumbs
+--------------------------------------------------------------*/
+
+.breadcrumbs {
+  font-size: $font-size__small;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    &:after {
+      content: "/";
+      padding: 0 .5em;
+      font-weight: bold;
+      opacity: .25;
+    }
+  }
+}

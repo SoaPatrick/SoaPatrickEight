@@ -13,4 +13,3 @@ require get_template_directory() . '/template-functions/customizer.php';
 require get_template_directory() . '/template-functions/functions.php';
 require get_template_directory() . '/template-functions/custom-post-type.php';
 require get_template_directory() . '/template-functions/taxonomies.php';
-require get_template_directory() . '/template-functions/widget-areas.php';

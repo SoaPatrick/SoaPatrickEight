@@ -11,7 +11,7 @@
 
 <article id="factory-<?php the_ID(); ?>" <?php post_class( 'article' ); ?>>
 
-  <div class="breadcrumbs-wrapper">
+  <div class="grid breadcrumbs-wrapper">
     <nav class="breadcrumbs">
       <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
       <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/factory/"><?php esc_html_e( 'Factory', 'soapatrickeight' ) ?></a></span>
@@ -19,18 +19,19 @@
     </nav>
   </div>
 
-  <header class="article__header">
+  <header class="grid article__header">
     <?php the_title( '<h1 class="title-large">', '</h1>' ); ?>
 
     <div class="article__meta">
       <?php
         soapatrickeight_posted_on();
         soapatrickeight_tags();
+        soapatrickeight_edit_post();
       ?>
     </div>
   </header>
 
-  <div class="content-grid article__content">
+  <div class="grid article__content">
     <?php the_content(); ?>
   </div>
 
@@ -57,7 +58,7 @@
             <div class="related__items related--post__items">
               <?php
                 while( $projects->have_posts() ) : $projects->the_post();
-                  get_template_part( 'template-partials/content/content' );
+                  get_template_part( 'template-partials/content/content', 'list' );
                 endwhile;
               ?>
             </div>

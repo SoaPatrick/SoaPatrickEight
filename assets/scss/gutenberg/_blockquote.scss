@@ -1,0 +1,38 @@
+/*--------------------------------------------------------------
+#Blockquote
+--------------------------------------------------------------*/
+
+ blockquote.wp-block-quote  {
+  margin: $margin__base 0;
+  padding: 0 $margin__base;
+  border-left: $border-width__blockquote solid var(--color__highlight);
+
+  p {
+    font-weight: 400;
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  &.is-style-large {
+    margin: $margin__base 0;
+    padding: 0 calc(#{$margin__base} * 2);
+
+    p {
+      font-size: $font-size__h3;
+      line-height: 1.4;
+    }
+  }
+
+  cite,
+  cite em {
+    font-style: normal;
+    font-size: $font-size__small;
+    font-weight: $font-weight__regular;
+  }
+}

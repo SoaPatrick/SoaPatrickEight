@@ -1,8 +1,7 @@
 /*--------------------------------------------------------------
-#Functions
+#Single
 --------------------------------------------------------------*/
 
-// z-index map function
-@function z($key) {
-  @return map-get($z-index, $key);
+.post-single {
+  padding: 4rem 0;
 }

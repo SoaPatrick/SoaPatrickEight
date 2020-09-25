@@ -3,52 +3,13 @@
 --------------------------------------------------------------*/
 
 .site-footer {
-  position: relative;
-  background: var(--color__highlight);
-  padding: $margin__base;
-  padding-top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: var(--color__background);
-  font-weight: $font-weight__regular;
-  overflow: hidden;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
 
-  @media (min-width: 912px) {
-    min-width: 400px;
-  }
-
-  a:hover,
-  a:active {
-    color: var(--color__text);
-  }
-
-  &__related {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-
-    h1 {
-      margin-top: 0;
-    }
-  }
-
-  &__copyright {
-    margin-bottom: 0;
-  }
-}
-
-
-.site-bubbles {
-  background: var(--color__highlight);
-  overflow: hidden;
-
-  svg {
-    height: 50vh;
-    width: auto;
-  }
-
-  .cls-1 {
-    fill: var(--color__background);
+  &__data-protection {
+    align-self: end;
+    justify-self: right;
   }
 }

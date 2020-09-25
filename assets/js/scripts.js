@@ -1,12 +1,12 @@
-// script stuff
-
-
 window.onload = function(){
 
-  // toggle Settings from Navigation
-  document.getElementById('toggle-navigation').onclick = function() {
-    document.getElementById('navigation').classList.toggle('open');
-    document.getElementById('toggle-navigation').classList.toggle('active');
+  // open/close search
+  document.getElementById('toggle-search-collapse').onclick = function() {
+    document.getElementById('search-collapse').classList.toggle('open');
+    document.getElementById('toggle-search-collapse').classList.toggle('active');
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.getElementById('search-collapse--input').value = "";
   };
 
   // toggle Settings from Navigation
@@ -33,8 +33,8 @@ window.onload = function(){
     }
     allCodeBlocks[i].insertAdjacentHTML('afterbegin', '<div class="prism-language">'+ codeLang +'</div>');
   }
-
 };
+
 
 // script to load YouTube Videos only on
 // click on Preview Image
@@ -68,6 +68,7 @@ function ytIframe() {
   iframe.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
   this.parentNode.replaceChild(iframe, this);
 }
+
 
 // script to toggle between light and dark
 // mode and store setting in local storage

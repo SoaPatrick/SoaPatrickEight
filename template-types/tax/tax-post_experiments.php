@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom taxonomy Projects
+ * Custom taxonomy Post Projects
  *
  * @link https://generatewp.com/taxonomy/
  *

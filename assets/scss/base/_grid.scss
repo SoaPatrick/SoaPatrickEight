@@ -1,0 +1,37 @@
+/*----------------------------------------------
+#Grid
+----------------------------------------------*/
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax($margin__body,1fr) minmax(0,375px) minmax(500px,750px) minmax(0,375px) minmax($margin__body,1fr);
+
+  > * {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+
+  .alignwide {
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+
+  .alignfull {
+    grid-column-start: 1;
+    grid-column-end: 6;
+  }
+}
+
+@media #{$breakpoint__991--max} {
+  .grid {
+    grid-template-columns: minmax($margin__base,1fr) 0 minmax(auto,550px) 0 minmax($margin__base,1fr);
+
+    > .wp-block-embed-youtube,
+    > .wp-block-image,
+    > .wp-block-video,
+    > .wp-block-gallery {
+      grid-column-start: 1;
+      grid-column-end: 6;
+    }
+  }
+}

@@ -3,14 +3,17 @@
 --------------------------------------------------------------*/
 
 /*
-This file is used to contain all component imports.
+This file is used to contain all layout imports.
 Files inside this folder can contain specific element styles and layout.
-Unique combinations of components and base styles are imported here
+Unique combinations of layouts and base styles are imported here
 */
 
 //Import Layout files
 @import "navigation";
-@import "main";
-@import "footer";
-@import "search";
 @import "settings";
+@import "search";
+@import "header-home";
+@import "header-not-home";
+@import "factory-feed";
+@import "related";
+@import "footer";

@@ -1,0 +1,47 @@
+/*--------------------------------------------------------------
+#Highlight
+--------------------------------------------------------------*/
+
+.highlight {
+  color: $color__white;
+  background: var(--color__highlight);
+
+  a,
+  .post-list .title-list a {
+    color: $color__gray--dark;
+
+    &:hover {
+      color: $color__white;
+    }
+
+    &:focus {
+      outline: $outline-highlight;
+    }
+  }
+
+  .post-list .title-list a {
+    &:hover {
+      text-shadow:
+        1px 2px var(--color__highlight),
+        2px 2px var(--color__highlight),
+        3px 2px var(--color__highlight),
+        -1px 2px var(--color__highlight),
+        -2px 2px var(--color__highlight),
+        -3px 2px var(--color__highlight);
+      background-image: linear-gradient($color__white,$color__white);
+    }
+  }
+
+  .post-list__icon {
+    background: $color__white;
+    color: var(--color__highlight);
+
+    &--image {
+      background: none;
+    }
+  }
+
+  .article__meta .tags a:before {
+    color: $color__white;
+  }
+}

@@ -1,0 +1,33 @@
+/*--------------------------------------------------------------
+#Tags
+--------------------------------------------------------------*/
+
+.tags {
+  &--cloud {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    position: relative;
+    margin-right: .75rem;
+    margin-bottom: .25rem;
+    display: inline-block;
+    font-size: $font-size__small;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:before {
+      color: var(--color__text);
+      content: "#";
+    }
+
+    &.active {
+      color: var(--color__text);
+    }
+  }
+}

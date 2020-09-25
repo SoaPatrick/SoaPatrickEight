@@ -18,12 +18,13 @@ get_header(); ?>
       </nav>
     </div>
 
-    <header>
+    <header class="grid">
       <h1 class="title-large"><?php echo single_term_title(); ?></h1>
+      <hr>
     </header>
 
-    <div class="content-grid">
-      <div class="factory-list__tags">
+    <div class="grid">
+      <div class="tags">
         <?php
           $args = array(
             'orderby'    => 'name',
@@ -44,8 +45,8 @@ get_header(); ?>
       </div>
     </div>
 
-    <div class="content-grid">
-      <div class="factory-list__list alignwide-content">
+    <div class="grid">
+      <div class="factory-list__list">
         <?php
           if ( have_posts() ) :
             while ( have_posts() ) : the_post();
@@ -57,6 +58,8 @@ get_header(); ?>
     </div>
 
   </section>
+
+  <?php soapatrickeight_posts_navigation(); ?>
 
 <?php
 get_footer();

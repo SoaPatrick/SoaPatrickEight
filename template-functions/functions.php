@@ -25,89 +25,52 @@ function soapatrickeight_allowed_block_types( $allowed_blocks ) {
 }
 add_filter( 'allowed_block_types', 'soapatrickeight_allowed_block_types' );
 
-
 /**
- * Adds custom classes to the array of body classes.
- */
-function soapatrickeight_one_body_classes( $classes ) {
-
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar' ) ) {
-		$classes[] = 'no-sidebar';
-  }
-
-	return $classes;
-}
-add_filter( 'body_class', 'soapatrickeight_one_body_classes' );
-
-
-/**
- * Prints HTML with meta information for the current post-date/time.
+ * posted on functions for blog posts
+ *
  */
 if ( ! function_exists( 'soapatrickeight_posted_on' ) ) :
-	function soapatrickeight_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-		}
+  function soapatrickeight_posted_on() {
+    $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+    $time_string = sprintf( $time_string, esc_attr( get_the_date( DATE_W3C ) ), esc_html( get_the_date() ) );
+    $posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
-		);
-
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'soapatrickeight' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
-
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-
-	}
+    echo  '<div class="posted-on">' . $posted_on .'</div>'; // WPCS: XSS OK.
+  }
 endif;
 
 
 /**
- * Prints HTML with meta information for the current author.
- */
-if ( ! function_exists( 'soapatrickeight_posted_by' ) ) :
-	function soapatrickeight_posted_by() {
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'soapatrickeight' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
-
-		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
-	}
-endif;
-
-
-/**
- * Prints HTML with meta information for the tags.
+ * tags function for blog posts and factory items
+ *
  */
 if ( ! function_exists( 'soapatrickeight_tags' ) ) :
-	function soapatrickeight_tags() {
-		// Hide  tag text for pages.
+  function soapatrickeight_tags() {
+
     if ( 'post' === get_post_type() ) {
-      $tags_list = get_the_term_list( $post->ID , 'post_tag', '', ', ' );
+      $tags_list = get_the_term_list( $post->ID , 'post_tag', '', '' );
     }
 
     if ( 'factory' === get_post_type() ) {
-      $tags_list = get_the_term_list( $post->ID , 'factory_tags', '', ', ' );
+      $tags_list = get_the_term_list( $post->ID , 'factory_tags', '', '' );
     }
 
     if ( $tags_list ) {
-      /* translators: 1: list of tags. */
-      printf( '<span class="tags-links">' . esc_html_x( ' in %1$s', 'tags prefix ', 'soapatrickeight' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+      echo '<div class="tags">' . $tags_list . '</div>';
     }
-	}
+  }
 endif;
 
+
+/**
+ * Edit link for blog posts and factory items
+ *
+ */
+if ( ! function_exists( 'soapatrickeight_edit_post' ) ) :
+  function soapatrickeight_edit_post() {
+    edit_post_link( __( 'Edit', 'soapatrickeight' ), '<div class="edit">', '</div>' );
+  }
+endif;
 
 
 /**
@@ -116,16 +79,10 @@ endif;
  */
 if ( ! function_exists( 'soapatrickeight_post_navigation' ) ) :
   function soapatrickeight_post_navigation() {
-    echo '<nav class="post-navigation post-navigation--single">';
-    if ( 'post' === get_post_type() ) { ?>
-      <div class="post-navigation__previous"><?php next_post_link( '%link', __( 'Newer Post &rarr;', 'soapatrickeight' ) ); ?></div>
-      <div class="post-navigation__next"><?php previous_post_link('%link', __( '&larr;  Older Post', 'soapatrickeight' ) ); ?></div>
-    <?php }
-    if ( 'factory' === get_post_type() ) { ?>
-      <div class="post-navigation__previous"><?php next_post_link( '%link', __( 'Newer Item &rarr;', 'soapatrickeight' ) ); ?></div>
-      <div class="post-navigation__next"><?php previous_post_link('%link', __( '&larr;  Older Item', 'soapatrickeight' ) ); ?></div>
-    <?php }
-    echo '</nav>';
+    echo '<div class="grid"><nav class="post-navigation post-navigation--single">';
+    next_post_link( '%link', __( 'Next Post', 'soapatrickeight' ) );
+    previous_post_link('%link', __( 'Previous Post', 'soapatrickeight' ) );
+    echo '</nav></div>';
   }
 endif;
 
@@ -136,96 +93,53 @@ endif;
  */
 if ( ! function_exists( 'soapatrickeight_posts_navigation' ) ) :
 	function soapatrickeight_posts_navigation() {
-    echo '<nav class="post-navigation">';
-    if ( 'post' === get_post_type() ) { ?>
-      <div class="post-navigation__previous"><?php previous_posts_link( __( 'Newer Posts  &rarr;', 'soapatrickeight' ), '' ); ?></div>
-      <div class="post-navigation__next"><?php next_posts_link( __( '&larr; Older Posts', 'soapatrickeight' ), '' ); ?></div>
-    <?php }
-    if ( 'factory' === get_post_type() ) { ?>
-      <div class="post-navigation__previous"><?php previous_posts_link( __( 'Newer Items &rarr;', 'soapatrickeight' ), '' ); ?></div>
-      <div class="post-navigation__next"><?php next_posts_link( __( '&larr; Older Items', 'soapatrickeight' ), '' ); ?></div>
-    <?php }
+    echo '<div class="grid"><nav class="post-navigation">';
+    if ( 'post' === get_post_type() ) {
+      posts_nav_link( ' ', __( 'Next Posts', 'soapatrickeight' ), __( 'Previous Posts', 'soapatrickeight' ) );
+    }
+    if ( 'factory' === get_post_type() ) {
+      posts_nav_link( ' ', __( 'Next Items', 'soapatrickeight' ), __( 'Previous Items', 'soapatrickeight' ) );
+    }
     if ( 'log' === get_post_type() ) {
       next_posts_link( __( 'Load More', 'soapatrickeight' ) );
     }
-    echo '</nav>';
+    echo '</nav></div>';
 	}
 endif;
 
+
+/**
+ * add classes to next and previous Posts
+ *
+ */
+add_filter('next_posts_link_attributes', 'soapatrickeight_next_posts_link_class');
+add_filter('previous_posts_link_attributes', 'soapatrickeight_previous_posts_link_class');
+function soapatrickeight_next_posts_link_class() {
+  return 'class="btn post-navigation__previous"';
+}
+function soapatrickeight_previous_posts_link_class() {
+  return 'class="btn post-navigation__next"';
+}
 
 /**
  * add classes to next and previous Post
  *
  */
-add_filter('next_post_link', 'soapatrickseven_next_post_link_class');
-add_filter('previous_post_link', 'soapatrickseven_previous_post_link_class');
-function soapatrickseven_next_post_link_class($format){
+add_filter('next_post_link', 'soapatrickeight_next_post_link_class');
+add_filter('previous_post_link', 'soapatrickeight_previous_post_link_class');
+function soapatrickeight_next_post_link_class($format){
   $format = str_replace('href=', 'class="btn post-navigation__next" href=', $format);
   return $format;
 }
-function soapatrickseven_previous_post_link_class($format) {
+function soapatrickeight_previous_post_link_class($format) {
   $format = str_replace('href=', 'class="btn post-navigation__previous" href=', $format);
   return $format;
 }
 
 
-
-
-/**
- * Displays an optional post thumbnail.
- *
- * Wraps the post thumbnail in an anchor element on index views, or a div
- * element when on single views.
- */
-if ( ! function_exists( 'soapatrickeight_post_thumbnail' ) ) :
-	function soapatrickeight_post_thumbnail() {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-			return;
-		}
-
-		if ( is_singular() ) :
-			?>
-
-			<div>
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
-
-		<?php else : ?>
-
-		<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
-			?>
-		</a>
-
-		<?php
-		endif; // End is_singular().
-	}
-endif;
-
-
-/**
- * Remove Emojiscript
- */
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-
-
-/**
- * Deregister Embed script
- */
-function soapatrickeight_deregister_scripts(){
-	wp_deregister_script( 'wp-embed' );
-}
-add_action( 'wp_footer', 'soapatrickeight_deregister_scripts' );
-
-
 /**
  * Remove default image sizes from generating
+ *
  */
 function soapatrickeight_remove_default_image_sizes( $sizes ) {
   unset( $sizes[ 'medium_large' ]);
@@ -236,6 +150,43 @@ function soapatrickeight_remove_default_image_sizes( $sizes ) {
 }
 add_filter( 'intermediate_image_sizes_advanced', 'soapatrickeight_remove_default_image_sizes' );
 
+
+/**
+ * Attach a class to linked images' parent anchors
+ * Works for existing content
+ *
+ */
+function soapatrickeight_give_linked_images_class($content) {
+  $classes = 'img-link'; // separate classes by spaces - 'img image-link'
+  // check if there are already a class property assigned to the anchor
+  if ( preg_match('/<a.*? class=".*?"><img/', $content) ) {
+    // If there is, simply add the class
+    $content = preg_replace('/(<a.*? class=".*?)(".*?><img)/', '$1 ' . $classes . '$2', $content);
+  } else {
+    // If there is not an existing class, create a class property
+    $content = preg_replace('/(<a.*?)><img/', '$1 class="' . $classes . '" ><img', $content);
+  }
+  return $content;
+}
+add_filter('the_content','soapatrickeight_give_linked_images_class');
+
+
+/**
+ * wrap all iframes within content with a div and class
+ *
+ */
+function soapatrickeight_iframe_wrapper($content) {
+  $pattern = '~<iframe.*</iframe>|<embed.*</embed>~';
+  preg_match_all($pattern, $content, $matches);
+
+  foreach ($matches[0] as $match) {
+    $wrappedframe = '<div class="responsive-container">' . $match . '</div>';
+    $content = str_replace($match, $wrappedframe, $content);
+  }
+
+  return $content;
+}
+add_filter('the_content', 'soapatrickeight_iframe_wrapper');
 
 /**
  * Replace Youtube Videos with Preview Image instead
@@ -267,36 +218,6 @@ add_filter('the_content', 'soapatrickeight_youtube_embeded',1);
 
 
 /**
- * Replace Bracket with 'more' link in exceprt
- *
- */
-function soapatrickeight_excerpt_more( $more ) {
-  return ' ... <a href="'.get_the_permalink().'" rel="nofollow">more &rarr;</a>';
-}
-add_filter( 'excerpt_more', 'soapatrickeight_excerpt_more' );
-
-
-/**
- * Attach a class to linked images' parent anchors
- * Works for existing content
- *
- */
-function soapatrickeight_give_linked_images_class($content) {
-  $classes = 'img-link'; // separate classes by spaces - 'img image-link'
-  // check if there are already a class property assigned to the anchor
-  if ( preg_match('/<a.*? class=".*?"><img/', $content) ) {
-    // If there is, simply add the class
-    $content = preg_replace('/(<a.*? class=".*?)(".*?><img)/', '$1 ' . $classes . '$2', $content);
-  } else {
-    // If there is not an existing class, create a class property
-    $content = preg_replace('/(<a.*?)><img/', '$1 class="' . $classes . '" ><img', $content);
-  }
-  return $content;
-}
-add_filter('the_content','soapatrickeight_give_linked_images_class');
-
-
-/**
  * Remove archive title prefixes.
  *
  */
@@ -305,3 +226,119 @@ function soapatrickeight_archive_title( $title ) {
   return preg_replace( '#^[\w\d\s]+:\s*#', '', strip_tags( $title ) );
 }
 add_filter( 'get_the_archive_title', 'soapatrickeight_archive_title' );
+
+
+/**
+ * Adding simple page title to home page
+ *
+ */
+function soapatrickeight_home_page_title( $title ) {
+  if ( is_home() ):
+    return get_bloginfo('name');
+  endif;
+}
+add_filter( 'pre_get_document_title', 'soapatrickeight_home_page_title' );
+
+
+/**
+ * Adding noindex to specific pages that shouldn't be indexed
+ *
+ */
+function soapatrickeight_add_robots_noindes($output) {
+  if($paged > 1 || is_author() || is_tag() || is_date() || is_attachment() || is_singular('log') || is_post_type_archive('log') || is_tax('factory_tags') || is_page('storage') || is_page('tags')) {
+    echo '<meta name="robots" content="noindex">';
+  }
+}
+add_action('wp_head', 'soapatrickeight_add_robots_noindes', 1);
+
+
+/**
+ * Adding the Open Graph in the Language Attributes
+ *
+ */
+function soapatrickeight_add_opengraph_doctype($output) {
+  return $output . ' xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"';
+}
+add_action('wp_head', 'soapatrickeight_add_opengraph_doctype', 1);
+
+
+/**
+ * add Open Graph Meta Info
+ *
+ */
+function soapatrickeight_add_opengraph_infos() {
+
+  global $post;
+  $default_image = get_template_directory_uri().'/assets/favicon/android-chrome-512x512.png';
+
+  // if page is not single
+  if ( !is_singular() ) {
+    echo '<meta name="description" content="' . get_bloginfo('description') . '"/>';
+    echo '<meta property="og:type" content="article"/>';
+    echo '<meta property="og:title" content="' . get_bloginfo('name') . '"/>';
+    echo '<meta property="og:description" content="' . get_bloginfo('description') . '"/>';
+    echo '<meta property="og:image" content="' . $default_image . '"/>';
+    echo '<meta name="twitter:image" content="' . $default_image . '"/>';
+    return;
+  }
+
+  // if post has excerpt or not
+  if ($excerpt = $post->post_excerpt) {
+    $excerpt = esc_html(strip_tags($post->post_excerpt));
+  } else {
+    $excerpt = esc_html(wp_trim_words($post->post_content,20));
+  }
+
+  // basic meta infos
+  echo '<meta name="description" content="' . $excerpt . '"/>';
+  echo '<meta property="og:type" content="article"/>';
+  echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+  echo '<meta property="og:description" content="' . $excerpt . '"/>';
+  echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+  echo '<meta property="og:site_name" content="' . get_bloginfo() . '"/>';
+
+  // if post has featured image or not
+  if ( !has_post_thumbnail($post->ID) ) {
+    echo '<meta property="og:image" content="' . $default_image . '"/>';
+  } else {
+  $thumbnail_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
+    echo '<meta property="og:image" content="' . esc_attr($thumbnail_src[0]) . '"/>';
+  }
+
+  echo '<meta name="twitter:title" content="' . get_the_title() . '"/>';
+  echo '<meta name="twitter:card" content="summary" />';
+  echo '<meta name="twitter:description" content="' . $excerpt . '" />';
+  echo '<meta name="twitter:url" content="' . get_permalink() . '"/>';
+
+  // if post has featured image or not
+  if ( !has_post_thumbnail($post->ID) ) {
+    echo '<meta name="twitter:image" content="' . $default_image . '"/>';
+  } else {
+    $thumbnail_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
+    echo '<meta name="twitter:image" content="' . esc_attr($thumbnail_src[0]) . '"/>';
+  }
+}
+add_action('wp_head', 'soapatrickeight_add_opengraph_infos', 1);
+
+
+/**
+ * Strip body of unwanted classes
+ *
+ */
+function soapatrickeight_body_class( $wp_classes, $extra_classes ) {
+  // List of the only WP generated classes allowed
+  $whitelist = array( 'admin-bar', 'single' );
+
+  // List of the only WP generated classes that are not allowed
+  $blacklist = array( 'home', 'blog', 'archive', 'single', 'category', 'tag', 'error404', 'logged-in', 'admin-bar' );
+
+  // Filter the body classes
+  // Whitelist result: (comment if you want to blacklist classes)
+  $wp_classes = array_intersect( $wp_classes, $whitelist );
+  // Blacklist result: (uncomment if you want to blacklist classes)
+  # $wp_classes = array_diff( $wp_classes, $blacklist );
+
+  // Add the extra classes back untouched
+  return array_merge( $wp_classes, (array) $extra_classes );
+}
+add_filter( 'body_class', 'soapatrickeight_body_class', 10, 2 );

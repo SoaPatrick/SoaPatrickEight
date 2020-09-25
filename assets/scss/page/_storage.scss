@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+#Storage
+--------------------------------------------------------------*/
+
+.storage {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__year {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    @media #{$breakpoint__370--max}{
+      width: calc(100%/2);
+    }
+
+    @media #{$breakpoint__371--min} {
+      width: calc(100%/3);
+    }
+
+    @media #{$breakpoint__768--min} {
+      width: calc(100%/4);
+    }
+
+    @media #{$breakpoint__1200--min} {
+      width: calc(100%/5);
+    }
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin-top: 0;
+      list-style: none;
+      padding: 0;
+
+      li::before {
+        content: none;
+      }
+    }
+  }
+}

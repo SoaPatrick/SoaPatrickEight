@@ -2,164 +2,165 @@
 #Navigation
 --------------------------------------------------------------*/
 
-.site-header {
-  background: var(--color__sidepanel);
+.site-navigation {
+  top: 0;
+  bottom: auto;
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: calc(#{$navbar--width} - 2rem);
 
-  .navbar {
-    font-family: $font-family__heading;
-    font-size: $font-size__h3;
-    position: fixed;
-    bottom: calc(#{$margin__base} - 5px);
-    left: $margin__base;
-    width: calc(#{$navbar--width} - 2 * #{$margin__base});
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 
-    @media (max-width: 911px) {
-      position: static;
+    li:before {
+      content: none;
     }
+  }
 
-    &-brand {
-      border: 0;
-      padding: 0;
 
-      svg {
-        height: 4rem;
-        fill: var(--color__highlight);
-        transition: all .15s ease-in-out;
-      }
+  &__icon {
+    display: none;
+
+    &--home {
+      display: block;
+      height: 3rem;
+      fill: var(--color__highlight);
+      transition: all .15s ease-in-out;
+      margin-bottom: .5rem;
 
       &:hover,
       &:active {
-        svg {
-          fill: var(--color__text);
+        fill: var(--color__text);
+      }
+    }
+  }
+
+  &__link {
+    padding: 0;
+    border: 0;
+    color: var(--color__text);
+    font-family: $font-family__heading;
+    font-size: $font-size__h4;
+
+    &:hover {
+      text-decoration: none;
+      border: 0;
+    }
+
+    &:focus {
+      outline: 3px dotted var(--color__highlight);
+      outline-offset: -3px;
+    }
+
+    &--animation {
+      position: relative;
+      left: 0;
+      transition: all .25s ease-in-out;
+      cursor: pointer;
+
+      @media #{$breakpoint__992--min} {
+        &:before {
+          content: "Soap";
+          color: var(--color__highlight);
+          position: absolute;
+          z-index: -1;
+          left: 0rem;
+          opacity: 0;
+          transition: opacity .2s ease-in-out;
         }
-      }
-    }
 
-    &-toggle {
-      @media (min-width: 912px) {
-        display: none;
-      }
-    }
-
-    &-nav {
-      &__link {
-        padding: 0;
-        border: 0;
-        left: 0;
-        display: inline-block;
-        position: relative;
-        left: 0;
-        transition: all .25s ease-in-out;
-        cursor: pointer;
-
-        @media (min-width: 912px) {
+        &:hover {
+          left: -1rem;
+          padding-left: 2.35rem;
+          color: var(--color__text);
 
           &:before {
-            content: "Soap";
-            color: var(--color__highlight);
-            position: absolute;
-            z-index: -1;
-            left: 0rem;
-            opacity: 0;
-            transition: opacity .2s ease-in-out;
-          }
-
-          &:hover {
-            left: -1rem;
-            padding-left: 2.8rem;
-            color: var(--color__text);
-
-            &:before {
-              transition: opacity .25s ease-in-out;
-              opacity: 1;
-            }
-          }
-
-          &--patrick {
-            &:hover {
-              padding-left: 2.1rem;
-            }
-
-            &:before {
-              content: "Soa";
-            }
+            transition: opacity .25s ease-in-out;
+            opacity: 1;
           }
         }
       }
     }
-  }
 
-  ul {
-    @include list--reset();
-  }
+    &.active {
+      color: var(--color__highlight);
+    }
 
-  @media (max-width: 911px) {
-    .navbar {
-      padding: 1rem 2rem 2rem 2rem;
-      position: fixed;
-      z-index: 2000;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
+    @media #{$breakpoint__992--min} {
+      &--patrick {
+        &:hover {
+          padding-left: 1.75rem;
+        }
+
+        &:before {
+          content: "Soa";
+        }
+      }
+    }
+  }
+}
+
+@media #{$breakpoint__991--max} {
+  .site-navigation {
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    top: auto;
+    width: 100%;
+    padding: 0;
+    padding-bottom: 1rem;
+    box-shadow: $shadow__quarter;
+    background: var(--color__body);
+    overflow-x: scroll;
+
+    ul {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--color__sidepanel);
-      box-shadow: $shadow__quarter;
+    }
 
-      &-brand {
-        z-index: 2;
-        line-height: 0;
+    &__icon {
+      display: block;
+      margin: 0;
+      width: 1rem;
+      height: 1rem;
 
-        svg {
-          height: 1.5rem;
-          width: auto;
+      .primary {
+        fill: var(--color__highlight);
+      }
+
+      .secondary {
+        fill: var(--color__text);
+      }
+    }
+
+    &__link {
+      padding: 1rem;
+      display: block;
+
+      &.active {
+        background: var(--color__highlight);
+
+        .primary {
+          fill: var(--color__body);
         }
       }
 
-      &-toggle {
-        z-index: 2;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: all .15s ease-in-out;
-
-        &:hover,
-        &:active {
-          color: var(--color__highlight);
-        }
-
-        &:focus {
-          outline: $outline;
-        }
+      span {
+        display: none;
       }
+    }
+  }
+}
 
-      &-nav {
-        background: var(--color__sidepanel);
-        box-shadow: $shadow__quarter;
-        transform: translateY(calc(100% + 4.5rem));
-        transition: all 0.4s ease-in-out;
-        position: fixed;
-        bottom: 4.5rem;
-        left: 0;
-        right: 0;
-        width: 100%;
-        text-align: center;
-        padding: 2rem;
-        opacity: 0;
-
-        &.open {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        &__link {
-          display: block;
-          margin: .5rem 0;
-        }
-      }
+// fix WP Admin Navbar margin
+@media #{$breakpoint__992--min} {
+  body.admin-bar {
+    .site-navigation {
+      padding-top: calc(#{$margin__body} + 32px);
     }
   }
 }
