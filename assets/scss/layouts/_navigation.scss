@@ -42,7 +42,6 @@
     padding: 0;
     border: 0;
     color: var(--color__text);
-    margin-bottom: .25em;
     font-family: $font-family__heading;
     font-size: $font-size__h4;
 
@@ -84,6 +83,10 @@
           }
         }
       }
+    }
+
+    &.active {
+      color: var(--color__highlight);
     }
 
     @media #{$breakpoint__992--min} {
@@ -137,6 +140,14 @@
     &__link {
       padding: 1rem;
       display: block;
+
+      &.active {
+        background: var(--color__highlight);
+
+        .primary {
+          fill: var(--color__body);
+        }
+      }
 
       span {
         display: none;
