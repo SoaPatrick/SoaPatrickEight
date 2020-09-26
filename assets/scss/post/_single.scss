@@ -4,4 +4,50 @@
 
 .post-single {
   padding: 4rem 0;
+
+  .inner-wrapper {
+    border-left: $border-width__blockquote solid var(--color__highlight);
+    margin: 0 0 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+
+    svg {
+      width: 1.5rem;
+      padding: .1rem 0 .5rem;
+      box-sizing: content-box;
+      background: var(--color__wrapper);
+      position: absolute;
+      top: 0;
+      left: calc((1.5rem / -2) - (#{$border-width__blockquote} / 2));
+    }
+
+    p {
+      font-family: $font-family__heading;
+      font-size: $font-size__h3;
+      line-height: 1.4;
+      margin-top: 0;
+    }
+
+    &__link,
+    &__status {
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__quote {
+      blockquote {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+    }
+
+    &__link {
+      p:last-child {
+        font-size: $font-size__small;
+        font-family: $font-family__base;
+      }
+    }
+  }
 }
