@@ -160,7 +160,7 @@
 @media #{$breakpoint__992--min} {
   body.admin-bar {
     .site-navigation {
-      padding-top: calc(#{$margin__body} + 32px);
+      top: calc(#{$margin__body} + 32px);
     }
   }
 }

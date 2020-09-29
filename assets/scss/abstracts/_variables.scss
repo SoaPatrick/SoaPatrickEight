@@ -89,12 +89,16 @@ $breakpoint__1500--min: (min-width: 1500px);
   --color__body: #{$color__gray--darker};
   --color__wrapper: #{$color__gray--dark};
   --color__text: #{$color__white};
+
+  --font-smoothing: antialiased;
 }
 
 [data-theme="light"] {
 	--color__body: #{$color__gray--light};
 	--color__wrapper: #{$color__white};
   --color__text: #{$color__gray--dark};
+
+  --font-smoothing: subpixel-antialiased;
 }
 
 [data-color="amber"] { --color__highlight: #{$color__amber} }
