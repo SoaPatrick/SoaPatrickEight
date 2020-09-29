@@ -17,7 +17,7 @@ body {
   font-weight: $font-weight__light;
   background: var(--color__body);
   color: var(--color__text);
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: var(--font-smoothing);
 
   @media #{$breakpoint__992--min} {
     margin: $margin__body $navbar__width;
