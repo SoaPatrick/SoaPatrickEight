@@ -20,6 +20,9 @@ if ( ! function_exists( 'soapatrickeight_setup' ) ) :
     // Enable support for Post Thumbnails on posts and pages.
     add_theme_support( 'post-thumbnails' );
 
+    // Enable support for Post Formats
+    add_theme_support( 'post-formats', array( 'status', 'link', 'quote', 'image', 'video' ) );
+
     // Add Theme Support for wide and full-width images.
     add_theme_support( 'align-wide' );
 
