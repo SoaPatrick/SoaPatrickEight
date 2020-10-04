@@ -62,7 +62,7 @@ $outline-highlight: $outline__width dotted $color__white;
 
 // Navbar
 $navbar__width: 8.5rem;
-$navbar__height: 3rem;
+$navbar__height: 4rem;
 
 // Border-width
 $border-width__btn: .125em;
@@ -79,10 +79,18 @@ $breakpoint__1199--max: (max-width: 1199px);
 $breakpoint__1200--min: (min-width: 1200px);
 $breakpoint__1499--max: (max-width: 1499px);
 $breakpoint__1500--min: (min-width: 1500px);
+$breakpoint__1920--max: (max-width: 1920px);
+
 
 // CSS Variables
 :root {
   --color__highlight: #{$color__pink};
+
+  --content-gap: 2rem;
+
+  @media #{$breakpoint__767--max} {
+    --content-gap: 1rem;
+  }
 }
 
 [data-theme="dark"] {

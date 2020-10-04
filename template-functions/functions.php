@@ -79,10 +79,10 @@ endif;
  */
 if ( ! function_exists( 'soapatrickeight_post_navigation' ) ) :
   function soapatrickeight_post_navigation() {
-    echo '<div class="grid"><nav class="post-navigation post-navigation--single">';
-    next_post_link( '%link', __( 'Next Post', 'soapatrickeight' ) );
-    previous_post_link('%link', __( 'Previous Post', 'soapatrickeight' ) );
-    echo '</nav></div>';
+    echo '<nav class="post-navigation post-navigation--single">';
+    next_post_link( '%link', __( 'Next Post &rarr;', 'soapatrickeight' ) );
+    previous_post_link('%link', __( '&larr; Previous Post', 'soapatrickeight' ) );
+    echo '</nav>';
   }
 endif;
 
@@ -93,17 +93,17 @@ endif;
  */
 if ( ! function_exists( 'soapatrickeight_posts_navigation' ) ) :
 	function soapatrickeight_posts_navigation() {
-    echo '<div class="grid"><nav class="post-navigation">';
+    echo '<nav class="post-navigation">';
     if ( 'post' === get_post_type() ) {
-      posts_nav_link( ' ', __( 'Next Posts', 'soapatrickeight' ), __( 'Previous Posts', 'soapatrickeight' ) );
+      posts_nav_link( ' ', __( 'Next Posts &rarr;', 'soapatrickeight' ), __( '&larr; Previous Posts', 'soapatrickeight' ) );
     }
     if ( 'factory' === get_post_type() ) {
-      posts_nav_link( ' ', __( 'Next Items', 'soapatrickeight' ), __( 'Previous Items', 'soapatrickeight' ) );
+      posts_nav_link( ' ', __( 'Next Items &rarr;', 'soapatrickeight' ), __( '&larr; Previous Items', 'soapatrickeight' ) );
     }
     if ( 'log' === get_post_type() ) {
-      next_posts_link( __( 'Load More', 'soapatrickeight' ) );
+      next_posts_link( __( 'Load More &darr;', 'soapatrickeight' ) );
     }
-    echo '</nav></div>';
+    echo '</nav>';
 	}
 endif;
 
@@ -115,10 +115,10 @@ endif;
 add_filter('next_posts_link_attributes', 'soapatrickeight_next_posts_link_class');
 add_filter('previous_posts_link_attributes', 'soapatrickeight_previous_posts_link_class');
 function soapatrickeight_next_posts_link_class() {
-  return 'class="btn post-navigation__previous"';
+  return 'class="post-navigation__previous"';
 }
 function soapatrickeight_previous_posts_link_class() {
-  return 'class="btn post-navigation__next"';
+  return 'class="post-navigation__next"';
 }
 
 /**
@@ -128,11 +128,11 @@ function soapatrickeight_previous_posts_link_class() {
 add_filter('next_post_link', 'soapatrickeight_next_post_link_class');
 add_filter('previous_post_link', 'soapatrickeight_previous_post_link_class');
 function soapatrickeight_next_post_link_class($format){
-  $format = str_replace('href=', 'class="btn post-navigation__next" href=', $format);
+  $format = str_replace('href=', 'class="post-navigation__next" href=', $format);
   return $format;
 }
 function soapatrickeight_previous_post_link_class($format) {
-  $format = str_replace('href=', 'class="btn post-navigation__previous" href=', $format);
+  $format = str_replace('href=', 'class="post-navigation__previous" href=', $format);
   return $format;
 }
 

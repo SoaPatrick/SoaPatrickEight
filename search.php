@@ -11,11 +11,10 @@ get_header();
 
   if ( have_posts() ) : ?>
 
-    <header class="grid">
-		  <h1 class="title-large">
+    <header>
+		  <h1 class="title-huge">
         <?php printf( esc_html__( 'Search: %s', 'soapatrickeight' ), get_search_query() ); ?>
       </h1>
-      <hr>
     </header>
 
     <?php

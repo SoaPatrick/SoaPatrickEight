@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'grid article post-list' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'article post-list' ); ?>>
   <div class="post-list__wrapper">
     <div class="post-list__icon<?php if (has_post_thumbnail()): echo ' post-list__icon--image'; endif; ?>">
       <?php

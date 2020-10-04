@@ -11,7 +11,7 @@
 
 <article id="factory-<?php the_ID(); ?>" <?php post_class( 'article' ); ?>>
 
-  <div class="grid breadcrumbs-wrapper">
+  <div class="breadcrumbs-wrapper">
     <nav class="breadcrumbs">
       <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
       <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/factory/"><?php esc_html_e( 'Factory', 'soapatrickeight' ) ?></a></span>
@@ -19,8 +19,8 @@
     </nav>
   </div>
 
-  <header class="grid article__header">
-    <?php the_title( '<h1 class="title-large">', '</h1>' ); ?>
+  <header class="article__header">
+    <?php the_title( '<h1 class="title-huge">', '</h1>' ); ?>
 
     <div class="article__meta">
       <?php
@@ -31,7 +31,7 @@
     </div>
   </header>
 
-  <div class="grid article__content">
+  <div class="article__content">
     <?php the_content(); ?>
   </div>
 

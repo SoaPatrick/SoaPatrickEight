@@ -13,5 +13,15 @@
 
   .wp-block-column {
     margin: 0;
+
+    @media #{$breakpoint__992--min} {
+      > *:first-child {
+        margin-top: 0;
+      }
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
