@@ -3,7 +3,21 @@
 --------------------------------------------------------------*/
 
 .wp-block-gallery {
-  margin: $margin__base 0 0 0;
+  margin-bottom: calc(3rem - #{$margin__base});
+
+  &.alignfull,
+  &.alignwide {
+    margin-left: calc(var(--content-gap) * -1);
+    margin-right: calc(var(--content-gap) * -1);
+  }
+
+  &.alignwide {
+    max-width: calc(1200px + var(--content-gap) * 2);
+  }
+
+  &.alignfull {
+    max-width: calc(100% + var(--content-gap) * 2);
+  }
 
   .blocks-gallery-grid {
     display: flex;

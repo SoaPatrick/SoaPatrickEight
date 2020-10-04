@@ -26,6 +26,15 @@ h4 {
   margin: 0;
 }
 
+.title-huge {
+  font-size: clamp(2rem,10vw,6rem);
+  margin: 0 0 2rem 0;
+
+  @media #{$breakpoint__992--min} {
+    margin-left: -$navbar__width;
+  }
+}
+
 /*
  * Links
  * -----------------------------------------------------------
@@ -57,8 +66,9 @@ h4 {
 
 hr {
   margin: $margin__base auto;
-  border: 1px solid var(--color__highlight);;
-  width: 100%;
+  border: 1px solid var(--color__highlight);
+  display: inline-flex;
+  width: 150px;
 }
 
 img {

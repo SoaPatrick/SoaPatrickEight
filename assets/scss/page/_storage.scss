@@ -9,29 +9,18 @@
   &__year {
     flex-grow: 0;
     flex-shrink: 0;
+    width: 7.5rem;
 
-    @media #{$breakpoint__370--max}{
-      width: calc(100%/2);
-    }
-
-    @media #{$breakpoint__371--min} {
-      width: calc(100%/3);
-    }
-
-    @media #{$breakpoint__768--min} {
-      width: calc(100%/4);
-    }
-
-    @media #{$breakpoint__1200--min} {
-      width: calc(100%/5);
+    @media #{$breakpoint__767--max} {
+      width: 5.9rem;
     }
 
     h2 {
-      margin-bottom: 0;
+      margin: 2rem 0 0 0;
     }
 
     ul {
-      margin-top: 0;
+      margin: 0 0 2rem 0;
       list-style: none;
       padding: 0;
 

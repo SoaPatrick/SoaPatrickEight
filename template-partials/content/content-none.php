@@ -9,9 +9,9 @@
 
 ?>
 
-<section>
-  <header class="grid">
-    <h1 class="title-large">
+<div class="page">
+  <header class="page__header">
+    <h1 class="title-huge">
       <?php
         if ( is_search() ) :
           esc_html_e( 'I found nothing!', 'soapatrickeight' );
@@ -20,10 +20,9 @@
         endif;
       ?>
     </h1>
-    <hr>
   </header>
 
-  <div class="grid">
+  <div class="page__content">
     <?php
       if ( is_search() ) :
           echo '<p>' . __( 'Sorry, but I can&rsquo;t find what you&rsquo;re looking for. Please try again with other words.', 'soapatrickeight' ) . '</p>';
@@ -34,4 +33,4 @@
       the_widget( 'WP_Widget_Recent_Posts' );
     ?>
   </div>
-</section>
+</div>

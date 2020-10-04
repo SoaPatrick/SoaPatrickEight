@@ -35,8 +35,12 @@
   }
 
   &__content {
-    hr {
-      width: 33%;
+    h2, h3, h4, h5 {
+      margin: 3rem 0 1.5rem 0;
+    }
+
+    p, ul, ol {
+      margin: 1.5rem 0;
     }
 
     a[target="_blank"] {
@@ -46,6 +50,29 @@
         content: "\293B\00A0";
         line-height: 0;
       }
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.article,
+.page {
+  &__content {
+
+    > * {
+      max-width: 750px;
+    }
+
+    > .alignwide {
+      max-width: 1200px;
+    }
+
+    > .alignfull {
+      max-width: 100%;
     }
   }
 }

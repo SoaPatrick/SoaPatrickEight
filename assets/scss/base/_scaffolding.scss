@@ -15,56 +15,75 @@ body {
 body {
   font-family: $font-family__base;
   font-weight: $font-weight__light;
-  background: var(--color__body);
   color: var(--color__text);
   -webkit-font-smoothing: var(--font-smoothing);
-
-  @media #{$breakpoint__992--min} {
-    margin: $margin__body $navbar__width;
-  }
+  background: var(--color__body);
 }
 
 .site-wrapper {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color__wrapper);
-  position: relative;
-  z-index: 1;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: $navbar__width minmax(calc(750px + 4rem),auto) 700px;
+  grid-template-areas:
+    "navigation content header"
+    "navigation content footer";
+
+  @media #{$breakpoint__1920--max} {
+    grid-template-columns: $navbar__width minmax(650px, auto) minmax($navbar__width, auto);
+    grid-template-areas:
+      "navigation content header"
+      "navigation footer header";
+  }
 
   @media #{$breakpoint__991--max} {
+    display:block;
     margin-bottom: $navbar__height;
-    min-height: calc(100vh - #{$navbar__height});
   }
 
-  @media #{$breakpoint__992--min} {
-    box-shadow: $shadow__quarter;
-    margin-bottom: $margin__body;
-    min-height: calc(100vh - 2 * #{$margin__body});
-  }
-
-  .site-footer,
   .site-header {
-    flex: none;
+    grid-area: header;
+    background-color: var(--color__wrapper);
+
+    .waves {
+      fill: var(--color__highlight);
+    }
+
+    @media #{$breakpoint__992--min} {
+      background: var(--color__highlight);
+    }
+  }
+
+  .site-navigation {
+    grid-area: navigation;
+    background: var(--color__body);
   }
 
   .site-content {
-    flex: 1 0 auto;
-    padding: 4rem 0;
-    overflow-x: hidden;
+    grid-area: content;
+    background-color: var(--color__wrapper);
+  }
 
+  .site-footer {
+    grid-area: footer;
+  }
+
+  .site-content,
+  .site-footer {
+    padding: 2rem var(--content-gap);
+  }
+
+  .site-content {
     > article:first-child {
       padding-top: 0;
-    }
-
-    > article:nth-last-child(2) {
-      padding-bottom: 4rem;
     }
   }
 }
 
-body.single .site-content {
-  padding-bottom: 0;
-}
+
+
+
+
+
 
 // scollbar
 ::-webkit-scrollbar {

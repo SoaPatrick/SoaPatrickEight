@@ -15,7 +15,7 @@ $format = get_post_format();
 <article id="post-<?php the_ID(); ?>" <?php post_class('article post-single'); ?>>
   <?php if ($format === 'quote' || $format === 'link' || $format === 'status') : ?>
 
-    <header class="grid article__header">
+    <header class="article__header">
       <div class="inner-wrapper inner-wrapper__<?php echo $format ?>">
         <?php
           if($format === 'status') :
@@ -39,8 +39,8 @@ $format = get_post_format();
 
   <?php else : ?>
 
-    <header class="grid article__header">
-      <?php the_title( '<h1 class="title-large">', '</h1>' ); ?>
+    <header class="article__header">
+      <?php the_title( '<h1 class="title-huge">', '</h1>' ); ?>
 
       <div class="article__meta">
         <?php
@@ -51,7 +51,7 @@ $format = get_post_format();
       </div>
     </header>
 
-    <div class="grid article__content">
+    <div class="article__content">
       <?php the_content(); ?>
     </div>
 

@@ -29,12 +29,12 @@
   <?php
     get_template_part( 'template-partials/layout/settings');
     get_template_part( 'template-partials/layout/search');
-    get_template_part( 'template-partials/layout/navigation');
   ?>
 
   <div class="site-wrapper">
     <?php
-      get_template_part( 'template-partials/layout/header', 'sp8');
+      get_template_part( 'template-partials/layout/navigation');
+      get_template_part( 'template-partials/layout/header');
     ?>
     <div class="site-content">
 

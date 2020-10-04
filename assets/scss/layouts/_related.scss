@@ -3,16 +3,14 @@
 --------------------------------------------------------------*/
 
 .related {
-  padding: 4rem 0;
 
-  h1 {
-    margin-bottom: 2rem;
+  &--post {
+    margin-top: 4rem;
   }
 
   &--factory{
     color: $color__white;
 
-    @include bob-animation-font-size();
     @include bob-animation(article);
 
     &__items {

@@ -3,12 +3,11 @@
 --------------------------------------------------------------*/
 
 figure {
-  margin: $margin__base 0;
+  margin: 3rem 0;
 }
 
 .wp-block-image,
 .wp-block-video {
-  margin: $margin__base 0;
 
   figcaption {
     font-size: .8rem;
@@ -16,15 +15,11 @@ figure {
     margin-bottom: 0;
     font-style: italic;
     color: inherit;
-    opacity: .7;
-    text-align: center;
   }
 }
 
 // Image
 .wp-block-image {
-  max-width: 100%;
-  text-align: center;
 
   > figure {
     margin: 0;
@@ -43,14 +38,31 @@ figure {
     height: auto;
     margin-left: 0;
     margin-right: 0;
-    text-align: center;
+  }
+
+  &.alignfull,
+  &.alignwide {
+    margin-left: calc(var(--content-gap) * -1);
+    margin-right: calc(var(--content-gap) * -1);
+
+    figcaption {
+      margin-left: var(--content-gap);
+    }
+  }
+
+  &.alignwide {
+    max-width: calc(1200px + var(--content-gap) * 2);
+  }
+
+  &.alignfull {
+    max-width: calc(100% + var(--content-gap) * 2);
   }
 
   img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 0;
   }
 
   .img-link {
