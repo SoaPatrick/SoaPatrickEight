@@ -2,11 +2,9 @@
 #Navigation
 --------------------------------------------------------------*/
 
-.site-navigation {
-  top: 0;
-  bottom: auto;
+.main-navigation {
+  bottom: 2rem;
   position: fixed;
-  top: 2rem;
   left: 2rem;
   width: calc(#{$navbar--width} - 2rem);
 
@@ -104,7 +102,7 @@
 }
 
 @media #{$breakpoint__991--max} {
-  .site-navigation {
+  .main-navigation {
     bottom: 0;
     left: 0;
     z-index: 1000;

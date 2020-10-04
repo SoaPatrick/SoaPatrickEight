@@ -4,8 +4,9 @@
 
 .breadcrumbs {
   font-size: $font-size__small;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   display: flex;
+  justify-content: flex-end;
   flex-wrap: wrap;
 
   &__item {

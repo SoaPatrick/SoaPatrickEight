@@ -3,13 +3,12 @@
 --------------------------------------------------------------*/
 
 .site-footer {
-  padding: 2rem 1.5rem;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 
-  &__data-protection {
-    align-self: end;
-    justify-self: right;
+  &__copyright {
+    margin: 4rem 0 0 0;
+    font-size: $font-size__small;
   }
 }

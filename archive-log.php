@@ -9,12 +9,11 @@
 
 get_header(); ?>
 
-  <section>
-    <header class="grid">
-      <h1 class="title-large"><?php esc_html_e( 'Change Log', 'soapatrickeight' ) ?></h1>
-      <hr>
+  <section class="page">
+    <header class="page__header">
+      <h1 class="title-huge"><?php esc_html_e( 'Change Log', 'soapatrickeight' ) ?></h1>
     </header>
-    <div class="grid">
+    <div class="page__content">
       <div class="changelog" data-infinite-scroll='{ "path": ".post-navigation__previous", "append": ".logs", "history": false, "scrollThreshold": false, "button" : ".post-navigation__previous" }'>
         <?php
           if( have_posts() ) :

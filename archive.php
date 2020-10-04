@@ -11,7 +11,7 @@ get_header();
 
   if ( have_posts() ) : ?>
 
-    <div class="grid breadcrumbs-wrapper">
+    <div class="breadcrumbs-wrapper">
       <nav class="breadcrumbs">
         <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
         <?php if( is_tag() ) : ?>
@@ -23,9 +23,8 @@ get_header();
       </nav>
     </div>
 
-    <header class="grid page__header">
-      <?php the_archive_title( '<h1 class="title-large">', '</h1>' ); ?>
-      <hr>
+    <header class="page__header">
+      <?php the_archive_title( '<h1 class="title-huge">', '</h1>' ); ?>
     </header>
 
     <?php

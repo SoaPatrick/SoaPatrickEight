@@ -5,22 +5,27 @@
 .factory-list {
   color: var(--color__text);
   @include bob-animation(article);
+  //max-width: 1200px;
 
   &__list {
     margin: $margin__base 0;
     padding-bottom: 2rem;
-    display: grid;
-    font-size: $font-size__smaller;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: $margin__base;
 
-    @media #{$breakpoint__1199--max} {
-      grid-template-columns: 1fr 1fr;
-      font-size: calc(10px + 1vw);
+    @media #{$breakpoint__992--min} {
+      display: flex;
+      flex-wrap: wrap;
+
+      article {
+        max-width: 12rem;
+        margin-right: $margin__base;
+        margin-bottom: $margin__base;
+      }
     }
 
-    @media #{$breakpoint__767--max} {
-      font-size: calc(5px + 1.2vw);
+    @media #{$breakpoint__991--max} {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $margin__base;
     }
   }
 
@@ -37,7 +42,7 @@
       position: absolute;
       bottom: 0;
       margin: 0;
-      font-size: inherit;
+      font-size: $font-size__small;
     }
   }
 }

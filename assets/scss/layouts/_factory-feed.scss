@@ -5,37 +5,30 @@
 .factory-feed {
   color: $color__white;
 
-  @include bob-animation-font-size();
   @include bob-animation(article);
-
-  margin: 2rem 0;
-  padding: 4rem 0;
-
-  .svg-inline--fa {
-    color: inherit;
-  }
 
   h1 {
     margin-bottom: 2rem;
   }
 
-  .lead {
-    text-align: center;
-    margin: 2rem auto 0;
-    font-size: $font-size__base;
-  }
-
   &__items {
-    display: grid;
-    gap: $margin__base;
 
-    @media #{$breakpoint__1200--min} {
-      grid-column-start: 2;
-      grid-column-end: 5;
-      grid-template-columns: repeat(4,1fr);
+
+    @media #{$breakpoint__992--min} {
+      display: flex;
+      flex-wrap: wrap;
+
+      article {
+        max-width: 11.5rem;
+        margin-right: $margin__base;
+        margin-bottom: $margin__base;
+      }
     }
 
-    @media #{$breakpoint__1199--max} {
+
+    @media #{$breakpoint__991--max} {
+      gap: $margin__base;
+      display: grid;
       grid-template-columns: 1fr 1fr;
     }
 
@@ -54,7 +47,7 @@
         position: absolute;
         bottom: 0;
         margin: 0;
-        font-size: inherit;
+        font-size: $font-size__small;
       }
     }
   }

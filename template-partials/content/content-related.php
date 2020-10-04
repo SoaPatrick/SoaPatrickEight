@@ -26,7 +26,7 @@ if( $terms ):
   $related_items = new WP_Query( $args );
   ?>
     <aside class="related related--post highlight">
-      <h1 class="title-large has-text-align-center"><?php esc_html_e( 'Related Blog Posts', 'soapatrickeight' ); ?></h1>
+      <h1><?php esc_html_e( 'Related Blog Posts', 'soapatrickeight' ); ?></h1>
       <div class="related__items related--post__items">
         <?php
           if ($related_items->have_posts()) :

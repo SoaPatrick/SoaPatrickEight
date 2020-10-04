@@ -26,17 +26,15 @@ if( $terms ):
   $related_items = new WP_Query( $args );
   ?>
     <aside class="related related--factory highlight">
-      <h1 class="title-large has-text-align-center"><?php esc_html_e( 'Related Factory Items', 'soapatrickeight' ); ?></h1>
-      <div class="grid">
-        <div class="related__items related--factory__items">
-          <?php
-            if ($related_items->have_posts()) :
-              while ( $related_items->have_posts() ) : $related_items->the_post();
-                get_template_part( 'template-partials/content/content', 'featured-full' );
-              endwhile;
-            endif;
-          ?>
-        </div>
+      <h1><?php esc_html_e( 'Related Factory Items', 'soapatrickeight' ); ?></h1>
+      <div class="related__items related--factory__items">
+        <?php
+          if ($related_items->have_posts()) :
+            while ( $related_items->have_posts() ) : $related_items->the_post();
+              get_template_part( 'template-partials/content/content', 'featured-full' );
+            endwhile;
+          endif;
+        ?>
       </div>
     </aside>
   <?php
