@@ -42,14 +42,33 @@ body {
 
   .site-header {
     grid-area: header;
+    overflow-x: hidden;
     background-color: var(--color__wrapper);
 
     .waves {
       fill: var(--color__highlight);
     }
 
+    .bubbles {
+      display: none;
+    }
+
     @media #{$breakpoint__992--min} {
-      background: var(--color__highlight);
+      background-color: var(--color__highlight);
+
+      .waves {
+        display: none;
+      }
+
+      .bubbles {
+        display: block;
+        min-width: 25vw;
+
+        &--bg,
+        &--circle {
+          fill: var(--color__wrapper);
+        }
+      }
     }
   }
 

@@ -9,10 +9,14 @@ figure {
 .wp-block-image,
 .wp-block-video {
 
+  * {
+    clear: both;
+  }
+
   figcaption {
     font-size: .8rem;
     margin-top: $margin__base / 2;
-    margin-bottom: 0;
+    margin-bottom: $margin__base / 2;
     font-style: italic;
     color: inherit;
   }
@@ -25,8 +29,6 @@ figure {
     margin: 0;
   }
 
-  .alignleft,
-  .alignright,
   .aligncenter,
   .alignnone,
   &.alignleft,
@@ -38,6 +40,48 @@ figure {
     height: auto;
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .alignleft,
+  .alignright {
+    width: auto;
+    margin-top: $margin__base / 2;
+    margin-bottom: $margin__base / 2;
+
+    @media #{$breakpoint__768--min} {
+      &.size-medium:not(.is-resized) {
+        max-width: calc(100%/3 - #{$margin__base / 2});
+      }
+
+      &.size-full:not(.is-resized),
+      &.size-large:not(.is-resized) {
+        max-width: calc(50% - #{$margin__base / 2});
+      }
+    }
+
+    @media #{$breakpoint__767--max} {
+      &.is-resized {
+        max-width: 150px;
+      }
+
+      &.size-medium:not(.is-resized),
+      &.size-large:not(.is-resized),
+      &.size-full:not(.is-resized)  {
+        max-width: 100%;
+        float: none;
+        margin: 0;
+      }
+    }
+  }
+
+  .alignleft {
+    float: left;
+    margin-right: $margin__base;
+  }
+
+  .alignright {
+    float: right;
+    margin-left: $margin__base;
   }
 
   &.alignfull,
