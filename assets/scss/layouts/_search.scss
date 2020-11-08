@@ -38,6 +38,8 @@
 
 #search-collapse {
   @media #{$breakpoint__991--max} {
+    position: relative;
+    z-index: 2;
     background: var(--color__highlight);
   }
 

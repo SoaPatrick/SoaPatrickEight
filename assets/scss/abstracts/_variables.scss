@@ -29,7 +29,7 @@ $font-family__heading: 'Recoleta', serif;
 $font-family__code: Hack, "Fira Code", Consolas, Menlo, Monaco, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
 
 // Font-Sizes
-$font-size__base: clamp(19px, 1.5vw, 24px);
+$font-size__base: clamp(18px, 1.5vw, 24px);
 $font-size__h1: 2.2rem;
 $font-size__h2: 1.5rem;
 $font-size__h3: 1.2rem;
@@ -52,7 +52,6 @@ $margin__base: 1rem;
 $margin__body: 2rem;
 
 // Shadows
-$shadow__quarter: 0 0 .5rem rgba(0,0,0,.25);
 $shadow__half: 0 0 .5rem rgba(0,0,0,.5);
 
 // Outline
@@ -62,7 +61,7 @@ $outline-highlight: $outline__width dotted $color__white;
 
 // Navbar
 $navbar__width: 8.5rem;
-$navbar__height: 4rem;
+$navbar__width--mobile: 3rem;
 
 // Border-width
 $border-width__btn: .125em;

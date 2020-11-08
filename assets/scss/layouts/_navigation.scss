@@ -104,18 +104,22 @@
 @media #{$breakpoint__991--max} {
   .main-navigation {
     bottom: 0;
-    left: 0;
-    z-index: 1000;
-    top: auto;
-    width: 100%;
+    top: 0;
+    left: auto;
+    right: 0;
+    z-index: 1;
+    width: $navbar__width--mobile;
     padding: 0;
     padding-bottom: 1rem;
-    box-shadow: $shadow__quarter;
     background: var(--color__body);
+    display: flex;
+    justify-content: center;
+    align-self: end;
+
 
     ul {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column-reverse;
       align-items: center;
     }
 

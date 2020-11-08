@@ -18,6 +18,10 @@ body {
   color: var(--color__text);
   -webkit-font-smoothing: var(--font-smoothing);
   background: var(--color__body);
+
+  @media #{$breakpoint__991--max} {
+    background: var(--color__wrapper);
+  }
 }
 
 .site-wrapper {
@@ -37,13 +41,20 @@ body {
 
   @media #{$breakpoint__991--max} {
     display:block;
-    margin-bottom: $navbar__height;
+    margin-right: $navbar__width--mobile;
   }
 
   .site-header {
     grid-area: header;
     overflow-x: hidden;
     background-color: var(--color__wrapper);
+
+    @media #{$breakpoint__991--max} {
+      background-color: transparent;
+      position: relative;
+      z-index: 2;
+      margin-right: -$navbar__width--mobile;
+    }
 
     .waves {
       fill: var(--color__highlight);
@@ -75,6 +86,11 @@ body {
   .site-navigation {
     grid-area: navigation;
     background: var(--color__body);
+
+    @media #{$breakpoint__991--max} {
+      position: relative;
+      z-index: 1;
+    }
   }
 
   .site-content {
