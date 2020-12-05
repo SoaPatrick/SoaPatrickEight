@@ -48,7 +48,6 @@ body {
 
   @media #{$breakpoint__991--max} {
     display: block;
-    margin-right: $navbar__width--mobile;
   }
 
   .site-header {
@@ -60,7 +59,6 @@ body {
       background-color: transparent;
       position: relative;
       z-index: 2;
-      margin-right: -$navbar__width--mobile;
     }
 
     .waves {
@@ -117,6 +115,27 @@ body {
   .site-content {
     > article:first-child {
       padding-top: 0;
+    }
+  }
+}
+@media #{$breakpoint__991--max} {
+  [data-nav="left"] {
+    .site-wrapper {
+      margin-left: $navbar__width--mobile;
+    }
+
+    .site-header {
+      margin-left: -$navbar__width--mobile;
+    }
+  }
+
+  [data-nav="right"] {
+    .site-wrapper {
+      margin-right: $navbar__width--mobile;
+    }
+
+    .site-header {
+      margin-right: -$navbar__width--mobile;
     }
   }
 }
