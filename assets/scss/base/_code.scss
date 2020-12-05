@@ -6,10 +6,10 @@ ul,
 ol {
   code {
     background: var(--color__body);
-    padding: .3em;
+    padding: 0.3em;
     display: inline-block;
     line-height: 1;
-    border-radius: .2em;
+    border-radius: 0.2em;
     font-size: $font-size__small;
     font-family: $font-family__code;
   }
@@ -17,7 +17,7 @@ ol {
 
 pre[class*="language-"] {
   margin: $margin__base 0;
-  border-radius: .2em;
+  border-radius: 0.2em;
   background: $color__gray--darker;
   position: relative;
   padding: 0;
@@ -29,9 +29,9 @@ pre[class*="language-"] {
 
   .prism-language {
     position: absolute;
-    right: .25rem;
-    top: .25rem;
-    font-size: .5rem;
+    right: 0.25rem;
+    top: 0.25rem;
+    font-size: 0.5rem;
     font-weight: bold;
     color: orange;
     font-family: $font-family__code;

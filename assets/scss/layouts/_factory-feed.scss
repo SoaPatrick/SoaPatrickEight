@@ -12,8 +12,6 @@
   }
 
   &__items {
-
-
     @media #{$breakpoint__992--min} {
       display: flex;
       flex-wrap: wrap;
@@ -24,7 +22,6 @@
         margin-bottom: $margin__base;
       }
     }
-
 
     @media #{$breakpoint__991--max} {
       gap: $margin__base;

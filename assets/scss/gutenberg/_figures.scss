@@ -8,13 +8,12 @@ figure {
 
 .wp-block-image,
 .wp-block-video {
-
   * {
     clear: both;
   }
 
   figcaption {
-    font-size: .8rem;
+    font-size: 0.8rem;
     margin-top: $margin__base / 2;
     margin-bottom: $margin__base / 2;
     font-style: italic;
@@ -24,7 +23,6 @@ figure {
 
 // Image
 .wp-block-image {
-
   > figure {
     margin: 0;
   }
@@ -50,7 +48,7 @@ figure {
 
     @media #{$breakpoint__768--min} {
       &.size-medium:not(.is-resized) {
-        max-width: calc(100%/3 - #{$margin__base / 2});
+        max-width: calc(100% / 3 - #{$margin__base / 2});
       }
 
       &.size-full:not(.is-resized),
@@ -66,7 +64,7 @@ figure {
 
       &.size-medium:not(.is-resized),
       &.size-large:not(.is-resized),
-      &.size-full:not(.is-resized)  {
+      &.size-full:not(.is-resized) {
         max-width: 100%;
         float: none;
         margin: 0;
