@@ -27,20 +27,27 @@ body {
 .site-wrapper {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: $navbar__width minmax(calc(750px + 4rem),auto) 700px;
+  grid-template-columns: $navbar__width minmax(calc(750px + 4rem), auto) 700px;
   grid-template-areas:
     "navigation content header"
     "navigation content footer";
 
+  @media #{$breakpoint__1921--min} {
+    grid-template-rows: 971px auto;
+  }
+
   @media #{$breakpoint__1920--max} {
-    grid-template-columns: $navbar__width minmax(650px, auto) minmax($navbar__width, auto);
+    grid-template-columns: $navbar__width minmax(650px, auto) minmax(
+        $navbar__width,
+        auto
+      );
     grid-template-areas:
       "navigation content header"
-      "navigation footer header";
+      "navigation footer footer";
   }
 
   @media #{$breakpoint__991--max} {
-    display:block;
+    display: block;
     margin-right: $navbar__width--mobile;
   }
 
@@ -113,12 +120,6 @@ body {
     }
   }
 }
-
-
-
-
-
-
 
 // scollbar
 ::-webkit-scrollbar {

@@ -16,17 +16,20 @@ $color__gray--darker: #1c1c1c;
 $color__gray--light: #eeeeee;
 
 // Theme Colors
-$color__amber: #FFB300;
-$color__red: #CF3A3A;
-$color__pink: #EC407A;
-$color__purple: #AB47BC;
+$color__amber: #ffb300;
+$color__red: #cf3a3a;
+$color__pink: #ec407a;
+$color__purple: #ab47bc;
 $color__blue: #28aae2;
 $color__green: #348236;
 
 // Font-Family
-$font-family__base: 'Lato', sans-serif;
-$font-family__heading: 'Recoleta', serif;
-$font-family__code: Hack, "Fira Code", Consolas, Menlo, Monaco, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+$font-family__base: "Lato", sans-serif;
+$font-family__heading: "Recoleta", serif;
+$font-family__code: Hack, "Fira Code", Consolas, Menlo, Monaco, "Andale Mono",
+  "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+  "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New",
+  Courier, monospace;
 
 // Font-Sizes
 $font-size__base: clamp(18px, 1.5vw, 24px);
@@ -52,7 +55,7 @@ $margin__base: 1rem;
 $margin__body: 2rem;
 
 // Shadows
-$shadow__half: 0 0 .5rem rgba(0,0,0,.5);
+$shadow__half: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 
 // Outline
 $outline__width: 3px;
@@ -64,22 +67,46 @@ $navbar__width: 8.5rem;
 $navbar__width--mobile: 3rem;
 
 // Border-width
-$border-width__btn: .125em;
+$border-width__btn: 0.125em;
 $border-width__blockquote: 5px;
 
 // Breakpoints
-$breakpoint__370--max: (max-width: 370px);
-$breakpoint__371--min: (min-width: 371px);
-$breakpoint__767--max: (max-width: 767px);
-$breakpoint__768--min: (min-width: 768px);
-$breakpoint__991--max: (max-width: 991px);
-$breakpoint__992--min: (min-width: 992px);
-$breakpoint__1199--max: (max-width: 1199px);
-$breakpoint__1200--min: (min-width: 1200px);
-$breakpoint__1499--max: (max-width: 1499px);
-$breakpoint__1500--min: (min-width: 1500px);
-$breakpoint__1920--max: (max-width: 1920px);
-
+$breakpoint__370--max: (
+  max-width: 370px,
+);
+$breakpoint__371--min: (
+  min-width: 371px,
+);
+$breakpoint__767--max: (
+  max-width: 767px,
+);
+$breakpoint__768--min: (
+  min-width: 768px,
+);
+$breakpoint__991--max: (
+  max-width: 991px,
+);
+$breakpoint__992--min: (
+  min-width: 992px,
+);
+$breakpoint__1199--max: (
+  max-width: 1199px,
+);
+$breakpoint__1200--min: (
+  min-width: 1200px,
+);
+$breakpoint__1499--max: (
+  max-width: 1499px,
+);
+$breakpoint__1500--min: (
+  min-width: 1500px,
+);
+$breakpoint__1920--max: (
+  max-width: 1920px,
+);
+$breakpoint__1921--min: (
+  min-width: 1921px,
+);
 
 // CSS Variables
 :root {
@@ -101,16 +128,28 @@ $breakpoint__1920--max: (max-width: 1920px);
 }
 
 [data-theme="light"] {
-	--color__body: #{$color__gray--light};
-	--color__wrapper: #{$color__white};
+  --color__body: #{$color__gray--light};
+  --color__wrapper: #{$color__white};
   --color__text: #{$color__gray--dark};
 
   --font-smoothing: subpixel-antialiased;
 }
 
-[data-color="amber"] { --color__highlight: #{$color__amber} }
-[data-color="red"] { --color__highlight: #{$color__red} }
-[data-color="pink"] { --color__highlight: #{$color__pink} }
-[data-color="purple"] { --color__highlight: #{$color__purple} }
-[data-color="blue"] { --color__highlight: #{$color__blue} }
-[data-color="green"] { --color__highlight: #{$color__green} }
+[data-color="amber"] {
+  --color__highlight: #{$color__amber};
+}
+[data-color="red"] {
+  --color__highlight: #{$color__red};
+}
+[data-color="pink"] {
+  --color__highlight: #{$color__pink};
+}
+[data-color="purple"] {
+  --color__highlight: #{$color__purple};
+}
+[data-color="blue"] {
+  --color__highlight: #{$color__blue};
+}
+[data-color="green"] {
+  --color__highlight: #{$color__green};
+}
