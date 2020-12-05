@@ -115,6 +115,35 @@ if (currentColor) {
 }
 
 
+
+// script to toggle between left and right navigation
+// mode and store setting in local storage
+// ----------------------------------------
+const toggleNavSwitch = document.querySelector('.nav-switch input[type="checkbox"]');
+toggleNavSwitch.addEventListener('change', switchNav, false);
+
+function switchNav(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-nav', 'right');
+        localStorage.setItem('nav', 'right');
+    }
+    else {
+        document.documentElement.setAttribute('data-nav', 'left');
+        localStorage.setItem('nav', 'left');
+    }
+}
+
+// currentNav variable set in head
+if (currentNav) {
+    document.documentElement.setAttribute('data-nav', currentNav);
+
+    if (currentNav === 'right') {
+        toggleNavSwitch.checked = true;
+    }
+}
+
+
+
 // make Settings draggagle
 // ----------------------------------------
 dragElement(document.getElementById("settings"));

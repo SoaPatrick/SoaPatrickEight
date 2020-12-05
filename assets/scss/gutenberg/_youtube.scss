@@ -16,8 +16,8 @@
   }
 
   .video--play-btn__bg {
-    transition: .4s opacity;
-    opacity: .7;
+    transition: 0.4s opacity;
+    opacity: 0.7;
   }
 
   &:hover {
@@ -73,7 +73,6 @@
     }
   }
 }
-
 
 .responsive-container {
   position: relative;

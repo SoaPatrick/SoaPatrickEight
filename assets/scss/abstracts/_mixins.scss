@@ -13,7 +13,7 @@
 @mixin bob-animation($tag) {
   #{$tag} {
     animation-name: hide-start;
-    animation-duration: .5s;
+    animation-duration: 0.5s;
   }
 
   #{$tag} img {
@@ -22,19 +22,18 @@
     transform: translateZ(0);
     backface-visibility: hidden;
     animation-name: bob-start;
-    animation-duration: .3s;
+    animation-duration: 0.3s;
   }
 
   #{$tag}:hover img,
   #{$tag}:focus img,
   #{$tag}:active img {
     animation-name: bob-float, bob;
-    animation-duration: .3s, 1.5s;
-    animation-delay: 0s, .3s;
+    animation-duration: 0.3s, 1.5s;
+    animation-delay: 0s, 0.3s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-fill-mode: forwards;
     animation-direction: normal, alternate;
   }
 }
-

@@ -33,14 +33,11 @@
 
   .post-list .title-list a {
     &:hover {
-      text-shadow:
-        1px 2px var(--color__highlight),
-        2px 2px var(--color__highlight),
-        3px 2px var(--color__highlight),
-        -1px 2px var(--color__highlight),
-        -2px 2px var(--color__highlight),
+      text-shadow: 1px 2px var(--color__highlight),
+        2px 2px var(--color__highlight), 3px 2px var(--color__highlight),
+        -1px 2px var(--color__highlight), -2px 2px var(--color__highlight),
         -3px 2px var(--color__highlight);
-      background-image: linear-gradient($color__white,$color__white);
+      background-image: linear-gradient($color__white, $color__white);
     }
   }
 

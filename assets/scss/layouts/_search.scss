@@ -6,12 +6,12 @@
   margin: 4rem 0;
 
   input {
-    padding: .75rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     width: 100%;
     font-size: 1.5rem;
     border: 0;
     font-weight: $font-weight__regular;
-    background: rgba(0,0,0,.1);
+    background: rgba(0, 0, 0, 0.1);
     color: var(--color__text);
     border-radius: 3rem;
 
@@ -21,17 +21,17 @@
 
     &::-webkit-input-placeholder {
       color: var(--color__text);
-      opacity: .5;
+      opacity: 0.5;
     }
 
     &::-moz-placeholder {
       color: var(--color__text);
-      opacity: .5;
+      opacity: 0.5;
     }
 
     &:-ms-input-placeholder {
       color: var(--color__text);
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 }

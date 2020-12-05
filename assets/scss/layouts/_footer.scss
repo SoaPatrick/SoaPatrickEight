@@ -5,7 +5,13 @@
 .site-footer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+
+  @media #{$breakpoint__1921--min} {
+    &__sticky {
+      position: sticky;
+      top: 0;
+    }
+  }
 
   &__copyright {
     margin: 4rem 0 0 0;
