@@ -20,10 +20,10 @@
 
   &__header {
     grid-area: header;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
-  &__meta{
+  &__meta {
     grid-area: footer;
     margin: 0;
   }
@@ -82,14 +82,14 @@
         background-size: 100% 0.5px;
         background-position: center bottom 15%;
         background-origin: padding-box;
-        text-shadow:
-          1px 2px var(--color__wrapper),
-          2px 2px var(--color__wrapper),
-          3px 2px var(--color__wrapper),
-          -1px 2px var(--color__wrapper),
-          -2px 2px var(--color__wrapper),
+        text-shadow: 1px 2px var(--color__wrapper),
+          2px 2px var(--color__wrapper), 3px 2px var(--color__wrapper),
+          -1px 2px var(--color__wrapper), -2px 2px var(--color__wrapper),
           -3px 2px var(--color__wrapper);
-        background-image: linear-gradient(var(--color__text),var(--color__text));
+        background-image: linear-gradient(
+          var(--color__text),
+          var(--color__text)
+        );
       }
     }
   }

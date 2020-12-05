@@ -4,7 +4,10 @@
 
 .grid {
   display: grid;
-  grid-template-columns: minmax($margin__body,1fr) minmax(0,375px) minmax(500px,750px) minmax(0,375px) minmax($margin__body,1fr);
+  grid-template-columns: minmax($margin__body, 1fr) minmax(0, 375px) minmax(
+      500px,
+      750px
+    ) minmax(0, 375px) minmax($margin__body, 1fr);
 
   > * {
     grid-column-start: 3;
@@ -24,7 +27,10 @@
 
 @media #{$breakpoint__991--max} {
   .grid {
-    grid-template-columns: minmax($margin__base,1fr) 0 minmax(auto,550px) 0 minmax($margin__base,1fr);
+    grid-template-columns: minmax($margin__base, 1fr) 0 minmax(auto, 550px) 0 minmax(
+        $margin__base,
+        1fr
+      );
 
     > .wp-block-embed-youtube,
     > .wp-block-image,

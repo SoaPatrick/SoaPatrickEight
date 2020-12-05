@@ -27,7 +27,7 @@ h4 {
 }
 
 .title-huge {
-  font-size: clamp(2rem,10vw,6rem);
+  font-size: clamp(2rem, 10vw, 6rem);
   margin: 0 0 2rem 0;
 
   @media #{$breakpoint__992--min} {
@@ -40,7 +40,7 @@ h4 {
  * -----------------------------------------------------------
  */
 
- a {
+a {
   color: var(--color__highlight);
   font-weight: $font-weight__regular;
   text-decoration: none;
@@ -56,8 +56,6 @@ h4 {
     outline: $outline;
   }
 }
-
-
 
 /*
  * Misc Elements

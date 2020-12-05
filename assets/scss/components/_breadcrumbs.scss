@@ -12,9 +12,9 @@
   &__item {
     &:after {
       content: "/";
-      padding: 0 .5em;
+      padding: 0 0.5em;
       font-weight: bold;
-      opacity: .25;
+      opacity: 0.25;
     }
   }
 }

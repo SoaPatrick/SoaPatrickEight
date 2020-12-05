@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 .btn {
-  padding: .5em 1.25em;
+  padding: 0.5em 1.25em;
   color: var(--color__highlight);
   border: $border-width__btn solid var(--color__highlight);
   background: transparent;
@@ -22,7 +22,7 @@
 }
 
 .btn-small {
-  padding: .25em .75em;
+  padding: 0.25em 0.75em;
   font-size: $font-size__small;
 }
 
@@ -46,5 +46,5 @@
   background: var(--color__highlight);
   color: $color__white;
   font-weight: $font-weight__regular;
-  cursor: pointer
+  cursor: pointer;
 }
