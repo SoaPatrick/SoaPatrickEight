@@ -3,12 +3,7 @@
 --------------------------------------------------------------*/
 
 .related {
-
-  &--post {
-    margin-top: 4rem;
-  }
-
-  &--factory{
+  &--factory {
     color: $color__white;
 
     @include bob-animation(article);
