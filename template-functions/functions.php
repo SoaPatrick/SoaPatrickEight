@@ -407,3 +407,47 @@ if ( ! function_exists( 'soapatrickeight_svg_icons' ) ) :
     echo $svgIcon;
   }
 endif;
+
+
+/**
+ * Use Wordpress build in Sitemap generator and modify results
+ *
+ */
+function soapatrickeight_sitemap_remove_cpt($post_types) {
+  unset( $post_types['log'] );
+  return $post_types;
+}
+add_filter('wp_sitemaps_post_types', 'soapatrickeight_sitemap_remove_cpt');
+
+
+function soapatrickeight_sitemap_remove_tax($taxonomies) {
+  unset( $taxonomies['post_tag'] );
+  unset( $taxonomies['category'] );
+  unset( $taxonomies['post_format'] );
+  unset( $taxonomies['factory_tags'] );
+  return $taxonomies;
+}
+add_filter('wp_sitemaps_taxonomies', 'soapatrickeight_sitemap_remove_tax');
+
+
+function soapatrickeight_sitemap_remove_users($provider, $name) {
+  if ( 'users' === $name ) {
+      return false;
+  }
+  return $provider;
+}
+add_filter('wp_sitemaps_add_provider', 'soapatrickeight_sitemap_remove_users', 10, 2);
+
+
+function soapatrickeight_sitemap_remove_pages($args, $post_type) {
+  if ( 'page' !== $post_type ) {
+      return $args;
+  }
+
+  $args['post__not_in'] = isset( $args['post__not_in'] ) ? $args['post__not_in'] : array();
+  $args['post__not_in'][] = 2823; // Log Archive
+  $args['post__not_in'][] = 1397; // Post Archive (Storage)
+  $args['post__not_in'][] = 1402; // Tags Archive
+  return $args;
+}
+add_filter('wp_sitemaps_posts_query_args', 'soapatrickeight_sitemap_remove_pages', 10, 2);
