@@ -85,7 +85,10 @@ figure {
   &.alignfull,
   &.alignwide {
     margin-left: calc(var(--content-gap) * -1);
-    margin-right: calc(var(--content-gap) * -1);
+
+    @media #{$breakpoint__991--max} {
+      margin-right: calc(var(--content-gap) * -1);
+    }
 
     figcaption {
       margin-left: var(--content-gap);

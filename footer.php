@@ -17,7 +17,7 @@
       <div class="site-footer__sticky">
         <?php
 
-          if(is_home() && !is_paged()):
+          if(is_home() && !is_paged() || is_page()):
             get_template_part( 'template-partials/content/content-factory_feed' );
           else:
             get_template_part( 'template-partials/content/content-related', get_post_type() );
@@ -25,7 +25,7 @@
         ?>
 
         <p class="site-footer__copyright">
-          <?php echo sprintf( __( 'Stuff from 2000 to %s by SoaPatrick<a href="%s">Eight</a>', 'soapatrickeight' ), date('Y'), esc_url( home_url( '/log' )) ); ?> / <a href="<?php echo esc_url( home_url( '/' ) ); ?>privacy-policy" aria-label="<?php esc_html_e( 'Privacy', 'soapatrickeight' ); ?>"><?php esc_html_e( 'Privacy', 'soapatrickeight' ); ?></a>
+          <?php echo sprintf( __( 'Stuff from 2000 to %s by SoaPatrick<a href="%s">Eight</a>', 'soapatrickeight' ), date('Y'), esc_url( home_url( '/log' )) ); ?></a>
         </p>
       </div>
     </footer>
