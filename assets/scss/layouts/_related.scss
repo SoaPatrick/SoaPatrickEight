@@ -3,6 +3,15 @@
 --------------------------------------------------------------*/
 
 .related {
+  &--post {
+    margin-top: 4rem;
+
+    // within footer/sidebar
+    &.highlight {
+      margin-top: 0;
+    }
+  }
+
   &--factory {
     color: $color__white;
 
