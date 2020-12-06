@@ -17,7 +17,7 @@
       <div class="site-footer__sticky">
         <?php
 
-          if(is_home() && !is_paged()):
+          if(is_home() && !is_paged() || is_page()):
             get_template_part( 'template-partials/content/content-factory_feed' );
           else:
             get_template_part( 'template-partials/content/content-related', get_post_type() );
