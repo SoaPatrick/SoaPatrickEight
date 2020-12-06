@@ -9,7 +9,12 @@
 
 function soapatrickeight_scripts() {
   wp_dequeue_style( 'wp-block-library' );
-  wp_enqueue_style( 'soapatrickeight-style', get_template_directory_uri() . '/assets/css/app.css' );
+
+  if ( 'local' === wp_get_environment_type() ) {
+    wp_enqueue_style( 'soapatrickeight-style', get_template_directory_uri() . '/assets/css/app.css', '', rand(1,10000) );
+  } else {
+    wp_enqueue_style( 'soapatrickeight-style', get_template_directory_uri() . '/assets/css/app.css' );
+  }
   wp_enqueue_script( 'soapatrickeight-scripts', get_template_directory_uri() . '/assets/js/scripts.js', '','' , true );
 
   if( is_post_type_archive('log') ) {
