@@ -33,12 +33,12 @@
       </label>
     </div>
     <div class="nav-switch-wrapper">
-      <?php soapatrickeight_svg_icons('hand-left-arrow') ?>
+      <?php soapatrickeight_svg_icons('nav-left') ?>
       <label class="nav-switch" for="nav-switch">
         <input type="checkbox" id="nav-switch">
         <div class="slider round"></div>
       </label>
-      <?php soapatrickeight_svg_icons('hand-right-arrow') ?>
+      <?php soapatrickeight_svg_icons('nav-right') ?>
     </div>
   </div>
 </div>
