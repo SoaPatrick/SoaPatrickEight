@@ -33,7 +33,7 @@ body {
     "navigation content footer";
 
   @media #{$breakpoint__1921--min} {
-    grid-template-rows: 971px auto;
+    grid-template-rows: minmax(971px, 35vw) auto;
   }
 
   @media #{$breakpoint__1920--max} {
