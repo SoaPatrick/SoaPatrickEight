@@ -11,8 +11,17 @@
 $format = get_post_format();
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class('article post-single'); ?>>
+
+  <?php if(is_page()): ?>
+    <div class="breadcrumbs-wrapper">
+      <nav class="breadcrumbs">
+        <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
+        <span class="breadcrumbs__item--last"><?php the_title() ?></span>
+      </nav>
+    </div>
+  <?php endif; ?>
+
   <?php if ($format === 'quote' || $format === 'link' || $format === 'status') : ?>
 
     <header class="article__header">
