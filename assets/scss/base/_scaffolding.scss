@@ -52,7 +52,7 @@ body {
 
   .site-header {
     grid-area: header;
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: var(--color__wrapper);
 
     @media #{$breakpoint__991--max} {
