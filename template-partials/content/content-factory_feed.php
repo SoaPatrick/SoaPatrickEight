@@ -9,9 +9,9 @@
 
 ?>
 
-<section class="factory-feed highlight">
+<section class="factory-list factory-list--feed highlight">
   <h1><?php esc_html_e( 'Factory Feed', 'soapatrickeight' ); ?></h1>
-  <div class="factory-feed__items">
+  <div class="factory-list__items">
     <?php
       $args = array(
         'post_type'       => 'factory',

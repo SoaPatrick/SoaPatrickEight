@@ -5,27 +5,18 @@
 .factory-list {
   color: var(--color__text);
   @include bob-animation(article);
-  //max-width: 1200px;
 
-  &__list {
-    margin: $margin__base 0;
-    padding-bottom: 2rem;
+  &__items {
+    margin-top: $margin__base;
+    display: grid;
+    gap: $margin__base;
 
     @media #{$breakpoint__992--min} {
-      display: flex;
-      flex-wrap: wrap;
-
-      article {
-        max-width: 12rem;
-        margin-right: $margin__base;
-        margin-bottom: $margin__base;
-      }
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     @media #{$breakpoint__991--max} {
-      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: $margin__base;
     }
   }
 
@@ -33,6 +24,8 @@
     position: relative;
 
     img {
+      max-width: 100%;
+      height: auto;
       display: block;
       position: relative;
       z-index: 2;

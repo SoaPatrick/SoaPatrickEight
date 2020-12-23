@@ -63,6 +63,8 @@ body {
 
     .waves {
       fill: var(--color__highlight);
+      margin-left: -1px;
+      margin-right: -1px;
     }
 
     .bubbles {
@@ -78,6 +80,7 @@ body {
 
       .bubbles {
         display: block;
+        margin-left: -1px;
         min-width: 25vw;
 
         &--bg,

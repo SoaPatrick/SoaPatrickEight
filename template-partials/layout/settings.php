@@ -7,7 +7,7 @@
 
 ?>
 
-<div id="settings">
+<section id="settings">
   <div class="container">
     <div id="settings__header"></div>
     <button type="button" id="settings__close" aria-label="<?php esc_html_e( 'Close Settings', 'soapatrickeight' ); ?>">
@@ -41,4 +41,4 @@
       <?php soapatrickeight_svg_icons('nav-right') ?>
     </div>
   </div>
-</div>
+</section>
