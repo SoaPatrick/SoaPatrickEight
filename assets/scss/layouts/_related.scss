@@ -13,12 +13,10 @@
   }
 
   &--factory {
-    color: $color__white;
-
-    @include bob-animation(article);
+    @extend .factory-list;
 
     &__items {
-      @extend .factory-feed__items;
+      @extend .factory-list__items;
     }
   }
 }
