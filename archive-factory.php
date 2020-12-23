@@ -44,7 +44,7 @@ get_header(); ?>
       ?>
     </div>
 
-    <div class="factory-list__list">
+    <div class="factory-list__items">
       <?php
         if ( have_posts() ) :
           while ( have_posts() ) : the_post();
