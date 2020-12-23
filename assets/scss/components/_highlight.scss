@@ -29,6 +29,12 @@
     &:focus {
       outline: $outline-highlight;
     }
+
+    &.img-link {
+      display: block;
+      padding: 0;
+      border: 0;
+    }
   }
 
   .post-list .title-list a {

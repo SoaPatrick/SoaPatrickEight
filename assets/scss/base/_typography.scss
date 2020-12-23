@@ -55,6 +55,12 @@ a {
   &:focus {
     outline: $outline;
   }
+
+  &.img-link {
+    display: block;
+    padding: 0;
+    border: 0;
+  }
 }
 
 /*
