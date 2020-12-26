@@ -6,8 +6,10 @@ window.onload = function(){
     document.getElementById('toggle-search-collapse').classList.toggle('active');
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    document.getElementById('search-collapse--input').value = "";
-    document.getElementById('search-collapse--input').focus();
+    if(document.getElementById('search-collapse').classList.contains('open')) {
+      document.getElementById('search-collapse--input').value = "";
+      document.getElementById('search-collapse--input').focus();
+    }
   };
 
   // toggle Settings from Navigation
