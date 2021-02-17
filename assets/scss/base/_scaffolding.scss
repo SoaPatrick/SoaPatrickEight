@@ -39,7 +39,7 @@ body {
   @media #{$breakpoint__1920--max} {
     grid-template-columns: $navbar__width minmax(650px, auto) minmax(
         $navbar__width,
-        auto
+        400px
       );
     grid-template-areas:
       "navigation content header"
