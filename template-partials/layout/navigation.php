@@ -19,7 +19,7 @@
         </a>
       </li>
       <li>
-        <a class="main-navigation__link main-navigation__link--animation" href="<?php echo esc_url( home_url( '/' ) ); ?>box" aria-label="<?php esc_html_e( 'Box', 'soapatrickeight' ); ?>">
+        <a class="main-navigation__link main-navigation__link--animation" href="<?php echo esc_url( home_url( '/' ) ); ?>storage" aria-label="<?php esc_html_e( 'Storage', 'soapatrickeight' ); ?>">
           <span><?php esc_html_e( 'Box', 'soapatrickeight' ); ?></span>
           <svg aria-hidden="true" focusable="false" class="main-navigation__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path fill="currentColor" class="secondary" d="M32 160v288a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32V160zm288 84a12 12 0 0 1-12 12H204a12 12 0 0 1-12-12v-8a12 12 0 0 1 12-12h104a12 12 0 0 1 12 12z"></path>

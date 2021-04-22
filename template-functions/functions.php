@@ -245,7 +245,7 @@ add_filter( 'pre_get_document_title', 'soapatrickeight_home_page_title' );
  *
  */
 function soapatrickeight_add_robots_noindes($output) {
-  if($paged > 1 || is_author() || is_tag() || is_date() || is_attachment() || is_singular('log') || is_post_type_archive('lab') || is_singular('lab') || is_post_type_archive('log') || is_tax('factory_tags') || is_page('box') || is_page('tags')) {
+  if($paged > 1 || is_author() || is_tag() || is_date() || is_attachment() || is_singular('log') || is_post_type_archive('lab') || is_singular('lab') || is_post_type_archive('log') || is_tax('factory_tags') || is_page('storage') || is_page('tags')) {
     echo '<meta name="robots" content="noindex">';
   }
 }
@@ -447,7 +447,7 @@ function soapatrickeight_sitemap_remove_pages($args, $post_type) {
 
   $args['post__not_in'] = isset( $args['post__not_in'] ) ? $args['post__not_in'] : array();
   $args['post__not_in'][] = 2823; // Log Archive
-  $args['post__not_in'][] = 1397; // Post Archive (Box)
+  $args['post__not_in'][] = 1397; // Post Archive (Storage)
   $args['post__not_in'][] = 1402; // Tags Archive
   return $args;
 }

@@ -1,8 +1,8 @@
 /*--------------------------------------------------------------
-#Box
+#Storage
 --------------------------------------------------------------*/
 
-.box {
+.storage {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
   gap: $margin__base * 2 $margin__base;
