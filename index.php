@@ -16,7 +16,9 @@ get_header();
 
   if ( have_posts() ) :
     while ( have_posts() ) : the_post();
-      if (is_single() || is_page() || is_home() || is_paged() ):
+      if (is_front_page()):
+        get_template_part( 'template-partials/content/content-home', get_post_type() );
+      elseif (is_single()|| is_page() || is_home() || is_paged() ):
         get_template_part( 'template-partials/content/content-single', get_post_type() );
       else:
         get_template_part( 'template-partials/content/content-list', get_post_type() );
