@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Storage Page
+ * Template Name: Box Page
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -14,14 +14,14 @@ get_header();
     <div class="breadcrumbs-wrapper">
       <nav class="breadcrumbs">
         <span class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'SoaPatrick', 'soapatrickeight' ) ?></a></span>
-        <span class="breadcrumbs__item--last"><?php esc_html_e( 'Storage', 'soapatrickeight' ) ?></span>
+        <span class="breadcrumbs__item--last"><?php esc_html_e( 'Box', 'soapatrickeight' ) ?></span>
       </nav>
     </div>
 
     <header>
-      <h1 class="title-huge"><?php esc_html_e( 'Storage', 'soapatrickeight' ) ?></h1>
+      <h1 class="title-huge"><?php esc_html_e( 'Box', 'soapatrickeight' ) ?></h1>
     </header>
-    <div class="storage">
+    <div class="box">
       <?php
         while ( have_posts() ) : the_post();
 
@@ -31,7 +31,7 @@ get_header();
 
           foreach($years as $year):
             ?>
-              <div class="storage__year">
+              <div class="box__year">
                 <h2><?php echo $year; ?></h2>
                 <ul>
                   <?php

@@ -1,0 +1,38 @@
+/*--------------------------------------------------------------
+#Lab
+--------------------------------------------------------------*/
+
+.lab-list__items {
+  display:flex;
+  gap: $margin__base;
+  flex-wrap: wrap;
+
+  @media #{$breakpoint__767--max} {
+    flex-direction: column;
+  }
+
+  img {
+    height: clamp(150px,10vw,300px);
+    width: auto;
+    display: block;
+
+    @media #{$breakpoint__767--max} {
+      height: auto;
+    }
+  }
+
+  @supports (grid-template-rows: masonry) {
+    display: grid;
+    gap: $margin__base;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: masonry;
+
+    @media #{$breakpoint__767--max} {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    img {
+      height: auto;
+    }
+  }
+}

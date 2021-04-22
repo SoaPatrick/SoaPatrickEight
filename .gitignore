@@ -8,6 +8,7 @@ config.codekit3
 # css file gets compiled with deployment process
 *.css
 !style.css
+!style-admin.css
 
 # localy generated files by running node
 package-lock.json
