@@ -27,11 +27,15 @@ get_header(); ?>
           while ( have_posts() ) : the_post();
 
             if (has_post_thumbnail()) :
-              // get_template_part( 'template-partials/content/content', 'featured-full' );
-              the_post_thumbnail('medium');
-              // if (get_post(get_post_thumbnail_id())->post_excerpt): // search for if the image has caption added on it
-              //   echo wp_kses_post(get_post(get_post_thumbnail_id())->post_excerpt); // displays the image caption
-              // endif;
+              if (get_post(get_post_thumbnail_id())->post_excerpt):
+                $hasCaption = true; // search for if the image has caption added on it
+                $caption = wp_kses_post(get_post(get_post_thumbnail_id())->post_excerpt); // displays the image caption
+              endif;
+              ?>
+              <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(),'large'); ?>" class="glightbox" data-width="50px" <?php if($hasCaption) { echo 'data-glightbox="title:'. $caption .'"'; } ?>>
+                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium'); ?>" alt="image" />
+              </a>
+              <?php
             endif;
           endwhile;
         endif;

@@ -1,5 +1,12 @@
 window.onload = function(){
 
+  // Lightbox function
+  if(typeof GLightbox === "function"){
+    const glightbox = GLightbox({
+      zoomable: false,
+    });
+  }
+
   // open/close search
   document.getElementById('toggle-search-collapse').onclick = function() {
     document.getElementById('search-collapse').classList.toggle('open');
