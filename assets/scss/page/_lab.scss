@@ -4,11 +4,20 @@
 
 .lab-list__items {
   display:flex;
-  gap: $margin__base;
   flex-wrap: wrap;
+
+  > a {
+    margin-right: $margin__base;
+    margin-bottom: $margin__base;
+  }
 
   @media #{$breakpoint__767--max} {
     flex-direction: column;
+
+    > a {
+      margin-right: 0;
+      margin-bottom: $margin__base;
+    }
   }
 
   img {
@@ -26,6 +35,10 @@
     gap: $margin__base;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     grid-template-rows: masonry;
+
+    > a {
+      margin: 0;
+    }
 
     @media #{$breakpoint__767--max} {
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
