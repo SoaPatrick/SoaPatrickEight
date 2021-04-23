@@ -1,0 +1,23 @@
+/*--------------------------------------------------------------
+#GLightbox
+--------------------------------------------------------------*/
+
+.glightbox-clean.glightbox-container {
+  .gslide-title {
+    font-family: $font-family__base;
+    font-size: 1rem;
+    margin: 0;
+    line-height: inherit;
+    font-weight: inherit;
+    color: $color__gray--dark;
+  }
+
+  .gslide-description {
+    background-color: $color__white;
+  }
+}
+
+.glightbox-mobile .glightbox-container.glightbox-clean .gslide-title {
+  font-size: 1rem;
+  color: $color__white;
+}

@@ -32,8 +32,8 @@ get_header(); ?>
                 $caption = wp_kses_post(get_post(get_post_thumbnail_id())->post_excerpt); // displays the image caption
               endif;
               ?>
-              <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(),'large'); ?>" class="glightbox" data-width="50px" <?php if($hasCaption) { echo 'data-glightbox="title:'. $caption .'"'; } ?>>
-                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium'); ?>" alt="image" />
+              <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(),'large'); ?>" class="glightbox img-link" data-width="50px" <?php if($hasCaption) { echo 'data-glightbox="title:'. $caption .'"'; } ?>>
+                <?php the_post_thumbnail( 'medium'); ?>
               </a>
               <?php
             endif;
