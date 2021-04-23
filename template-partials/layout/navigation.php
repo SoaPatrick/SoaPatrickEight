@@ -18,7 +18,6 @@
           </svg>
         </a>
       </li>
-      <!-- <li><a class="main-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>box"><?php esc_html_e( 'Box', 'soapatrickeight' ); ?></a></li> -->
       <li>
         <a class="main-navigation__link main-navigation__link--animation" href="<?php echo esc_url( home_url( '/' ) ); ?>storage" aria-label="<?php esc_html_e( 'Storage', 'soapatrickeight' ); ?>">
           <span><?php esc_html_e( 'Storage', 'soapatrickeight' ); ?></span>
@@ -29,7 +28,16 @@
         </a>
       </li>
       <li>
-        <a class="main-navigation__link main-navigation__link--animation" href="<?php echo esc_url( home_url( '/' ) ); ?>factory" aria-label="<?php esc_html_e( 'Factory', 'soapatrickeight' ); ?>">
+        <a class="main-navigation__link main-navigation__link--animation" href="<?php echo get_post_type_archive_link( 'lab' ) ?>" aria-label="<?php esc_html_e( 'Lab', 'soapatrickeight' ); ?>">
+          <span><?php esc_html_e( 'Lab', 'soapatrickeight' ); ?></span>
+          <svg aria-hidden="true" focusable="false" class="main-navigation__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" class="primary" d="M138.07 320h171.84l72.93 117.29a6.4 6.4 0 0 1 .09 7.12 6.11 6.11 0 0 1-5.88 3.52H70.89a6.08 6.08 0 0 1-5.89-3.46 6.45 6.45 0 0 1 .11-7.18z"></path>
+            <path fill="currentColor" class="secondary" d="M112 64h224a16 16 0 0 0 16-16V16a16 16 0 0 0-16-16H112a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16zm325.19 339.5L320 215V96h-64v137.27l126.85 204a6.4 6.4 0 0 1 .09 7.12 6.11 6.11 0 0 1-5.88 3.52H70.89a6.08 6.08 0 0 1-5.89-3.44 6.45 6.45 0 0 1 .11-7.18L192 233.27V96h-64v119L10.79 403.5c-29.3 47.1 4.5 108.5 60.1 108.5h306.2c55.7 0 89.4-61.5 60.1-108.5z"></path>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a class="main-navigation__link main-navigation__link--animation" href="<?php echo get_post_type_archive_link( 'factory' ) ?>" aria-label="<?php esc_html_e( 'Factory', 'soapatrickeight' ); ?>">
           <span><?php esc_html_e( 'Factory', 'soapatrickeight' ); ?></span>
           <svg aria-hidden="true" focusable="false" class="main-navigation__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path fill="currentColor" class="secondary" d="M512 184v272a24 24 0 0 1-24 24H136a24 24 0 0 0 24-24V252.31l139.12-88.53A24 24 0 0 1 336 184v68.28l139.12-88.53A24 24 0 0 1 512 184z"></path>
@@ -47,7 +55,7 @@
         </a>
       </li>
       <li>
-        <a class="main-navigation__link main-navigation__link--animation" href="<?php echo esc_url( home_url( '/' ) ); ?>privacy-policy" aria-label="<?php esc_html_e( 'Privacy', 'soapatrickeight' ); ?>">
+        <a class="main-navigation__link main-navigation__link--animation main-navigation__link--patrick" href="<?php echo esc_url( home_url( '/' ) ); ?>privacy-policy" aria-label="<?php esc_html_e( 'Privacy', 'soapatrickeight' ); ?>">
           <span><?php esc_html_e( 'Privacy', 'soapatrickeight' ); ?></span>
           <svg aria-hidden="true" focusable="false" class="main-navigation__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path fill="currentColor" class="secondary" d="M255.38 421.22L224 480l-31.38-58.78L208 352l-17.79-35.58a161.25 161.25 0 0 0 67.58 0L240 352zM224 288a128 128 0 0 0 128-127.21c-7.49 1.54-15.51 3-24 4.2v6.59c-.11.11-6.07 3.47-6.93 6.28-4.23 12.9-7.59 26.65-17.88 36.19-10.94 10.07-52 24.26-69.33-27.09-3-9.1-16.69-9.1-19.83 0-18.41 54.39-60.66 35.1-69.33 27.09-10.29-9.54-13.76-23.29-17.88-36.19-.86-2.7-6.82-6.17-6.82-6.28V165c-8.48-1.25-16.5-2.66-24-4.2A128 128 0 0 0 224 288z"></path>

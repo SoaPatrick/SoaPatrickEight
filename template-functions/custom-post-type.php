@@ -8,4 +8,5 @@
  */
 
 get_template_part( 'template-types/cpt/cpt', 'factory');
+get_template_part( 'template-types/cpt/cpt', 'lab');
 get_template_part( 'template-types/cpt/cpt', 'log');

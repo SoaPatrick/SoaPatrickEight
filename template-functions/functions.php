@@ -97,7 +97,7 @@ if ( ! function_exists( 'soapatrickeight_posts_navigation' ) ) :
     if ( 'post' === get_post_type() ) {
       posts_nav_link( ' ', __( 'Next Posts &rarr;', 'soapatrickeight' ), __( '&larr; Previous Posts', 'soapatrickeight' ) );
     }
-    if ( 'factory' === get_post_type() ) {
+    if ( 'factory' === get_post_type() || 'lab' === get_post_type() ) {
       posts_nav_link( ' ', __( 'Next Items &rarr;', 'soapatrickeight' ), __( '&larr; Previous Items', 'soapatrickeight' ) );
     }
     if ( 'log' === get_post_type() ) {
@@ -245,7 +245,7 @@ add_filter( 'pre_get_document_title', 'soapatrickeight_home_page_title' );
  *
  */
 function soapatrickeight_add_robots_noindes($output) {
-  if($paged > 1 || is_author() || is_tag() || is_date() || is_attachment() || is_singular('log') || is_post_type_archive('log') || is_tax('factory_tags') || is_page('storage') || is_page('tags')) {
+  if($paged > 1 || is_author() || is_tag() || is_date() || is_attachment() || is_singular('log') || is_post_type_archive('lab') || is_singular('lab') || is_post_type_archive('log') || is_tax('factory_tags') || is_page('storage') || is_page('tags')) {
     echo '<meta name="robots" content="noindex">';
   }
 }
@@ -415,6 +415,7 @@ endif;
  */
 function soapatrickeight_sitemap_remove_cpt($post_types) {
   unset( $post_types['log'] );
+  unset( $post_types['lab'] );
   return $post_types;
 }
 add_filter('wp_sitemaps_post_types', 'soapatrickeight_sitemap_remove_cpt');

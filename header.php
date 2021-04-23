@@ -21,6 +21,13 @@
     wp_head();
     get_template_part( 'template-partials/head/favicon');
     get_template_part( 'template-partials/head/theme-script');
+
+    if(is_post_type_archive('lab')):
+      ?>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+        <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+      <?php
+    endif;
   ?>
 </head>
 

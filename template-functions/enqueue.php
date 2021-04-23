@@ -24,6 +24,12 @@ function soapatrickeight_scripts() {
 add_action( 'wp_enqueue_scripts', 'soapatrickeight_scripts' );
 
 
+function soapatrickeight_admin_styles() {
+  wp_register_style( 'soapatrickeight-admin-styles', get_template_directory_uri() . '/style-admin.css', false, '1.0.0' );
+  wp_enqueue_style( 'soapatrickeight-admin-styles' );
+}
+add_action( 'admin_enqueue_scripts', 'soapatrickeight_admin_styles' );
+
 // Remove Emojiscript
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
