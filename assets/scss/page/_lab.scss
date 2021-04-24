@@ -5,6 +5,7 @@
 .lab-list__items {
   display:flex;
   flex-wrap: wrap;
+  @include bob-animation(a);
 
   > a {
     margin-right: $margin__base;
