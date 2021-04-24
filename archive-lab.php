@@ -28,7 +28,7 @@ get_header(); ?>
 
             if (has_post_thumbnail()) :
               ?>
-              <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(),'large'); ?>" class="glightbox img-link"<?php if(get_the_post_thumbnail_caption()): ?> data-glightbox="title:<?php the_post_thumbnail_caption() ?>"<?php endif; ?>>
+              <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(),'large'); ?>" aria-label="<?php the_title() ?>" class="glightbox img-link"<?php if(get_the_post_thumbnail_caption()): ?> data-glightbox="title:<?php the_post_thumbnail_caption() ?>"<?php endif; ?>>
                 <?php the_post_thumbnail( 'medium'); ?>
               </a>
               <?php
