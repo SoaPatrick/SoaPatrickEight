@@ -16,7 +16,8 @@
     animation-duration: 0.5s;
   }
 
-  #{$tag} img {
+  #{$tag} img,
+  #{$tag} svg {
     display: inline-block;
     vertical-align: middle;
     transform: translateZ(0);
@@ -27,7 +28,10 @@
 
   #{$tag}:hover img,
   #{$tag}:focus img,
-  #{$tag}:active img {
+  #{$tag}:active img,
+  #{$tag}:hover svg,
+  #{$tag}:focus svg,
+  #{$tag}:active svg {
     animation-name: bob-float, bob;
     animation-duration: 0.3s, 1.5s;
     animation-delay: 0s, 0.3s;

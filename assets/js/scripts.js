@@ -4,6 +4,7 @@ window.onload = function(){
   if(typeof GLightbox === "function"){
     const glightbox = GLightbox({
       zoomable: false,
+      autoplayVideos: false
     });
   }
 
