@@ -7,6 +7,21 @@
   flex-wrap: wrap;
   @include bob-animation(a);
 
+  .video-link {
+    position: relative;
+
+    &__icon {
+      position: absolute;
+      bottom: .25rem;
+      right: .5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      z-index: 1;
+      fill: $color__white;
+      box-shadow: none !important;
+    }
+  }
+
   > a {
     margin-right: $margin__base;
     margin-bottom: $margin__base;
