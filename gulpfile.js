@@ -13,7 +13,7 @@ var reload = browserSync.reload;
  * configs
  */
 var config = {
-  url: "soapatrick.local",
+  url: "soapatrickeight.local",
   scssSrc: './assets/scss/*.scss',
   scssDest: './assets/css'
 };
